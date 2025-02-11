@@ -1,0 +1,60 @@
+{
+    "produktpass": {
+      "produktID": "123456789",
+      "produktname": "Beispielprodukt X",
+      "kategorie": "Lebensmittel / Kosmetik / Elektronik",
+      "hersteller": {
+        "name": "Beispiel GmbH",
+        "standort": "Deutschland",
+        "kontakt": "info@beispiel-gmbh.de"
+      },
+      "zutaten_oder_materialien": [
+        {
+          "name": "Zutat A / Material 1",
+          "herkunft": "Land X",
+          "lieferant": "Lieferant A",
+          "zertifizierungen": ["Bio", "Fair Trade"]
+        },
+        {
+          "name": "Zutat B / Material 2",
+          "herkunft": "Land Y",
+          "lieferant": "Lieferant B",
+          "zertifizierungen": ["Recycelt", "Nachhaltig"]
+        }
+      ],
+      "verarbeitungsschritte": [
+        {
+          "schritt": 1,
+          "beschreibung": "Rohstoffgewinnung",
+          "ort": "Land X",
+          "energieverbrauch": "100 kWh",
+          "co2_emission": "50 kg CO2"
+        },
+        {
+          "schritt": 2,
+          "beschreibung": "Verarbeitung der Rohstoffe",
+          "ort": "Land Y",
+          "energieverbrauch": "200 kWh",
+          "co2_emission": "100 kg CO2"
+        },
+        {
+          "schritt": 3,
+          "beschreibung": "Zusammenbau / Produktion",
+          "ort": "Deutschland",
+          "energieverbrauch": "300 kWh",
+          "co2_emission": "150 kg CO2"
+        }
+      ],
+      "verpackung": {
+        "material": "Recycelter Kunststoff",
+        "gewicht": "50g",
+        "herkunft": "Deutschland",
+        "entsorgung": "Gelber Sack / Recycling"
+      },
+      "lebenszyklus_und_recycling": {
+        "haltbarkeit": "2 Jahre",
+        "wiederverwendbarkeit": "Ja",
+        "recyclingquote": "80%"
+      }
+    }
+  }
