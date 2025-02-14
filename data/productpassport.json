@@ -33,7 +33,7 @@
                 "name": "Rote Beete Saft",
                 "percentage": 30
             }
-        ],     
+        ],
         "process_steps": [
             {
                 "stepId": "c1b29d56-f34b-4572-98c2-0e9b21e537b5",
@@ -42,8 +42,6 @@
                 "address": "Organic Farm X",
                 "latitude": 50.8456,
                 "longitude": 10.8974,
-                "energy_consumption": "80 kWh",
-                "co2_emission": "40 kg CO2",
                 "next_stepId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
                 "step_entries": [
                     {
@@ -55,7 +53,9 @@
                         "amount": "500",
                         "amount_description": "Weight",
                         "amount_unit": "kg",
-                        "description": "Freshly harvested apples from organic farm."
+                        "description": "Freshly harvested apples from organic farm.",
+                        "energy_consumption": "80 kWh",
+                        "co2_emission": "40 kg CO2"
                     }
                 ]
             },
@@ -66,8 +66,6 @@
                 "address": "Processing Facility A",
                 "latitude": 50.9512,
                 "longitude": 11.4356,
-                "energy_consumption": "100 kWh",
-                "co2_emission": "50 kg CO2",
                 "next_stepId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
                 "step_entries": [
                     {
@@ -79,7 +77,9 @@
                         "amount": "450",
                         "amount_description": "Weight",
                         "amount_unit": "kg",
-                        "description": "Apples sorted for juice production."
+                        "description": "Apples sorted for juice production.",
+                        "energy_consumption": "100 kWh",
+                        "co2_emission": "50 kg CO2"
                     }
                 ]
             },
@@ -90,8 +90,6 @@
                 "address": "Juicing Facility B",
                 "latitude": 51.1123,
                 "longitude": 11.6789,
-                "energy_consumption": "120 kWh",
-                "co2_emission": "60 kg CO2",
                 "next_stepId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
                 "step_entries": [
                     {
@@ -103,7 +101,9 @@
                         "amount": "350",
                         "amount_description": "Volume",
                         "amount_unit": "liters",
-                        "description": "Pure apple juice extracted."
+                        "description": "Pure apple juice extracted.",
+                        "energy_consumption": "120 kWh",
+                        "co2_emission": "60 kg CO2"
                     }
                 ]
             },
@@ -114,8 +114,6 @@
                 "address": "Bottling Facility C",
                 "latitude": 51.3452,
                 "longitude": 12.0896,
-                "energy_consumption": "140 kWh",
-                "co2_emission": "75 kg CO2",
                 "next_stepId": "e5c6f7b9-123a-4d8b-91e7-bd23f69e0d34",
                 "step_entries": [
                     {
@@ -127,31 +125,9 @@
                         "amount": "300",
                         "amount_description": "Units",
                         "amount_unit": "bottles",
-                        "description": "Apple juice bottled and packed for distribution."
-                    }
-                ]
-            },
-            {
-                "stepId": "e5c6f7b9-123a-4d8b-91e7-bd23f69e0d34",
-                "description": "Distribution to Stores",
-                "image_src": "https://herkunftcheck.org/images/distribution.jpeg",
-                "address": "Retail Store X",
-                "latitude": 51.5033,
-                "longitude": 12.5678,
-                "energy_consumption": "160 kWh",
-                "co2_emission": "85 kg CO2",
-                "next_stepId": null,
-                "step_entries": [
-                    {
-                        "stepEntryId": "f68d9b3c-4e57-423c-a7b1-1f3e4d67a9bc",
-                        "next_stepEntryId": null,
-                        "name": "Juice Arrived at Store",
-                        "date": "2023-09-14T08:00:00.000Z",
-                        "image_src": "https://herkunftcheck.org/images/store_shelf.jpeg",
-                        "amount": "300",
-                        "amount_description": "Units",
-                        "amount_unit": "bottles",
-                        "description": "Juice delivered and ready for sale."
+                        "description": "Apple juice bottled and packed for distribution.",
+                        "energy_consumption": "140 kWh",
+                        "co2_emission": "75 kg CO2"
                     }
                 ]
             }
