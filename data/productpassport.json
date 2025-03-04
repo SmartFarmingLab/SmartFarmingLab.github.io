@@ -2,9 +2,12 @@
     "productpass": {
         "productId": "987654321",
         "regioDataId": "1",
-        "productname": "Apfel-RoteBeete-Saft",
-        "description": "Apple Harvesting",
-        "category": "Lebensmittel",
+        "production_date": "2024-10-23",
+        "best_before": "2025-12-31",
+        "product_name": "Bio-Apfel-Birnen-Saft",
+        "product_short_name": "Apfel-Birnen",
+        "description": "Der beste Apfel-Birnen-Saft Ihrer Region",
+        "category": "Saft",
         "image_src": "https://herkunftcheck.org/images/apple_juice.jpeg",
         "certificates": [
             "Bio",
@@ -19,10 +22,8 @@
             "state": "SA",
             "postal_code": "04109",
             "country": "GER",
-            "coordinates": {
-                "latitude": 51.339333,
-                "longitude": 12.378399
-            }
+            "latitude": 51.339333,
+            "longitude": 12.378399
         },
         "ingredients": [
             {
@@ -39,9 +40,13 @@
                 "stepId": "c1b29d56-f34b-4572-98c2-0e9b21e537b5",
                 "description": "Apple Harvesting",
                 "image_src": "https://herkunftcheck.org/images/apple_farm.jpeg",
-                "address": "Organic Farm X",
-                "latitude": 50.8456,
-                "longitude": 10.8974,
+                "address": {
+                    "name": "Obstbau Dominic Sonntag",
+                    "zip": "01728",
+                    "city": "Bannewitz",
+                    "latitude": 50.965108,
+                    "longitude": 13.718475
+                },
                 "next_stepId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
                 "step_entries": [
                     {
@@ -53,6 +58,7 @@
                         "amount": "500",
                         "amount_description": "Weight",
                         "amount_unit": "kg",
+                        "ingredient_type": "apple",
                         "description": "Freshly harvested apples from organic farm.",
                         "energy_consumption": "80 kWh",
                         "co2_emission": "40 kg CO2"
@@ -63,9 +69,13 @@
                 "stepId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
                 "description": "Apple Sorting",
                 "image_src": "https://herkunftcheck.org/images/apple_sorting.jpeg",
-                "address": "Processing Facility A",
-                "latitude": 50.9512,
-                "longitude": 11.4356,
+                "address": {
+                    "name": "Obstbau Dominic Sonntag",
+                    "zip": "01728",
+                    "city": "Bannewitz",
+                    "latitude": 50.965108,
+                    "longitude": 13.718475
+                },
                 "next_stepId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
                 "step_entries": [
                     {
@@ -87,9 +97,13 @@
                 "stepId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
                 "description": "Apple Juice Extraction",
                 "image_src": "https://herkunftcheck.org/images/apple_juicing.jpeg",
-                "address": "Juicing Facility B",
-                "latitude": 51.1123,
-                "longitude": 11.6789,
+                "address": {
+                    "name": "Obstbau Dominic Sonntag",
+                    "zip": "01728",
+                    "city": "Bannewitz",
+                    "latitude": 50.965108,
+                    "longitude": 13.718475
+                },
                 "next_stepId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
                 "step_entries": [
                     {
@@ -111,9 +125,13 @@
                 "stepId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
                 "description": "Bottling & Packaging",
                 "image_src": "https://herkunftcheck.org/images/bottling.jpeg",
-                "address": "Bottling Facility C",
-                "latitude": 51.3452,
-                "longitude": 12.0896,
+                "address": {
+                    "name": "Obstbau Dominic Sonntag",
+                    "zip": "01728",
+                    "city": "Bannewitz",
+                    "latitude": 50.965108,
+                    "longitude": 13.718475
+                },
                 "next_stepId": "e5c6f7b9-123a-4d8b-91e7-bd23f69e0d34",
                 "step_entries": [
                     {
