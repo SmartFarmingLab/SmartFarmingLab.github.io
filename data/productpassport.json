@@ -10,20 +10,36 @@
         "category": "Saft",
         "image_src": "https://herkunftcheck.org/images/apple_juice.jpeg",
         "certificates": [
-            "Bio",
-            "Fair Trade",
-            "EU Organic"
+            {
+                "name": "Bio",
+                "description": "Das Siegel ist ein bundeseinheitliches Zeichen für ökologisch erzeugte Produkte, die nach den Anforderungen der EU-Öko-Verordnung hergestellt werden.",
+                "link": "https://www.oekolandbau.de/bio-zertifizierung/bio-siegel/",
+                "image_src": "https://herkunftcheck.org/images/bioLogo.jpeg"
+            },
+            {
+                "name": "Fair Trade",
+                "description": "Fairtrade steht für fairen Handel, bessere Preise und menschenwürdige Arbeitsbedingungen.",
+                "link": "https://www.fairtrade.net/",
+                "image_src": "https://herkunftcheck.org/images/fairTradeLogo.jpeg"
+            },
+            {
+                "name": "EU Organic",
+                "description": "",
+                "link": "https://euorganicproducts.eu/",
+                "image_src": "https://herkunftcheck.org/images/EUOrganicLogo.jpeg"
+            }
         ],
         "productowner": {
             "name": "Arne Müller",
             "companyname": "ULE Naturprodukte",
-            "street": "Grimmaische Str. 12",
-            "city": "Leipzig",
-            "state": "SA",
-            "postal_code": "04109",
-            "country": "GER",
-            "latitude": 51.339333,
-            "longitude": 12.378399
+            "image_src": "https://herkunftcheck.org/images/companyLogo.jpeg",
+            "address": {
+                "name": "Obstbau Dominic Sonntag",
+                "zip": "01728",
+                "city": "Bannewitz",
+                "latitude": 50.965108,
+                "longitude": 13.718475
+            }
         },
         "ingredients": [
             {
