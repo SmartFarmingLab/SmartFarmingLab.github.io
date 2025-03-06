@@ -1,38 +1,38 @@
 {
-    "productpass": {
+    "productPass": {
         "productId": "987654321",
         "regioDataId": "1",
-        "production_date": "2024-10-23",
-        "best_before": "2025-12-31",
-        "product_name": "Bio-Apfel-Birnen-Saft",
-        "product_short_name": "Apfel-Birnen",
+        "productionDate": "2024-10-23",
+        "bestBefore": "2025-12-31",
+        "productName": "Bio-Apfel-Birnen-Saft",
+        "productShortName": "Apfel-Birnen",
         "description": "Der beste Apfel-Birnen-Saft Ihrer Region",
         "category": "Saft",
-        "image_src": "https://herkunftcheck.org/images/apple_juice.jpeg",
+        "imageSrc": "https://herkunftcheck.org/images/apple_juice.jpeg",
         "certificates": [
             {
                 "name": "Bio",
                 "description": "Das Siegel ist ein bundeseinheitliches Zeichen für ökologisch erzeugte Produkte, die nach den Anforderungen der EU-Öko-Verordnung hergestellt werden.",
                 "link": "https://www.oekolandbau.de/bio-zertifizierung/bio-siegel/",
-                "image_src": "https://herkunftcheck.org/images/bioLogo.jpeg"
+                "imageSrc": "https://herkunftcheck.org/images/bioLogo.jpeg"
             },
             {
                 "name": "Fair Trade",
                 "description": "Fairtrade steht für fairen Handel, bessere Preise und menschenwürdige Arbeitsbedingungen.",
                 "link": "https://www.fairtrade.net/",
-                "image_src": "https://herkunftcheck.org/images/fairTradeLogo.jpeg"
+                "imageSrc": "https://herkunftcheck.org/images/fairTradeLogo.jpeg"
             },
             {
                 "name": "EU Organic",
                 "description": "",
                 "link": "https://euorganicproducts.eu/",
-                "image_src": "https://herkunftcheck.org/images/EUOrganicLogo.jpeg"
+                "imageSrc": "https://herkunftcheck.org/images/EUOrganicLogo.jpeg"
             }
         ],
-        "productowner": {
+        "productOwner": {
             "name": "Arne Müller",
-            "companyname": "ULE Naturprodukte",
-            "image_src": "https://herkunftcheck.org/images/companyLogo.jpeg",
+            "companyName": "ULE Naturprodukte",
+            "imageSrc": "https://herkunftcheck.org/images/companyLogo.jpeg",
             "address": {
                 "name": "Obstbau Dominic Sonntag",
                 "zip": "01728",
@@ -51,11 +51,11 @@
                 "percentage": 30
             }
         ],
-        "process_steps": [
+        "processSteps": [
             {
                 "stepId": "c1b29d56-f34b-4572-98c2-0e9b21e537b5",
                 "description": "Apple Harvesting",
-                "image_src": "https://herkunftcheck.org/images/apple_farm.jpeg",
+                "imageSrc": "https://herkunftcheck.org/images/apple_farm.jpeg",
                 "address": {
                     "name": "Obstbau Dominic Sonntag",
                     "zip": "01728",
@@ -63,28 +63,28 @@
                     "latitude": 50.965108,
                     "longitude": 13.718475
                 },
-                "next_stepId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
-                "step_entries": [
+                "nextStepId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
+                "stepEntries": [
                     {
                         "stepEntryId": "ab3d4a67-890c-44d1-b2df-a4567edfdc34",
-                        "next_stepEntryId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
+                        "nextStepEntryId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
                         "name": "Apple Collection",
                         "date": "2023-09-10T08:30:00.000Z",
-                        "image_src": "https://herkunftcheck.org/images/apple_collected.jpeg",
+                        "imageSrc": "https://herkunftcheck.org/images/apple_collected.jpeg",
                         "amount": "500",
-                        "amount_description": "Weight",
-                        "amount_unit": "kg",
-                        "ingredient_type": "apple",
+                        "amountDescription": "Weight",
+                        "amountUnit": "kg",
+                        "ingredientType": "apple",
                         "description": "Freshly harvested apples from organic farm.",
-                        "energy_consumption": "80 kWh",
-                        "co2_emission": "40 kg CO2"
+                        "energyConsumption": "80 kWh",
+                        "co2Emission": "40 kg CO2"
                     }
                 ]
             },
             {
                 "stepId": "b5a8f3e2-792c-4e2a-b9f7-5efb621d3e91",
                 "description": "Apple Sorting",
-                "image_src": "https://herkunftcheck.org/images/apple_sorting.jpeg",
+                "imageSrc": "https://herkunftcheck.org/images/apple_sorting.jpeg",
                 "address": {
                     "name": "Obstbau Dominic Sonntag",
                     "zip": "01728",
@@ -92,27 +92,27 @@
                     "latitude": 50.965108,
                     "longitude": 13.718475
                 },
-                "next_stepId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
-                "step_entries": [
+                "nextStepId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
+                "stepEntries": [
                     {
                         "stepEntryId": "bc4e57f2-8b91-4d5c-b9e5-a9cd342dfe89",
-                        "next_stepEntryId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
+                        "nextStepEntryId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
                         "name": "Apples Sorted",
                         "date": "2023-09-11T12:45:00.000Z",
-                        "image_src": "https://herkunftcheck.org/images/apple_sorted.jpeg",
+                        "imageSrc": "https://herkunftcheck.org/images/apple_sorted.jpeg",
                         "amount": "450",
-                        "amount_description": "Weight",
-                        "amount_unit": "kg",
+                        "amountDescription": "Weight",
+                        "amountUnit": "kg",
                         "description": "Apples sorted for juice production.",
-                        "energy_consumption": "100 kWh",
-                        "co2_emission": "50 kg CO2"
+                        "energyConsumption": "100 kWh",
+                        "co2Emission": "50 kg CO2"
                     }
                 ]
             },
             {
                 "stepId": "d23b1a8e-2c9f-4c78-908e-1234a6bc7d65",
                 "description": "Apple Juice Extraction",
-                "image_src": "https://herkunftcheck.org/images/apple_juicing.jpeg",
+                "imageSrc": "https://herkunftcheck.org/images/apple_juicing.jpeg",
                 "address": {
                     "name": "Obstbau Dominic Sonntag",
                     "zip": "01728",
@@ -120,27 +120,27 @@
                     "latitude": 50.965108,
                     "longitude": 13.718475
                 },
-                "next_stepId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
-                "step_entries": [
+                "nextStepId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
+                "stepEntries": [
                     {
                         "stepEntryId": "df5b1e72-3e8b-4b12-bd75-61a2fcb567de",
-                        "next_stepEntryId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
+                        "nextStepEntryId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
                         "name": "Apple Juice Produced",
                         "date": "2023-09-12T15:20:00.000Z",
-                        "image_src": "https://herkunftcheck.org/images/apple_juice.jpeg",
+                        "imageSrc": "https://herkunftcheck.org/images/apple_juice.jpeg",
                         "amount": "350",
-                        "amount_description": "Volume",
-                        "amount_unit": "liters",
+                        "amountDescription": "Volume",
+                        "amountUnit": "liters",
                         "description": "Pure apple juice extracted.",
-                        "energy_consumption": "120 kWh",
-                        "co2_emission": "60 kg CO2"
+                        "energyConsumption": "120 kWh",
+                        "co2Emission": "60 kg CO2"
                     }
                 ]
             },
             {
                 "stepId": "a3b7e6d8-9d6c-4f3f-93c2-75e21d7f0b98",
                 "description": "Bottling & Packaging",
-                "image_src": "https://herkunftcheck.org/images/bottling.jpeg",
+                "imageSrc": "https://herkunftcheck.org/images/bottling.jpeg",
                 "address": {
                     "name": "Obstbau Dominic Sonntag",
                     "zip": "01728",
@@ -148,20 +148,20 @@
                     "latitude": 50.965108,
                     "longitude": 13.718475
                 },
-                "next_stepId": "e5c6f7b9-123a-4d8b-91e7-bd23f69e0d34",
-                "step_entries": [
+                "nextStepId": "e5c6f7b9-123a-4d8b-91e7-bd23f69e0d34",
+                "stepEntries": [
                     {
                         "stepEntryId": "ea7c1d4b-5a6f-41c9-b8d4-13abf6e7d24c",
-                        "next_stepEntryId": "e5c6f7b9-123a-4d8b-91e7-bd23f69e0d34",
+                        "nextStepEntryId": "e5c6f7b9-123a-4d8b-91e7-bd23f69e0d34",
                         "name": "Bottled Apple Juice",
                         "date": "2023-09-13T10:30:00.000Z",
-                        "image_src": "https://herkunftcheck.org/images/bottled_juice.jpeg",
+                        "imageSrc": "https://herkunftcheck.org/images/bottled_juice.jpeg",
                         "amount": "300",
-                        "amount_description": "Units",
-                        "amount_unit": "bottles",
+                        "amountDescription": "Units",
+                        "amountUnit": "bottles",
                         "description": "Apple juice bottled and packed for distribution.",
-                        "energy_consumption": "140 kWh",
-                        "co2_emission": "75 kg CO2"
+                        "energyConsumption": "140 kWh",
+                        "co2Emission": "75 kg CO2"
                     }
                 ]
             }
