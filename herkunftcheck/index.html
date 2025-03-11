@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Batch Map</title>
-    
+    <title>HerkunftCheck</title>
+    <link rel="icon" type="image/x-icon" href="img/tab_icon.png">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   
@@ -51,10 +51,11 @@
                /* Product Information Card */
         #product-card {
             position: fixed;
-            width: 80%;
-            left:7.5%;
-            max-width: 90%;
-            top:20px;
+            width: 100%;
+            max-width: 450px;
+            left:50px;
+      
+            top:10px;
 
             background: white;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -67,11 +68,22 @@
         }
 
         #product-card img {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             border-radius: 10px;
             object-fit: cover;
+            
         }
+
+        #product-card .logo {
+            width: 300px;
+            height: 150px;
+            border-radius: 10px;
+            margin-left: 25px;
+            object-fit: contain;
+        }
+
+
 
         #product-info {
             flex-grow: 1;
@@ -112,7 +124,7 @@
 
 
 
-        <img id="product-image" src="img/logo_icon.png" alt="Product Image">
+        
         <div id="product-info">
             <h2 id="product-name">Loading...</h2>
             <p><strong>Category:</strong> <span id="product-category"></span></p>
@@ -121,6 +133,7 @@
             <p><strong>Produced By:</strong> <span id="company-name"></span></p>
             <div class="certificate-images" id="certificates"></div>
         </div>
+        <img id="product-image" class="logo" src="img/logo_icon.png" alt="Product Image">
     </div>
 
     <div id="map"></div>
