@@ -15,21 +15,21 @@
             "name": "Fair Trade",
             "description": "Fairtrade steht für fairen Handel, bessere Preise und menschenwürdige Arbeitsbedingungen.",
             "link": "https://www.fairtrade.net/",
-            "imageSrc": "https://herkunftcheck.org/images/fairTradeLogo.jpeg"
+            "imageSrc": "https://www.fairtrade.net/content/dam/fairtrade/fairtrade-germany/logos-und-siegel/Fairtrade%20Deutschland%20Logo_schwarz-grau.png"
         },
         {
             "id": "63e5ce05-5607-4e83-9ace-6684c91f613b",
             "name": "Bio",
             "description": "Das Siegel ist ein bundeseinheitliches Zeichen für ökologisch erzeugte Produkte, die nach den Anforderungen der EU-Öko-Verordnung hergestellt werden.",
             "link": "https://www.oekolandbau.de/bio-zertifizierung/bio-siegel/",
-            "imageSrc": "https://herkunftcheck.org/images/bioLogo.jpeg"
+            "imageSrc": "https://de.wikipedia.org/wiki/Bio-Siegel#/media/Datei:Bio-Siegel-EG-%C3%96ko-VO-Deutschland.svg"
         },
         {
             "id": "6ab28b06-c0f8-4c0a-9c8a-96e542fbaf86",
             "name": "EU Organic",
             "description": "",
             "link": "https://euorganicproducts.eu/",
-            "imageSrc": "https://herkunftcheck.org/images/EUOrganicLogo.jpeg"
+            "imageSrc": "https://agriculture.ec.europa.eu/sites/default/files/styles/embed_medium/public/2019-06/eu-organic-logo-600x400_0.png?itok=SDmKtmW5"
         }
     ],
     "productOwner": {

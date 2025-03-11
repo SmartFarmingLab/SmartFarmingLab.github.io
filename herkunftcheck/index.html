@@ -7,6 +7,7 @@
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  
 
     <!-- Custom Styles -->
     <style>
@@ -21,7 +22,7 @@
         #map {
             height: 100vh;
             width: 100%;
-            border-radius: 10px;
+            border-radius: 10px;      z-index:110;
         }
 
         /* Custom popup styling */
@@ -46,66 +47,173 @@
             border: 3px solid white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
         }
+
+               /* Product Information Card */
+        #product-card {
+            position: fixed;
+            width: 80%;
+            left:7.5%;
+            max-width: 90%;
+            top:20px;
+
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+  
+            z-index:111;
+        }
+
+        #product-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        #product-info {
+            flex-grow: 1;
+            padding-left:50px;
+        }
+
+        #product-info h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        #product-info p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .certificate-images {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .certificate-images img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
     </style>
 </head>
 <body>
+
+    <!-- Product Information Card -->
+    <div id="product-card">
+
+
+
+        <img id="product-image" src="img/logo_icon.png" alt="Product Image">
+        <div id="product-info">
+            <h2 id="product-name">Loading...</h2>
+            <p><strong>Category:</strong> <span id="product-category"></span></p>
+            <p><strong>Production Date:</strong> <span id="production-date"></span></p>
+            <p><strong>Best Before:</strong> <span id="best-before"></span></p>
+            <p><strong>Produced By:</strong> <span id="company-name"></span></p>
+            <div class="certificate-images" id="certificates"></div>
+        </div>
+    </div>
 
     <div id="map"></div>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.min.js"></script>
     <script>
         // Initialize Map
-       var map = L.map('map', { zoomControl: false }).setView([51.1657, 10.4515], 6); // Center in Germany
-       //  var map = L.map('map', { zoomControl: true });
+        var map = L.map('map', { zoomControl: true });
 
-
-
-        // Load Tile Layer (Modern Styling)
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; OpenStreetMap & Carto',
             subdomains: 'abcd',
             maxZoom: 20
         }).addTo(map);
 
-        // Fetch and process product batch steps from data.json
+        // Create bounds object
+        var bounds = L.latLngBounds();
+
+        // Fetch and process product batch steps
         fetch("https://smartfarminglab.github.io/data/productpassport.json")
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                const productBatchSteps = data.productBatchSteps.map(step => ({
-                    name: step.name,
-                    latitude: step.address.latitude,
-                    longitude: step.address.longitude,
-                    address: `${step.address.name}, ${step.address.city}`,
-                    nextStepId: step.nextStepId
-                }));
 
-                // Add markers and connect steps
-                let polylinePoints = [];
-                productBatchSteps.forEach((step, index) => {
-                    var marker = L.marker([step.latitude, step.longitude], {
-                        icon: L.divIcon({
-                            className: 'custom-marker',
-                            html: `<div></div>`,
-                            iconSize: [14, 14],
-                            popupAnchor: [0, -10]
-                        })
-                    }).addTo(map)
-                      .bindPopup(`<b>${step.name}</b><br>${step.address}`);
+                  // Display Product Card Info
+                  document.getElementById("product-card").style.display = "flex";
+                document.getElementById("product-name").textContent = data.productName;
+                document.getElementById("product-category").textContent = data.category;
+                document.getElementById("production-date").textContent = new Date(data.productionDate).toLocaleDateString();
+                document.getElementById("best-before").textContent = new Date(data.bestBefore).toLocaleDateString();
+                document.getElementById("company-name").textContent = data.productOwner.companyName;
+              //  document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
 
-                    // Add to polyline path
-                    polylinePoints.push([step.latitude, step.longitude]);
+                // Load Certificates
+                let certificateContainer = document.getElementById("certificates");
+                certificateContainer.innerHTML = "";
+                data.certificates.forEach(cert => {
+                    let img = document.createElement("img");
+                    img.src = cert.imageSrc;
+                    img.title = cert.name;
+                    img.onclick = () => window.open(cert.link, "_blank");
+                    certificateContainer.appendChild(img);
                 });
 
-                // Draw polyline connecting the batch steps with a modern look
-                L.polyline(polylinePoints, {
-                    color: "#6ed391",
-                    weight: 4,
-                    opacity: 0.8,
-                    dashArray: "5, 10",
-                    lineJoin: "round"
-                }).addTo(map);
+                if (!data.productBatchSteps || data.productBatchSteps.length === 0) {
+                    console.warn("No product batch steps found.");
+                    map.setView([51.1657, 10.4515], 6); // Fallback center
+                    return;
+                }
+
+                let polylinePoints = [];
+                data.productBatchSteps.forEach(step => {
+                    if (step.address && step.address.latitude && step.address.longitude) {
+                        var marker = L.marker([step.address.latitude, step.address.longitude], {
+                            icon: L.divIcon({
+                                className: 'custom-marker',
+                                html: `<div></div>`,
+                                iconSize: [14, 14],
+                                popupAnchor: [0, -10]
+                            })
+                        }).addTo(map)
+                          .bindPopup(`<b>${step.name}</b><br>${step.address.name}, ${step.address.city}`);
+
+                        // Extend bounds
+                        bounds.extend([step.address.latitude, step.address.longitude]);
+                        polylinePoints.push([step.address.latitude, step.address.longitude]);
+                    }
+                });
+
+                // Draw polyline
+                if (polylinePoints.length > 1) {
+                    L.polyline(polylinePoints, {
+                        color: "#6ed391",
+                        weight: 4,
+                        opacity: 0.8,
+                        dashArray: "5, 10",
+                        lineJoin: "round"
+                    }).addTo(map);
+                }
+
+                // Fit bounds to show all points
+                if (bounds.isValid()) {
+                    map.fitBounds(bounds);
+                } else {
+                    console.warn("No valid coordinates found.");
+                    map.setView([51.1657, 10.4515], 6); // Default to Germany
+                }
             })
             .catch(error => console.error("Error loading data:", error));
     </script>
