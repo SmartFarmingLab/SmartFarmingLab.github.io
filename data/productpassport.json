@@ -65,13 +65,13 @@
             "nextStepId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
             "address": {
                 "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
-                "name": "Universität Leipzig",
-                "street": ", Grimmaische Str. 12",
-                "zip": "04109",
-                "city": "Leipzig",
+                "name": "Apfelbäume",
+                "street": "Glashütter Str. 50",
+                "zip": "01744",
+                "city": "Dippoldiswalde",
                 "country": "Deutschland",
-                "latitude": 51.339334,
-                "longitude": 12.378398
+                "latitude": 50.889817561217775,
+                "longitude": 13.707114509141743
             },
             "imageSrc": "string",
             "description": "string",
@@ -103,15 +103,15 @@
             "name": "Appple Filling",
             "previousStepId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
             "nextStepId": null,
-            "address": {
-                "id": "241cfc1f-37f3-4c91-ae60-8b2d8a1b06b8",
-                "name": "TU Berlin",
-                "street": ", Straße des 17. Juni 135",
-                "zip": "10623",
-                "city": "Berlin",
+           "address": {
+                "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+                "name": "Universität Leipzig",
+                "street": ", Grimmaische Str. 12",
+                "zip": "04109",
+                "city": "Leipzig",
                 "country": "Deutschland",
-                "latitude": 52.512065,
-                "longitude": 13.327042
+                "latitude": 51.339334,
+                "longitude": 12.378398
             },
             "imageSrc": "string",
             "description": "string",
