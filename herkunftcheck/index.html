@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <link rel="icon" type="image/x-icon" href="img/tab_icon.png">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  
+
 
     <!-- Custom Styles -->
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -22,7 +24,8 @@
         #map {
             height: 100vh;
             width: 100%;
-            border-radius: 10px;      z-index:110;
+            border-radius: 10px;
+            z-index: 110;
         }
 
         /* Custom popup styling */
@@ -48,15 +51,15 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
         }
 
-               /* Product Information Card */
+        /* Product Information Card */
         #product-card {
             position: fixed;
-            width: 450px;
-  
-            max-width: calc(90% - 50px);
-            left:50px;
-      
-            top:10px;
+            width: calc(90% - 50px);
+
+            max-width: 450px;
+            left: 50px;
+
+            top: 10px;
 
             background: white;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -64,8 +67,8 @@
             padding: 20px;
             display: flex;
             align-items: center;
-  
-            z-index:111;
+
+            z-index: 111;
         }
 
         #product-card img {
@@ -73,7 +76,7 @@
             height: 50px;
             border-radius: 10px;
             object-fit: cover;
-            
+
         }
 
         #product-card .logo {
@@ -88,7 +91,7 @@
 
         #product-info {
             flex-grow: 1;
-            padding-left:50px;
+            padding-left: 50px;
         }
 
         #product-info h2 {
@@ -116,8 +119,20 @@
         }
 
 
+        @media only screen and (max-width: 600px) {
+            #product-card .logo {
+                display: none;
+            }
+
+            #product-card {
+                left: 5%;
+                width: 80%;
+            }
+
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Product Information Card -->
@@ -125,7 +140,7 @@
 
 
 
-        
+
         <div id="product-info">
             <h2 id="product-name">Loading...</h2>
             <p><strong>Category:</strong> <span id="product-category"></span></p>
@@ -141,7 +156,8 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.min.js"></script>
     <script>
         // Initialize Map
         var map = L.map('map', { zoomControl: true });
@@ -165,14 +181,14 @@
             })
             .then(data => {
 
-                  // Display Product Card Info
-                  document.getElementById("product-card").style.display = "flex";
+                // Display Product Card Info
+                document.getElementById("product-card").style.display = "flex";
                 document.getElementById("product-name").textContent = data.productName;
                 document.getElementById("product-category").textContent = data.category;
                 document.getElementById("production-date").textContent = new Date(data.productionDate).toLocaleDateString();
                 document.getElementById("best-before").textContent = new Date(data.bestBefore).toLocaleDateString();
                 document.getElementById("company-name").textContent = data.productOwner.companyName;
-              //  document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
+                //  document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
 
                 // Load Certificates
                 let certificateContainer = document.getElementById("certificates");
@@ -202,7 +218,7 @@
                                 popupAnchor: [0, -10]
                             })
                         }).addTo(map)
-                          .bindPopup(`<b>${step.name}</b><br>${step.address.name}, ${step.address.city}`);
+                            .bindPopup(`<b>${step.name}</b><br>${step.address.name}, ${step.address.city}`);
 
                         // Extend bounds
                         bounds.extend([step.address.latitude, step.address.longitude]);
@@ -233,4 +249,5 @@
     </script>
 
 </body>
+
 </html>
