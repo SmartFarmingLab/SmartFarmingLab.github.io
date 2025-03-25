@@ -145,10 +145,6 @@
 
     <!-- Product Information Card -->
     <div id="product-card">
-
-
-
-
         <div id="product-info">
             <h2 id="product-name">Loading...</h2>
             <p><strong>Category:</strong> <span id="product-category"></span></p>
@@ -196,6 +192,7 @@
                 document.getElementById("production-date").textContent = new Date(data.productionDate).toLocaleDateString();
                 document.getElementById("best-before").textContent = new Date(data.bestBefore).toLocaleDateString();
                 document.getElementById("company-name").textContent = data.productOwner.companyName;
+                document.getElementById("product-image").src = data.imageSrc;
                 //  document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
 
                 // Load Certificates

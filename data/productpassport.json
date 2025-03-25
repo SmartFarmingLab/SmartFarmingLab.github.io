@@ -7,8 +7,8 @@
     "productName": "Apfel-Birnen-Saft",
     "productShortName": "Saft",
     "description": "string",
-    "category": "string",
-    "imageSrc": "string",
+    "category": "Saft",
+    "imageSrc": "https://smartfarminglab.github.io/data/flasche.jpg",
     "certificates": [
         {
             "id": "068f31bb-feaf-4e64-a013-5774c52d3e74",
@@ -34,7 +34,7 @@
     ],
     "productOwner": {
         "id": "2479b933-3fdc-40ac-a059-c6d183cbdb3d",
-        "companyName": "Company_ts3mr5u3",
+        "companyName": "SonntagsSAFT GmbH",
         "imgSrc": "string",
         "address": {
             "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
@@ -60,7 +60,7 @@
         {
             "id": "6f1284af-1f6c-4c7e-82f3-b01240e233a9",
             "productBatchId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
-            "name": "Appple Harvesting",
+            "name": "Apfel Ernte",
             "previousStepId": null,
             "nextStepId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
             "address": {
@@ -80,7 +80,7 @@
         {
             "id": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
             "productBatchId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
-            "name": "Appple Pressing",
+            "name": "Saftpressung",
             "previousStepId": "6f1284af-1f6c-4c7e-82f3-b01240e233a9",
             "nextStepId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
             "address": {
@@ -100,7 +100,7 @@
         {
             "id": "8c684ff8-6da0-4763-9308-fd93ba986e60",
             "productBatchId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
-            "name": "Appple Filling",
+            "name": "Abfüllung",
             "previousStepId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
             "nextStepId": null,
            "address": {
