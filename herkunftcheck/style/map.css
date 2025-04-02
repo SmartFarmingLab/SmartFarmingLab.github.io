@@ -59,18 +59,15 @@
   font-weight: bold;
   border-radius: 50%;
   background-color: rgba(110, 211, 145, 0.6);
-  background-color: none !important;
+ 
   color: #fff;
   text-align: center;
  
 }
 
-.marker-cluster-small div {
-    background-color: none !important;
-}
 
 .marker-cluster-small {
-    background-color: none !important;
+    background-color: unset !important;
 }
 .marker-cluster div {
     width: 100%;

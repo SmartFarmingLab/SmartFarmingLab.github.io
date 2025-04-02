@@ -31,7 +31,7 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 
     <!-- Polyline Decorator (if needed) -->
     <script
@@ -44,8 +44,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/0.7.3/leaflet.polylineDecorator.min.js"></script>
 
-
+        <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
 
     <script src="script/map.js"></script>
 
@@ -62,20 +64,20 @@
 
 
         function showSidebarWithStep(step) {
-    document.getElementById('sidebar').style.display = 'block';
-    document.getElementById('step-name').textContent = step.name || "-";
-    document.getElementById('step-location').textContent = step.address?.name || "-";
-    document.getElementById('step-street').textContent = step.address?.street || "-";
-    document.getElementById('step-zipcity').textContent = `${step.address?.zip || ""} ${step.address?.city || ""}`;
-    document.getElementById('step-country').textContent = step.address?.country || "-";
+            document.getElementById('sidebar').style.display = 'block';
+            document.getElementById('step-name').textContent = step.name || "-";
+            document.getElementById('step-location').textContent = step.address?.name || "-";
+            document.getElementById('step-street').textContent = step.address?.street || "-";
+            document.getElementById('step-zipcity').textContent = `${step.address?.zip || ""} ${step.address?.city || ""}`;
+            document.getElementById('step-country').textContent = step.address?.country || "-";
 
-    const entriesContainer = document.getElementById("step-entries");
-    entriesContainer.innerHTML = "";
+            const entriesContainer = document.getElementById("step-entries");
+            entriesContainer.innerHTML = "";
 
-    if (Array.isArray(step.stepEntries) && step.stepEntries.length > 0) {
-        step.stepEntries.forEach((entry, index) => {
+            if (Array.isArray(step.stepEntries) && step.stepEntries.length > 0) {
+                step.stepEntries.forEach((entry, index) => {
 
-        const entryHtml = `
+                    const entryHtml = `
             <details>
                 <summary>Eintrag ${index + 1}</summary>
                 
@@ -107,19 +109,19 @@
             </details>
 `;
 
-        entriesContainer.insertAdjacentHTML("beforeend", entryHtml);
-        });
-    } else {
-        entriesContainer.innerHTML = "<p>Keine Einträge vorhanden.</p>";
-    }
+                    entriesContainer.insertAdjacentHTML("beforeend", entryHtml);
+                });
+            } else {
+                entriesContainer.innerHTML = "<p>Keine Einträge vorhanden.</p>";
+            }
 
-    if (step.imageSrc && step.imageSrc !== "string") {
-        const imageDiv = document.getElementById("top-image");
-        if (imageDiv) {
-        imageDiv.style.backgroundImage = `url('${step.imageSrc}')`;
+            if (step.imageSrc && step.imageSrc !== "string") {
+                const imageDiv = document.getElementById("top-image");
+                if (imageDiv) {
+                    imageDiv.style.backgroundImage = `url('${step.imageSrc}')`;
+                }
+            }
         }
-    }
-    }
 
         // Event Listener zum Schließen der Seitenleiste
         window.addEventListener("DOMContentLoaded", () => {
@@ -151,7 +153,7 @@
 
 
     <div id="sidebar" class="modern-sidebar">
-     
+
         <div class="card-hover">
             <div id="top-image" class="top-image" style="background-image: url('img/example.jpg');"></div>
             <button id="sidebar-close" title="Schließen">&#8592;</button>
@@ -191,14 +193,15 @@
 
                         <section id="step-entries" class="step-entries"></section>
                     </div>
-                  
-                </div>  
+
+                </div>
             </div>
-        </div>       
+        </div>
     </div>
 
 
 
     <div id="map"></div>
 </body>
+
 </html>
