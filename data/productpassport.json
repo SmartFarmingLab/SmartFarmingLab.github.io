@@ -121,13 +121,26 @@
                     "productBatchStepId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
                     "date": "2025-03-08T20:57:35.582",
                     "previousStepEntryId": null,
+                    "nextStepEntryId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d9",
+                    "imageSrc": "string",
+                    "amount": "100",
+                    "amountUnit": "Stück",
+                    "description": "Flaschen spülen",
+                    "energyConsumption": "3kw/h",
+                    "co2Emission": "undefined"
+                },
+                {
+                    "id": "10481447-4cc9-46b5-b3dc-5a86ef24a4d9",
+                    "productBatchStepId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
+                    "date": "2025-03-10T20:57:35.582",
+                    "previousStepEntryId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d6",
                     "nextStepEntryId": null,
                     "imageSrc": "string",
-                    "amount": "string",
-                    "amountUnit": "string",
-                    "description": "string",
-                    "energyConsumption": "string",
-                    "co2Emission": "string"
+                    "amount": "100",
+                    "amountUnit": "Stück",
+                    "description": "Flaschen abfüllen",
+                    "energyConsumption": "1kw/h",
+                    "co2Emission": "undefined"
                 }
             ]
         }

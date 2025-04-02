@@ -268,6 +268,13 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 1em;
 }
 
+.card-hover__title-2 {
+    font-size: 1.3rem;
+    margin-bottom: 1em;
+    
+  }
+  
+
 .card-hover__title span {
   color: #2d7f0b;
 }
