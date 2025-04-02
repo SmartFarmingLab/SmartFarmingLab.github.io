@@ -62,40 +62,64 @@
 
 
         function showSidebarWithStep(step) {
-            document.getElementById('sidebar').style.display = 'block';
-            document.getElementById('step-name').textContent = step.name || "-";
-            document.getElementById('step-location').textContent = step.address?.name || "-";
-            document.getElementById('step-street').textContent = step.address?.street || "-";
-            document.getElementById('step-zipcity').textContent = `${step.address?.zip || ""} ${step.address?.city || ""}`;
-            document.getElementById('step-country').textContent = step.address?.country || "-";
+    document.getElementById('sidebar').style.display = 'block';
+    document.getElementById('step-name').textContent = step.name || "-";
+    document.getElementById('step-location').textContent = step.address?.name || "-";
+    document.getElementById('step-street').textContent = step.address?.street || "-";
+    document.getElementById('step-zipcity').textContent = `${step.address?.zip || ""} ${step.address?.city || ""}`;
+    document.getElementById('step-country').textContent = step.address?.country || "-";
 
-            const entriesContainer = document.getElementById("step-entries");
-            entriesContainer.innerHTML = "";
+    const entriesContainer = document.getElementById("step-entries");
+    entriesContainer.innerHTML = "";
 
-            if (Array.isArray(step.stepEntries) && step.stepEntries.length > 0) {
-                step.stepEntries.forEach(entry => {
-                    const entryHtml = `
-        <div class="step-entry">
-          <p><span class="entry-label">Datum:</span> ${entry.date ? new Date(entry.date).toLocaleDateString("de-DE") : "-"}</p>
-          <p><span class="entry-label">Beschreibung:</span> ${entry.description || "-"}</p>
-          <p><span class="entry-label">Menge:</span> ${entry.amount && entry.amountUnit ? `${entry.amount} ${entry.amountUnit}` : "-"}</p>
-          <p><span class="entry-label">Energieverbrauch:</span> ${entry.energyConsumption || "-"}</p>
-          <p><span class="entry-label">CO₂-Ausstoß:</span> ${entry.co2Emission || "-"}</p>
-        </div>
-      `;
-                    entriesContainer.insertAdjacentHTML("beforeend", entryHtml);
-                });
-            } else {
-                entriesContainer.innerHTML = "<p>Keine Einträge vorhanden.</p>";
-            }
+    if (Array.isArray(step.stepEntries) && step.stepEntries.length > 0) {
+        step.stepEntries.forEach((entry, index) => {
 
-            if (step.imageSrc && step.imageSrc !== "string") {
-                const imageDiv = document.getElementById("top-image");
-                if (imageDiv) {
-                    imageDiv.style.backgroundImage = `url('${step.imageSrc}')`;
-                }
-            }
+        const entryHtml = `
+            <details>
+                <summary>Eintrag ${index + 1}</summary>
+                
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Datum</span>
+                <span class="value">${entry.date ? new Date(entry.date).toLocaleDateString("de-DE") : "-"}</span>
+                </div>
+                
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Beschreibung</span>
+                <span class="value">${entry.description || "-"}</span>
+                </div>
+
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Menge</span>
+                <span class="value">${entry.amount && entry.amountUnit ? `${entry.amount} ${entry.amountUnit}` : "-"}</span>
+                </div>
+
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Energieverbrauch</span>
+                <span class="value">${entry.energyConsumption || "-"}</span>
+                </div>
+
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">CO₂-Ausstoß</span>
+                <span class="value">${entry.co2Emission || "-"}</span>
+                </div>
+                
+            </details>
+`;
+
+        entriesContainer.insertAdjacentHTML("beforeend", entryHtml);
+        });
+    } else {
+        entriesContainer.innerHTML = "<p>Keine Einträge vorhanden.</p>";
+    }
+
+    if (step.imageSrc && step.imageSrc !== "string") {
+        const imageDiv = document.getElementById("top-image");
+        if (imageDiv) {
+        imageDiv.style.backgroundImage = `url('${step.imageSrc}')`;
         }
+    }
+    }
 
         // Event Listener zum Schließen der Seitenleiste
         window.addEventListener("DOMContentLoaded", () => {
@@ -127,8 +151,9 @@
 
 
     <div id="sidebar" class="modern-sidebar">
-
+     
         <div class="card-hover">
+            <div id="top-image" class="top-image" style="background-image: url('img/example.jpg');"></div>
             <button id="sidebar-close" title="Schließen">&#8592;</button>
             <div class="card-hover__content">
                 <h3 class="card-hover__title" id="step-name">
@@ -141,19 +166,19 @@
                     </h4>
                     <div class="info-panel-data">
                         <div class="sidebar-content card-hover__text">
-                            <div class="sidebar-row">
+                            <div class="sidebar-row sidebar-row-undelined">
                                 <span class="label">Ort:</span>
                                 <span class="value" id="step-location"></span>
                             </div>
-                            <div class="sidebar-row">
+                            <div class="sidebar-row sidebar-row-undelined">
                                 <span class="label">Straße:</span>
                                 <span class="value" id="step-street"></span>
                             </div>
-                            <div class="sidebar-row">
+                            <div class="sidebar-row sidebar-row-undelined">
                                 <span class="label">PLZ & Stadt:</span>
                                 <span class="value" id="step-zipcity"></span>
                             </div>
-                            <div class="sidebar-row">
+                            <div class="sidebar-row sidebar-row-undelined">
                                 <span class="label">Land:</span>
                                 <span class="value" id="step-country"></span>
                             </div>
@@ -164,48 +189,16 @@
                             Einträge
                         </h4>
 
-                        <div id="step-entries" class="step-entries">
-
-
-
-
-                        </div>
+                        <section id="step-entries" class="step-entries"></section>
                     </div>
-                </div>
+                  
+                </div>  
             </div>
-
-
-
-
-
-
-
-
-            <div id="top-image" class="top-image" style="background-image: url('img/example.jpg');">
-
-            </div>
-
-
-
-
-
-
-
-        </div>
-
+        </div>       
     </div>
-    </div>
-
-
-
-
-    </div>
-
-
 
 
 
     <div id="map"></div>
 </body>
-
 </html>
