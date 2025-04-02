@@ -39,7 +39,7 @@
         "address": {
             "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
             "name": "Universität Leipzig",
-            "street": ", Grimmaische Str. 12",
+            "street": "Grimmaische Str. 12",
             "zip": "04109",
             "city": "Leipzig",
             "country": "Deutschland",
@@ -73,7 +73,7 @@
                 "latitude": 50.889817561217775,
                 "longitude": 13.707114509141743
             },
-            "imageSrc": "string",
+            "imageSrc": "https://smartfarminglab.github.io/data/example_harvesting.jpg",
             "description": "string",
             "stepEntries": []
         },
@@ -93,7 +93,7 @@
                 "latitude": 50.965019,
                 "longitude": 13.718952
             },
-            "imageSrc": "string",
+            "imageSrc": "https://smartfarminglab.github.io/data/example_pressing.jpg",
             "description": "string",
             "stepEntries": []
         },
@@ -113,7 +113,7 @@
                 "latitude": 51.339334,
                 "longitude": 12.378398
             },
-            "imageSrc": "string",
+            "imageSrc": "https://smartfarminglab.github.io/data/example_filling.jpg",
             "description": "string",
             "stepEntries": [
                 {

@@ -1,0 +1,15 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #f4f4f4;
+    color: #1F1D42;
+    font-family: "Fira Sans", sans-serif;
+}
+
+h1,h2,h3,h4{
+    font-family: "Boldonse", system-ui;
+}
