@@ -33,6 +33,9 @@ function InitializeMapAndData() {
             document.getElementById("company-name").textContent = data.productOwner.companyName;
             //document.getElementById("product-image").src = data.imageSrc;
             document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
+            
+  
+            
 
             // Load Certificates
             let certificateContainer = document.getElementById("certificates");

@@ -75,6 +75,14 @@
             document.getElementById('step-amount').textContent = entry?.amount && entry?.amountUnit ? `${entry.amount} ${entry.amountUnit}` : "-";
             document.getElementById('step-energy').textContent = entry?.energyConsumption || "-";
             document.getElementById('step-co2').textContent = entry?.co2Emission || "-";
+
+
+            if(entry.imageSrc !== "string"){
+                document.getElementById('top-image').style.backgroundImage = "url('" + entry.imageSrc + "')";
+            }
+         
+
+
         }
 
         // Event Listener zum Schließen der Seitenleiste
@@ -173,7 +181,7 @@
 
 
 
-            <div class="top-image" style="background-image: url('img/example.jpg');">
+            <div id="top-image" class="top-image" style="background-image: url('img/example.jpg');">
 
             </div>
 
