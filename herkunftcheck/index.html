@@ -75,10 +75,10 @@
             document.getElementById('step-amount').textContent = entry?.amount && entry?.amountUnit ? `${entry.amount} ${entry.amountUnit}` : "-";
             document.getElementById('step-energy').textContent = entry?.energyConsumption || "-";
             document.getElementById('step-co2').textContent = entry?.co2Emission || "-";
+            
 
-
-            if(entry.imageSrc !== "string"){
-                document.getElementById('top-image').style.backgroundImage = "url('" + entry.imageSrc + "')";
+            if(step.imageSrc !== "string"){
+                document.getElementById('top-image').style.backgroundImage = "url('" + step.imageSrc + "')";
             }
          
 
