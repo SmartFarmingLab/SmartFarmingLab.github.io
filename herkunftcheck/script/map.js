@@ -5,11 +5,13 @@ function InitializeMapAndData() {
 
     var map = L.map('map', { zoomControl: true });
  
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+    /*L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
     }).addTo(map);
+
+
   
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
@@ -18,7 +20,18 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
     maxZoom: 20
   }).addTo(map);
   
-   
+
+*/
+  //mapbox version
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/512/{z}/{x}/{y}@2x?access_token={accessToken}', {
+    id: 'kobers/cm93y0zpw009b01qzej3kgq68',
+    accessToken: 'pk.eyJ1Ijoia29iZXJzIiwiYSI6ImNsNjUwNTIzZzAxbmMzYm5vZGsxaTF2OTEifQ.dsJnTEm6J2YYWTN1W7ZvYA',
+    tileSize: 512,
+    zoomOffset: -1,
+    attribution: '© <a href="https://www.mapbox.com/">Mapbox</a>'
+  }).addTo(map);
+  
+  
     // Create bounds object
     var bounds = L.latLngBounds();
 
@@ -32,7 +45,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
         })
         .then(data => {
 
-            // Display Product Card Info
+       /*     // Display Product Card Info
             document.getElementById("product-card").style.display = "flex";
             document.getElementById("product-name").textContent = data.productName;
             document.getElementById("product-category").textContent = data.category;
@@ -61,7 +74,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
                 return;
             }
 
-
+*/
             // Clustergruppe initialisieren
             const markerClusterGroup = L.markerClusterGroup();
 
