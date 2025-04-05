@@ -1,7 +1,7 @@
 #map {
     height: 100%;
     width: 100%;
-    border-radius: 35px;
+    border-radius: 12px;
     z-index: 110;
 }
 
@@ -13,11 +13,13 @@
 
 .leaflet-popup-content b {
     color: #6ed391;
+
 }
 
 /* Marker styling */
 .custom-marker {
     background-color: #6ed391;
+   
     border-radius: 50%;
     width: 14px;
     height: 14px;
@@ -59,6 +61,7 @@
   font-weight: bold;
   border-radius: 50%;
   background-color: rgba(110, 211, 145, 0.6);
+
  
   color: #fff;
   text-align: center;
