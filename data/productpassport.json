@@ -86,7 +86,7 @@
             "address": {
                 "id": "0edbbc2c-588a-4df2-8b55-a6d2e12134e8",
                 "name": "SonntagsSAFT GmbH",
-                "street": ", Kreischaer Straße 8a",
+                "street": "Kreischaer Straße 8a",
                 "zip": "01728",
                 "city": "Bannewitz",
                 "country": "Deutschland",
@@ -106,7 +106,7 @@
            "address": {
                 "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
                 "name": "Universität Leipzig",
-                "street": ", Grimmaische Str. 12",
+                "street": "Grimmaische Str. 12",
                 "zip": "04109",
                 "city": "Leipzig",
                 "country": "Deutschland",
