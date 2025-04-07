@@ -160,7 +160,8 @@ display: grid
 	 border-bottom-left-radius: var(--radius);
 	 object-fit: cover;
 	 width: 100%;
-	 max-width: 75px;
+	 max-width: 150px;
+     height: 200px;
 }
  .card__content {
 	 padding: 20px;
