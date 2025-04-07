@@ -146,7 +146,7 @@ display: grid
 	 left: 10px;
 	 bottom: 10px;
 	 height: 200px;
-	 z-index: 10005;
+	 z-index: 1005;
 	 background: #fff;
 	 box-sizing: border-box;
 }
