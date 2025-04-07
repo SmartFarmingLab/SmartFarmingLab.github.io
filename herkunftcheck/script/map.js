@@ -33,7 +33,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
         .then(data => {
 
             // Display Product Card Info
-            document.getElementById("product-card").style.display = "flex";
+            document.getElementById("product-card").style.display = "grid";
             document.getElementById("product-name").textContent = data.productName;
             document.getElementById("product-category").textContent = data.category;
             document.getElementById("production-date").textContent = new Date(data.productionDate).toLocaleDateString();

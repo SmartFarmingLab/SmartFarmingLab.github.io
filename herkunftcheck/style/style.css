@@ -13,6 +13,16 @@ html {
 
 h1,h2,h3,h4{
     font-family: "Boldonse", system-ui;
+    font-family: "Hind", system-ui;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-optical-sizing: auto;
 }
 
+
+.highlight {
+    background-color: #d9ebd2;
+    background-color: #d6e5be;
+    border-radius: 2em;
+    padding: 0.1em 0.2em;
+}
 

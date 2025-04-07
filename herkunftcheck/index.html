@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HerkunftCheck</title>
     <link rel="icon" type="image/x-icon" href="img/tab_icon.png">
-
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+</style>
 
 
     <link rel="stylesheet" href="style/style.css" />
@@ -19,11 +21,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Boldonse&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hind:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Leaflet CSS -->
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -138,18 +136,30 @@
 
 
 
-    <!-- Product Information Card -->
-    <div id="product-card">
+    <div id="product-card" class="card">
         <div id="product-info">
-            <h1 id="product-name">Laden...</h2>
-                <p><strong>Kategorie:</strong> <span id="product-category"></span></p>
-                <p><strong>Produktionsdatum:</strong> <span id="production-date"></span></p>
-                <p><strong>MHD:</strong> <span id="best-before"></span></p>
-                <p><strong>Produzent:</strong> <span id="company-name"></span></p>
-                <div class="certificate-images" id="certificates"></div>
-        </div>
-        <img id="product-image" class="logo" src="img/logo_icon.png" alt="Product Image">
-    </div>
+        <img id="product-image" class="card__image" src="img/logo_icon.png" alt="Product Image">
+        <main class="card__content">
+            <div class="card-title  p-3 text-center" style="">
+                <h4>Herkunft<span class="highlight">Check</span>
+                </h4>
+            </div>
+          
+           <h1 id="product-name" class="card__head">Apfel-Birnen-Saft
+           </h1>
+           <span class="card__date" id="production-date">01.04.2025</span>
+           <div class="card__text"> 
+        <p><strong>Kategorie:</strong> <span id="product-category"></span></p>
+          
+           <p><strong>MHD:</strong> <span id="best-before"></span></p>
+           <p><strong>Produzent:</strong> <span id="company-name"></span></p>
+           <div class="certificate-images" id="certificates"></div></p>
+        </main>
+     </div>
+     </div>
+
+
+
 
 
     <div id="sidebar" class="modern-sidebar">
