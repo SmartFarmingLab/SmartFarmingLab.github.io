@@ -36,7 +36,10 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
             document.getElementById("product-card").style.display = "grid";
             document.getElementById("product-name").textContent = data.productName;
             document.getElementById("product-category").textContent = data.category;
-            document.getElementById("production-date").textContent = new Date(data.productionDate).toLocaleDateString();
+            const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            document.getElementById("production-date").textContent = 
+                new Date(data.productionDate).toLocaleDateString("de-DE", options);
+            
             document.getElementById("best-before").textContent = new Date(data.bestBefore).toLocaleDateString();
             document.getElementById("company-name").textContent = data.productOwner.companyName;
             //document.getElementById("product-image").src = data.imageSrc;

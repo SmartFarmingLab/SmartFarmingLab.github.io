@@ -209,11 +209,12 @@ font-size: 14px;
         left: 0;
         bottom: 0;
         height: 175px;
+		border-radius: 4px;
    
     }
 	.card__image {
-        border-top-left-radius: var(--radius);
-        border-bottom-left-radius: var(--radius);
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
         object-fit: cover;
         width: 100%;
         max-width: 100px;
