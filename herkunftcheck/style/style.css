@@ -8,6 +8,7 @@ html {
     background-color: #f4f4f4;
     color: #1F1D42;
     font-family: "Fira Sans", sans-serif;
+    box-sizing: border-box;
 }
 
 h1,h2,h3,h4{
