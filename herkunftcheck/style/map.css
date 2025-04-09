@@ -13,11 +13,13 @@
 
 .leaflet-popup-content b {
     color: #6ed391;
+    color: #3c8138;;
 }
 
 /* Marker styling */
 .custom-marker {
     background-color: #6ed391;
+    background-color: #3c8138;
     border-radius: 50%;
     width: 14px;
     height: 14px;
@@ -59,6 +61,7 @@
   font-weight: bold;
   border-radius: 50%;
   background-color: rgba(110, 211, 145, 0.6);
+  background-color: #3c8138af;
  
   color: #fff;
   text-align: center;

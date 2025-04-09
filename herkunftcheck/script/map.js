@@ -4,21 +4,34 @@ function InitializeMapAndData() {
     // Initialize Map
 
     var map = L.map('map', { zoomControl: true });
- 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+
+   /* L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
     }).addTo(map);
-  
+     */
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 20
-  }).addTo(map);
-  
-   
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+
+
+
+
+
+
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    }).addTo(map);
+
+
     // Create bounds object
     var bounds = L.latLngBounds();
 
@@ -37,15 +50,15 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
             document.getElementById("product-name").textContent = data.productName;
             document.getElementById("product-category").textContent = data.category;
             const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-            document.getElementById("production-date").textContent = 
+            document.getElementById("production-date").textContent =
                 new Date(data.productionDate).toLocaleDateString("de-DE", options);
-            
+
             document.getElementById("best-before").textContent = new Date(data.bestBefore).toLocaleDateString();
             document.getElementById("company-name").textContent = data.productOwner.companyName;
             //document.getElementById("product-image").src = data.imageSrc;
             document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
 
-            
+
 
             // Load Certificates
             let certificateContainer = document.getElementById("certificates");
@@ -120,7 +133,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
                     const midpointLatLng = [midpointY, midpointX];
 
                     const pathOptions = {
-                        color: '#6ed391',
+                        color: '#3c8138',
                         weight: 2,
                         opacity: 0.8,
                     };
@@ -167,7 +180,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
                             if (i < latlngs.length) {
                                 animatedLine.addLatLng(latlngs[i]);
 
-                                
+
                                 i++;
                             } else {
                                 clearInterval(interval);
@@ -186,7 +199,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
             if (bounds.isValid()) {
                 //map.fitBounds(bounds);
                 const zoom = map.getBoundsZoom(bounds);
-map.setView(bounds.getCenter(), zoom - 0.5); // Zoom um 1 verringert
+                map.setView(bounds.getCenter(), zoom - 0.5); // Zoom um 1 verringert
 
             } else {
                 console.warn("No valid coordinates found.");

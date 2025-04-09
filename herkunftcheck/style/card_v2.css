@@ -248,7 +248,7 @@ img {
 
 	.certificate-images img {
 		width: auto;
-		height: 20px;
+		height: 10px;
 		border-radius: 0px;
 		cursor: pointer;
 	}
@@ -256,6 +256,8 @@ img {
 	.card__text {
 
 		margin-top: -10px;
+		margin-top: 010px;
+        display: block;
 	}
 
 }
