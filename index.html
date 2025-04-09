@@ -1,0 +1,207 @@
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        body {
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+        }
+
+        .title {
+            position: relative;
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            letter-spacing: -6px;
+        }
+
+        /*
+ *  Text animation
+ */
+
+        .text-section {
+            position: relative;
+        }
+
+        .text {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+        }
+
+        .text-section .text:last-child {
+            position: absolute;
+            top: 0;
+        }
+
+        .light {
+            color: #000;
+            background: #fff;
+        }
+
+        .dark {
+            color: #fff;
+            color: rgb(255, 196, 9);
+            background: rgb(20, 48, 68);
+        }
+
+        .animate-dark-to-light {
+            will-change: clip-path;
+            animation: dark-to-light forwards 0.8s ease-in-out 0.8s;
+        }
+
+        .text-small {
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+
+            text-align: center;
+        }
+
+        .projects {
+            display: block;
+            text-align: center;
+        }
+
+        .card {max-width: 350px;width: 100%;box-shadow: 0px 12px 31px -15px rgba(0, 0, 0, 0.5);height: 120px;z-index: 1005;background: #fff;box-sizing: border-box;font-size: 30px;margin: 50px;border-radius: 11px;display: flex;align-items: center;justify-content: center;/* text-decoration: auto; */color: #000;}
+
+        @keyframes dark-to-light {
+            from {
+                clip-path: inset(0 0% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 100% 0 0);
+            }
+        }
+
+        /*
+ *  Sticky Scroller
+ */
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            z-index: 0;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            z-index: -1;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 0;
+        }
+    </style>
+    <script>
+        var observer = new IntersectionObserver(callback, {
+            rootMargin: "0px",
+            threshold: 1.0
+        });
+
+        var container = document.querySelector(".sticky-scroller");
+        var target = document.querySelector("[data-scroll-shrink]");
+        observer.observe(target);
+
+        function callback(entries, observer) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    window.addEventListener("scroll", onScroll);
+                } else {
+                    // window.removeEventListener('scroll', onScroll);
+                }
+            });
+        }
+
+        var lastScrollY = 0;
+        var ticking = false;
+
+        var update = function () {
+            // do your stuff
+            var bounds = container.getBoundingClientRect();
+            var percentage = ((Math.abs(bounds.y) * 100) / bounds.height) * 2;
+            var clipPath = "inset(0 0 " + percentage + "% 0)";
+            target.style.clipPath = clipPath;
+            ticking = false;
+        };
+
+        var requestTick = function () {
+            if (!ticking) {
+                window.requestAnimationFrame(update);
+                ticking = true;
+            }
+        };
+
+        var onScroll = function () {
+            lastScrollY = window.scrollY;
+            requestTick();
+        };
+
+    </script>
+</head>
+
+<body>
+
+    <main>
+
+        <section class="text-section">
+            <div class="text light title">
+                <div>Smart Farming Lab</div>
+            </div>
+            <div class="text dark animate-dark-to-light title">
+                <div>Smart Farming Lab</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="text projects">
+                <div class=" light title">Projekte </div>
+
+                <div class="text-small">Alle Projekte sind Demos und nicht zu kommerziellen Zwecken erstellt</div>
+
+
+               
+                    <a href="https://smartfarminglab.github.io/herkunftcheck"> <div class="card">HerkunftCheck    </div></a>
+            
+
+
+
+
+            </div>
+            <div class="text"></div>
+        </section>
+
+        <section>
+            <div class="text light title">
+                Contribution
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
