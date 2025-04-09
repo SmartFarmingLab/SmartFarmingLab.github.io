@@ -66,6 +66,12 @@
   color: #fff;
   text-align: center;
  
+
+
+}
+
+.marker-cluster-small div {
+    background-color: #3c8138af !important;
 }
 
 
