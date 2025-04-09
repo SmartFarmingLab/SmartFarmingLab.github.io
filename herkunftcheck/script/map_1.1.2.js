@@ -199,7 +199,7 @@ function InitializeMapAndData() {
             if (bounds.isValid()) {
                 //map.fitBounds(bounds);
                 const zoom = map.getBoundsZoom(bounds);
-                map.setView(bounds.getCenter(), zoom - 0.5); // Zoom um 1 verringert
+                map.setView(bounds.getCenter(), zoom - 1); // Zoom um 1 verringert
 
             } else {
                 console.warn("No valid coordinates found.");

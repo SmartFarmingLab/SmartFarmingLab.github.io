@@ -228,13 +228,12 @@ img {
 	.card {
 		width: calc(100% - 10px);
 		max-width: calc(100% - 10px);
-
 		left: 5px;
 		bottom: 5px;
 		top: unset;
 		height: 175px;
 
-		/* border-radius: 4px; */
+		 border-radius: 6px; 
 	}
 
 	.card__image {
