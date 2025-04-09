@@ -1,0 +1,195 @@
+{
+    "productBatchId": "741c6dd1-6ac2-4983-8e89-2bf3f113569e",
+    "productId": "d208e8c0-ee07-4c50-8f3a-c35c0351e434",
+    "regioDataId": "e58c9451-d15c-4445-b6df-43f791c28caa",
+    "productionDate": "2025-03-01T00:00:00",
+    "bestBefore": "2026-03-01T00:00:00",
+    "productName": "Trauben-Apfel-Saft",
+    "productShortName": "Saft",
+    "description": "string",
+    "category": "Saft",
+    "imageSrc": "https://smartfarminglab.github.io/data/flasche.jpg",
+    "certificates": [
+        {
+            "id": "63e5ce05-5607-4e83-9ace-6684c91f613b",
+            "name": "Bio",
+            "description": "Das Siegel ist ein bundeseinheitliches Zeichen f\u00fcr \u00f6kologisch erzeugte Produkte, die nach den Anforderungen der EU-\u00d6ko-Verordnung hergestellt werden.",
+            "link": "https://www.oekolandbau.de/bio-zertifizierung/bio-siegel/",
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Bio-Siegel-EG-%C3%96ko-VO-Deutschland.svg/1200px-Bio-Siegel-EG-%C3%96ko-VO-Deutschland.svg.png"
+        },
+        {
+            "id": "6ab28b06-c0f8-4c0a-9c8a-96e542fbaf86",
+            "name": "EU Organic",
+            "description": "",
+            "link": "https://euorganicproducts.eu/",
+            "imageSrc": "https://agriculture.ec.europa.eu/sites/default/files/styles/embed_medium/public/2019-06/eu-organic-logo-600x400_0.png?itok=SDmKtmW5"
+        }
+    ],
+    "productOwner": {
+        "id": "2479b933-3fdc-40ac-a059-c6d183cbdb3d",
+        "companyName": "SonntagsSAFT GmbH",
+        "imgSrc": "string",
+        "address": {
+            "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+            "name": "Universit\u00e4t Leipzig",
+            "street": "Grimmaische Str. 12",
+            "zip": "04109",
+            "city": "Leipzig",
+            "country": "Deutschland",
+            "latitude": 51.339334,
+            "longitude": 12.378398
+        }
+    },
+    "ingredients": [
+        {
+            "ingredientId": "ae57ed06-dd9a-47b9-bd8c-a15f379a2804",
+            "name": "Ingredient_nvicvxml",
+            "produced": "2025-03-09T09:47:02.96",
+            "processed": "2025-03-09T09:47:02.96",
+            "percentage": 70
+        }
+    ],
+    "productBatchSteps": [
+        {
+            "id": "9ef467a6-946c-4310-b2e0-0929f65a79bd",
+            "productBatchId": "741c6dd1-6ac2-4983-8e89-2bf3f113569e",
+            "name": "Apfel Ernte",
+            "previousStepId": null,
+            "nextStepId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
+            "address": {
+                "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+                "name": "Apfelb\u00e4ume",
+                "street": "Glash\u00fctter Str. 50",
+                "zip": "01744",
+                "city": "Dippoldiswalde",
+                "country": "Deutschland",
+                "latitude": 50.889817561217775,
+                "longitude": 13.707114509141743
+            },
+            "imageSrc": "https://smartfarminglab.github.io/data/example_harvesting.jpg",
+            "description": "string",
+            "stepEntries": [
+                {
+                    "id": "1fcd32bb-2e3f-4934-8092-ac14700665b3",
+                    "productBatchStepId": "9ef467a6-946c-4310-b2e0-0929f65a79bd",
+                    "date": "2025-03-11T07:47:35",
+                    "previousStepEntryId": null,
+                    "nextStepEntryId": "b16eba03-3171-451e-9817-66013074de89",
+                    "imageSrc": "https://example.com/step.jpg",
+                    "amount": "131",
+                    "amountUnit": "St\u00fcck",
+                    "description": "Nachbearbeitung",
+                    "energyConsumption": "10kw/h",
+                    "co2Emission": "2.21kg"
+                },
+                {
+                    "id": "b16eba03-3171-451e-9817-66013074de89",
+                    "productBatchStepId": "9ef467a6-946c-4310-b2e0-0929f65a79bd",
+                    "date": "2025-03-10T19:20:35",
+                    "previousStepEntryId": "1fcd32bb-2e3f-4934-8092-ac14700665b3",
+                    "nextStepEntryId": "d7f9a8f8-1d41-46d1-a36a-322fa4012586",
+                    "imageSrc": "https://example.com/step.jpg",
+                    "amount": "72",
+                    "amountUnit": "St\u00fcck",
+                    "description": "Vorbereitung",
+                    "energyConsumption": "7kw/h",
+                    "co2Emission": "0.97kg"
+                },
+                {
+                    "id": "d7f9a8f8-1d41-46d1-a36a-322fa4012586",
+                    "productBatchStepId": "9ef467a6-946c-4310-b2e0-0929f65a79bd",
+                    "date": "2025-03-08T06:29:44",
+                    "previousStepEntryId": "b16eba03-3171-451e-9817-66013074de89",
+                    "nextStepEntryId": null,
+                    "imageSrc": "https://example.com/step.jpg",
+                    "amount": "179",
+                    "amountUnit": "St\u00fcck",
+                    "description": "Nachbearbeitung",
+                    "energyConsumption": "5kw/h",
+                    "co2Emission": "1.53kg"
+                }
+            ]
+        },
+        {
+            "id": "0295d906-a0ce-4e2d-ad87-b848b3c416a0",
+            "productBatchId": "741c6dd1-6ac2-4983-8e89-2bf3f113569e",
+            "name": "Saftpressung",
+            "previousStepId": "9ef467a6-946c-4310-b2e0-0929f65a79bd",
+            "nextStepId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
+            "address": {
+                "id": "0edbbc2c-588a-4df2-8b55-a6d2e12134e8",
+                "name": "SonntagsSAFT GmbH",
+                "street": "Kreischaer Stra\u00dfe 8a",
+                "zip": "01728",
+                "city": "Bannewitz",
+                "country": "Deutschland",
+                "latitude": 50.965019,
+                "longitude": 13.718952
+            },
+            "imageSrc": "https://smartfarminglab.github.io/data/example_pressing.jpg",
+            "description": "string",
+            "stepEntries": [
+                {
+                    "id": "772db70a-d0d1-4e26-a316-c6fe25171af2",
+                    "productBatchStepId": "0295d906-a0ce-4e2d-ad87-b848b3c416a0",
+                    "date": "2025-03-09T15:37:26",
+                    "previousStepEntryId": null,
+                    "nextStepEntryId": "c41fd5f9-c43a-4670-961c-6ae76dfdd35f",
+                    "imageSrc": "https://example.com/step.jpg",
+                    "amount": "58",
+                    "amountUnit": "St\u00fcck",
+                    "description": "Hauptprozess",
+                    "energyConsumption": "3kw/h",
+                    "co2Emission": "2.09kg"
+                },
+                {
+                    "id": "c41fd5f9-c43a-4670-961c-6ae76dfdd35f",
+                    "productBatchStepId": "0295d906-a0ce-4e2d-ad87-b848b3c416a0",
+                    "date": "2025-03-10T15:45:52",
+                    "previousStepEntryId": "772db70a-d0d1-4e26-a316-c6fe25171af2",
+                    "nextStepEntryId": null,
+                    "imageSrc": "https://example.com/step.jpg",
+                    "amount": "124",
+                    "amountUnit": "St\u00fcck",
+                    "description": "Hauptprozess",
+                    "energyConsumption": "8kw/h",
+                    "co2Emission": "0.27kg"
+                }
+            ]
+        },
+        {
+            "id": "ce913da4-205a-4ab6-b3ba-0dcd46b739f7",
+            "productBatchId": "741c6dd1-6ac2-4983-8e89-2bf3f113569e",
+            "name": "Abf\u00fcllung",
+            "previousStepId": "0295d906-a0ce-4e2d-ad87-b848b3c416a0",
+            "nextStepId": null,
+            "address": {
+                "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+                "name": "Universit\u00e4t Leipzig",
+                "street": "Grimmaische Str. 12",
+                "zip": "04109",
+                "city": "Leipzig",
+                "country": "Deutschland",
+                "latitude": 51.339334,
+                "longitude": 12.378398
+            },
+            "imageSrc": "https://smartfarminglab.github.io/data/example_filling.jpg",
+            "description": "string",
+            "stepEntries": [
+                {
+                    "id": "893ff11a-6ee1-454a-b93e-ca913b51b87d",
+                    "productBatchStepId": "ce913da4-205a-4ab6-b3ba-0dcd46b739f7",
+                    "date": "2025-03-05T08:01:53",
+                    "previousStepEntryId": null,
+                    "nextStepEntryId": null,
+                    "imageSrc": "https://example.com/step.jpg",
+                    "amount": "72",
+                    "amountUnit": "St\u00fcck",
+                    "description": "Hauptprozess",
+                    "energyConsumption": "9kw/h",
+                    "co2Emission": "1.29kg"
+                }
+            ]
+        }
+    ]
+}

@@ -184,7 +184,10 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
 
             // Fit bounds to show all points
             if (bounds.isValid()) {
-                map.fitBounds(bounds);
+                //map.fitBounds(bounds);
+                const zoom = map.getBoundsZoom(bounds);
+map.setView(bounds.getCenter(), zoom - 0.5); // Zoom um 1 verringert
+
             } else {
                 console.warn("No valid coordinates found.");
                 map.setView([51.1657, 10.4515], 6); // Default to Germany
