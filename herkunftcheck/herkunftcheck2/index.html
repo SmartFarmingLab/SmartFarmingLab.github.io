@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HerkunftCheck</title>
+
+  <link rel="stylesheet" href="style/style_v1.css" />
+  <link rel="stylesheet" href="style/map.css" />
+
+
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
+   <!-- Polyline Decorator (if needed) -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.min.js"></script>
+
+    <!-- Working Leaflet.curve plugin -->
+    <script src="https://rawcdn.githack.com/elfalem/Leaflet.curve/master/src/leaflet.curve.js"></script>
+
+    <!-- MarkerCluster CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/0.7.3/leaflet.polylineDecorator.min.js"></script>
+
+    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+
+
+  <script src="script/map_1.1.2.js"></script>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      InitializeMapAndData();
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="copyright">
+    <div class="copyright-container">
+      <img src="img/logo_2.png" class="logo" /> <span class="copyright-title">HerkunftCheck</span>
+
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="bottom-sheet" id="product-card">
+    <div class="drag-handle" onclick="toggleSheet()"></div>
+    <div class="sheet-content">
+
+      <div class="product-header">
+        <h1 id="product-name" class="product-name">Apfel-Birnen-Saft</h1>
+        
+        <div class="info-card">
+        
+        <img id="product-image" src="https://source.unsplash.com/400x220/?juice,fruit" alt="Produktbild">
+      </div>
+      </div>
+
+      <div class="product-info">
+
+        <div class="info-card">
+          <h3>Produktinformationen</h3>
+          <p><strong>Hergestellt am:</strong> <span id="production-date">01.04.2025</span></p>
+          <p><strong>MHD:</strong> <span id="best-before">01.10.2025</span></p>
+          <p><strong>Kategorie:</strong> <span id="product-category">Fruchtsaft</span></p>
+          <p><strong>Produzent:</strong> <span id="company-name">Obsthof Müller</span></p>
+        </div>
+
+        <div class="info-card">
+          <h3>Produktionsschritte</h3>
+          <ul class="steps-list">
+            <li>1. Ernte der Früchte</li>
+            <li>2. Reinigung und Sortierung</li>
+            <li>3. Pressung</li>
+            <li>4. Pasteurisierung</li>
+            <li>5. Abfüllung</li>
+            <li>6. Etikettierung & Verpackung</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Zutaten</h3>
+          <p>Apfelsaft (60 %), Birnensaft (40 %), ohne Zuckerzusatz, naturtrüb</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Zertifikate</h3>
+          <div class="certificate-images" id="certificates">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Organic_Logo_EU.svg/120px-Organic_Logo_EU.svg.png"
+              alt="Bio" />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Fairtrade-logo.svg/120px-Fairtrade-logo.svg.png"
+              alt="Fairtrade" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const sheet = document.getElementById("product-card");
+    let startY, currentY, isDragging = false;
+
+    function toggleSheet() {
+      sheet.classList.toggle("open");
+    }
+
+    sheet.addEventListener("touchstart", e => {
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    });
+
+    sheet.addEventListener("touchmove", e => {
+      if (!isDragging) return;
+      currentY = e.touches[0].clientY;
+      let deltaY = currentY - startY;
+      if (deltaY > 0) {
+        sheet.style.transform = `translateY(${deltaY}px)`;
+      }
+    });
+
+    sheet.addEventListener("touchend", () => {
+      isDragging = false;
+      if (currentY - startY > 100) {
+        sheet.classList.remove("open");
+      } else {
+        sheet.classList.add("open");
+      }
+      sheet.style.transform = "";
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+#map {
+    height: 75vh;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 110;
+    top:0;
+    position: fixed !important;
+}
+
+  /* Custom popup styling */
+  .leaflet-popup-content {
+    font-size: 16px;
+    color: #333;
+}
+
+.leaflet-popup-content b {
+    color: #6ed391;
+    color: #3c8138;;
+}
+
+/* Marker styling */
+.custom-marker {
+    background-color: #6ed391;
+    background-color: #3c8138;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.dash-animation {
+    stroke-dasharray: 10;
+    stroke-dashoffset: 1000;
+    animation: dashmove 5s linear infinite;
+}
+
+@keyframes dashmove {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* Cluster Marker Größe ändern */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  width: 50px !important;
+  height: 50px !important;
+  line-height: 50px !important;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: rgba(110, 211, 145, 0.6);
+  background-color: #3c8138af;
+ 
+  color: #fff;
+  text-align: center;
+ 
+
+
+}
+
+.marker-cluster-small div {
+    background-color: #3c8138af !important;
+}
+
+
+.marker-cluster-small {
+    background-color: unset !important;
+}
+.marker-cluster div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .marker-cluster div {
+    width: 50px !important;
+    height: 50px !important;
+    margin-left: -3px !important;
+    margin-top: -3px !important;
+    text-align: center;
+    border-radius: 50% !important;
+    font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
