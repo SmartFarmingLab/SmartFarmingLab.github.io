@@ -45,3 +45,30 @@ h1,h2,h3,h4{
 .logo{
     width: 30px;
 }
+
+
+.copyright{
+    display: block;
+    position: fixed;
+    bottom:0;
+    left:0;
+    background: #ffffff;
+    height: 25px;
+    width: 100px;
+    z-index: 012000;
+    padding:5px;
+}
+
+
+.copyright .logo{
+    width: 15px;
+}
+
+.copyright-container{
+    display: flex;
+    gap: 5px;
+}
+
+.copyright-title{
+    font-size: 10px;
+}
