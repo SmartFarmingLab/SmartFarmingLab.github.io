@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerkunftCheck</title>
+    <link rel="icon" type="image/x-icon" href="img/logo_2.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+    </style>
+
+
+    <link rel="stylesheet" href="style/style_v1.css" />
+    <link rel="stylesheet" href="style/map.css" />
+    <link rel="stylesheet" href="style/card_v2.1.1.css" />
+    <link rel="stylesheet" href="style/sidebar_v2.css" />
+
+
+    <!-- Font CSS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Boldonse&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hind:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+
+
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
+
+    <!-- Polyline Decorator (if needed) -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.min.js"></script>
+
+    <!-- Working Leaflet.curve plugin -->
+    <script src="https://rawcdn.githack.com/elfalem/Leaflet.curve/master/src/leaflet.curve.js"></script>
+
+    <!-- MarkerCluster CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/0.7.3/leaflet.polylineDecorator.min.js"></script>
+
+    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+
+    <script src="script/map_1.1.2.js"></script>
+
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            InitializeMapAndData();
+        });
+
+
+
+
+        function showSidebarWithStep(step) {
+            document.getElementById('sidebar').style.display = 'block';
+            document.getElementById('step-name').textContent = step.name || "-";
+            document.getElementById('step-location').textContent = step.address?.name || "-";
+            document.getElementById('step-street').textContent = step.address?.street || "-";
+            document.getElementById('step-zipcity').textContent = `${step.address?.zip || ""} ${step.address?.city || ""}`;
+            document.getElementById('step-country').textContent = step.address?.country || "-";
+
+            const entriesContainer = document.getElementById("step-entries");
+            entriesContainer.innerHTML = "";
+
+            if (Array.isArray(step.stepEntries) && step.stepEntries.length > 0) {
+                step.stepEntries.forEach((entry, index) => {
+
+                    const entryHtml = `
+            <details>
+                <summary>Eintrag ${index + 1}</summary>
+                
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Datum</span>
+                <span class="value">${entry.date ? new Date(entry.date).toLocaleDateString("de-DE") : "-"}</span>
+                </div>
+                
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Beschreibung</span>
+                <span class="value">${entry.description || "-"}</span>
+                </div>
+
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Menge</span>
+                <span class="value">${entry.amount && entry.amountUnit ? `${entry.amount} ${entry.amountUnit}` : "-"}</span>
+                </div>
+
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">Energieverbrauch</span>
+                <span class="value">${entry.energyConsumption || "-"}</span>
+                </div>
+
+                <div class="sidebar-row sidebar-row-spaced">
+                <span class="label">CO₂-Ausstoß</span>
+                <span class="value">${entry.co2Emission || "-"}</span>
+                </div>
+                
+            </details>
+`;
+
+                    entriesContainer.insertAdjacentHTML("beforeend", entryHtml);
+                });
+            } else {
+                entriesContainer.innerHTML = "<p>Keine Einträge vorhanden.</p>";
+            }
+
+            if (step.imageSrc && step.imageSrc !== "string") {
+                const imageDiv = document.getElementById("top-image");
+                if (imageDiv) {
+                    imageDiv.style.backgroundImage = `url('${step.imageSrc}')`;
+                }
+            }
+        }
+
+        // Event Listener zum Schließen der Seitenleiste
+        window.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("sidebar-close").addEventListener("click", () => {
+                document.getElementById("sidebar").style.display = "none";
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+    <div class="copyright">
+        <div class="copyright-container">
+            <img src="img/logo_2.png" class="logo"/>  <span class="copyright-title">HerkunftCheck</span>
+      
+        </div>
+    </div>
+
+
+
+
+
+    <div id="sidebar" class="modern-sidebar">
+
+        <div class="card-hover">
+            <div id="top-image" class="top-image" style="background-image: url('img/example.jpg');"></div>
+            <button id="sidebar-close" title="Schließen">&#8592;</button>
+            <div class="card-hover__content">
+                <h3 class="card-hover__title" id="step-name">
+                    Schrittname
+                </h3>
+
+                <div class="card-hover__content-2">
+                    <h4 class="card-hover__title-2" id="">
+                        Daten
+                    </h4>
+                    <div class="info-panel-data">
+                        <div class="sidebar-content card-hover__text">
+                            <div class="sidebar-row sidebar-row-undelined">
+                                <span class="label">Ort:</span>
+                                <span class="value" id="step-location"></span>
+                            </div>
+                            <div class="sidebar-row sidebar-row-undelined">
+                                <span class="label">Straße:</span>
+                                <span class="value" id="step-street"></span>
+                            </div>
+                            <div class="sidebar-row sidebar-row-undelined">
+                                <span class="label">PLZ & Stadt:</span>
+                                <span class="value" id="step-zipcity"></span>
+                            </div>
+                            <div class="sidebar-row sidebar-row-undelined">
+                                <span class="label">Land:</span>
+                                <span class="value" id="step-country"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:35px;">
+                        <h4 class="card-hover__title-2" id="">
+                            Einträge
+                        </h4>
+
+                        <section id="step-entries" class="step-entries"></section>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="map"></div>
+
+
+
+    <div class="bottom-sheet" id="product-card">
+        <div class="drag-handle"></div>
+        <div class="sheet-content">
+
+          
+            <img id="product-image" class="card__image" src="" alt="Lädt...">
+        </div>
+
+        <h1 id="product-name" class="card__head">Apfel-Birnen-Saft
+        </h1>
+        <!--<span class="card__date" id="production-date">01.04.2025</span>-->
+        <div class="card__text">
+
+
+
+            <p><strong>Hergestellt am:</strong> <span id="production-date">01.04.2025</span></p>
+            <p><strong>Kategorie:</strong> <span id="product-category"></span></p>
+
+            <p><strong>MHD:</strong> <span id="best-before"></span></p>
+            <p><strong>Produzent:</strong> <span id="company-name"></span></p>
+            <div class="certificate-images" id="certificates"></div>
+            </p>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    <script>
+        const sheet = document.getElementById("product-card");
+        let startY, currentY, isDragging = false;
+      
+        function toggleSheet() {
+          sheet.classList.toggle("open");
+        }
+      
+        sheet.addEventListener("touchstart", e => {
+          startY = e.touches[0].clientY;
+          isDragging = true;
+        });
+      
+        sheet.addEventListener("touchmove", e => {
+          if (!isDragging) return;
+          currentY = e.touches[0].clientY;
+          let deltaY = currentY - startY;
+          if (deltaY > 0) {
+            sheet.style.transform = `translateY(${deltaY}px)`;
+          }
+        });
+      
+        sheet.addEventListener("touchend", () => {
+          isDragging = false;
+          if (currentY - startY > 100) {
+            sheet.classList.remove("open");
+          } else {
+            sheet.classList.add("open");
+          }
+          sheet.style.transform = "";
+        });
+      </script>
+      
+</body>
+
+</html>

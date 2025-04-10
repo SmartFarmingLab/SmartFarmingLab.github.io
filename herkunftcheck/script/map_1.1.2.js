@@ -40,7 +40,7 @@ function InitializeMapAndData() {
         .then(data => {
 
             // Display Product Card Info
-          //  document.getElementById("product-card").style.display = "grid";
+        // document.getElementById("product-card").style.display = "grid";
             document.getElementById("product-name").textContent = data.productName;
             document.getElementById("product-category").textContent = data.category;
             const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
