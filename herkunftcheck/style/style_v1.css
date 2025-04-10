@@ -77,3 +77,50 @@ h4 {
     font-size: 10px;
     font-weight: 700;
 }
+
+.bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    background: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(60%);
+    transition: transform 0.3s ease;
+    touch-action: none;
+    z-index:1005;
+  }
+
+  .bottom-sheet.open {
+    transform: translateY(0%);
+  }
+
+  .drag-handle {
+    width: 40px;
+    height: 6px;
+    background: #ccc;
+    border-radius: 3px;
+    margin: 10px auto;
+  }
+
+  .sheet-content {
+    padding: 20px;
+  }
+
+  button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+  }
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: #f0f0f0;
+  }

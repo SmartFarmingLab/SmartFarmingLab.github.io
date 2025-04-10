@@ -1,8 +1,10 @@
 #map {
-    height: 100vh;
+    height: 72vh;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0px;
     z-index: 110;
+    top:0;
+    position: fixed !important;
 }
 
   /* Custom popup styling */

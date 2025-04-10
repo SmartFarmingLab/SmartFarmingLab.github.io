@@ -147,33 +147,6 @@
         </div>
     </div>
 
-    <div id="product-card" class="card">
-        <div id="product-info">
-            <img id="product-image" class="card__image" src="" alt="Lädt...">
-            <main class="card__content">
-                <div class="card-title  p-3 text-center title" style="display: none;">
-                    <img src="img/logo_1.png" class="logo"/>  <h4 class="title">Herkunft<span class="highlight">Check</span>
-                    </h4>
-                </div>
-
-                <h1 id="product-name" class="card__head">Apfel-Birnen-Saft
-                </h1>
-                <!--<span class="card__date" id="production-date">01.04.2025</span>-->
-                <div class="card__text">
-
-
-
-                    <p><strong>Hergestellt am:</strong> <span id="production-date">01.04.2025</span></p>
-                    <p><strong>Kategorie:</strong> <span id="product-category"></span></p>
-
-                    <p><strong>MHD:</strong> <span id="best-before"></span></p>
-                    <p><strong>Produzent:</strong> <span id="company-name"></span></p>
-                    <div class="certificate-images" id="certificates"></div>
-                    </p>
-            </main>
-        </div>
-    </div>
-
 
 
 
@@ -228,6 +201,74 @@
 
 
     <div id="map"></div>
+
+
+
+    <div class="bottom-sheet" id="product-card">
+        <div class="drag-handle"></div>
+        <div class="sheet-content">
+
+          
+            <img id="product-image" class="card__image" src="" alt="Lädt...">
+        </div>
+
+        <h1 id="product-name" class="card__head">Apfel-Birnen-Saft
+        </h1>
+        <!--<span class="card__date" id="production-date">01.04.2025</span>-->
+        <div class="card__text">
+
+
+
+            <p><strong>Hergestellt am:</strong> <span id="production-date">01.04.2025</span></p>
+            <p><strong>Kategorie:</strong> <span id="product-category"></span></p>
+
+            <p><strong>MHD:</strong> <span id="best-before"></span></p>
+            <p><strong>Produzent:</strong> <span id="company-name"></span></p>
+            <div class="certificate-images" id="certificates"></div>
+            </p>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    <script>
+        const sheet = document.getElementById("product-card");
+        let startY, currentY, isDragging = false;
+      
+        function toggleSheet() {
+          sheet.classList.toggle("open");
+        }
+      
+        sheet.addEventListener("touchstart", e => {
+          startY = e.touches[0].clientY;
+          isDragging = true;
+        });
+      
+        sheet.addEventListener("touchmove", e => {
+          if (!isDragging) return;
+          currentY = e.touches[0].clientY;
+          let deltaY = currentY - startY;
+          if (deltaY > 0) {
+            sheet.style.transform = `translateY(${deltaY}px)`;
+          }
+        });
+      
+        sheet.addEventListener("touchend", () => {
+          isDragging = false;
+          if (currentY - startY > 100) {
+            sheet.classList.remove("open");
+          } else {
+            sheet.classList.add("open");
+          }
+          sheet.style.transform = "";
+        });
+      </script>
+      
 </body>
 
 </html>

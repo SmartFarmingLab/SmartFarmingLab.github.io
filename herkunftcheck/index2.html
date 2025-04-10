@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produktansicht</title>
+  <style>
+    :root {
+      --background-gray: #f2f2f7;
+      --card-white: #ffffff;
+      --text-dark: #1c1c1e;
+      --text-gray: #8e8e93;
+      --accent: #007aff;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--background-gray);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      padding: 10px 18px;
+      border: none;
+      background: var(--accent);
+      color: white;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .bottom-sheet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 92%;
+      background: var(--background-gray);
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+      box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+      transform: translateY(65%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .bottom-sheet.open {
+      transform: translateY(0%);
+    }
+
+    .drag-handle {
+      width: 44px;
+      height: 5px;
+      background: #ccc;
+      border-radius: 3px;
+      margin: 12px auto;
+    }
+
+    .sheet-content {
+      padding: 0 20px 24px;
+    }
+
+    .product-header {
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    .product-header img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--text-dark);
+    }
+
+    .product-info {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .info-card {
+      background: var(--card-white);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    .info-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--text-dark);
+    }
+
+    .info-card p {
+      margin: 4px 0;
+      color: var(--text-gray);
+      font-size: 15px;
+    }
+
+    .steps-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .steps-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      color: var(--text-dark);
+    }
+
+    .certificate-images {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .certificate-images img {
+      height: 32px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="toggleSheet()">Produkt anzeigen</button>
+
+<div class="bottom-sheet" id="product-card">
+  <div class="drag-handle"></div>
+  <div class="sheet-content">
+
+    <div class="product-header">
+      <img id="product-image" src="https://source.unsplash.com/400x220/?juice,fruit" alt="Produktbild">
+      <h1 id="product-name" class="product-name">Apfel-Birnen-Saft</h1>
+    </div>
+
+    <div class="product-info">
+
+      <div class="info-card">
+        <h3>Produktinformationen</h3>
+        <p><strong>Hergestellt am:</strong> <span id="production-date">01.04.2025</span></p>
+        <p><strong>MHD:</strong> <span id="best-before">01.10.2025</span></p>
+        <p><strong>Kategorie:</strong> <span id="product-category">Fruchtsaft</span></p>
+        <p><strong>Produzent:</strong> <span id="company-name">Obsthof Müller</span></p>
+      </div>
+
+      <div class="info-card">
+        <h3>Produktionsschritte</h3>
+        <ul class="steps-list">
+          <li>1. Ernte der Früchte</li>
+          <li>2. Reinigung und Sortierung</li>
+          <li>3. Pressung</li>
+          <li>4. Pasteurisierung</li>
+          <li>5. Abfüllung</li>
+          <li>6. Etikettierung & Verpackung</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Zutaten</h3>
+        <p>Apfelsaft (60 %), Birnensaft (40 %), ohne Zuckerzusatz, naturtrüb</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Zertifikate</h3>
+        <div class="certificate-images">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Organic_Logo_EU.svg/120px-Organic_Logo_EU.svg.png" alt="Bio" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Fairtrade-logo.svg/120px-Fairtrade-logo.svg.png" alt="Fairtrade" />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const sheet = document.getElementById("product-card");
+  let startY, currentY, isDragging = false;
+
+  function toggleSheet() {
+    sheet.classList.toggle("open");
+  }
+
+  sheet.addEventListener("touchstart", e => {
+    startY = e.touches[0].clientY;
+    isDragging = true;
+  });
+
+  sheet.addEventListener("touchmove", e => {
+    if (!isDragging) return;
+    currentY = e.touches[0].clientY;
+    let deltaY = currentY - startY;
+    if (deltaY > 0) {
+      sheet.style.transform = `translateY(${deltaY}px)`;
+    }
+  });
+
+  sheet.addEventListener("touchend", () => {
+    isDragging = false;
+    if (currentY - startY > 100) {
+      sheet.classList.remove("open");
+    } else {
+      sheet.classList.add("open");
+    }
+    sheet.style.transform = "";
+  });
+</script>
+
+</body>
+</html>
