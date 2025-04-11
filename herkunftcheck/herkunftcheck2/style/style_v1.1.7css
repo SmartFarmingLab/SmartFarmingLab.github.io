@@ -99,8 +99,17 @@ body {
   margin: auto;
 }
 
+#step-card{
+  transform: translateY(150%);
+  transition: transform 0.5s ease;
+}
+
+#step-card.open{
+  z-index: 1000;
+}
+
 .bottom-sheet.open {
-  transform: translateY(0%);
+  transform: translateY(0%) !important;
   overflow-y: auto;
 }
 
@@ -144,6 +153,7 @@ body {
   font-weight: 500;
   max-width: 700px;
   line-height: 1.4;
+  padding-top: 5px;
 }
 
 .product-image-container {
@@ -525,5 +535,5 @@ width: 14px;
 height: 14px; /* Add this! */
 align-self: center;
 display: flex;
-
 }
+
