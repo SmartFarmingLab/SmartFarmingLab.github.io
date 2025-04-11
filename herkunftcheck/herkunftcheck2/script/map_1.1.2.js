@@ -43,6 +43,7 @@ function InitializeMapAndData() {
             // document.getElementById("product-card").style.display = "grid";
             document.getElementById("product-name").textContent = data.productName;
             document.getElementById("product-category").textContent = data.category;
+            document.getElementById("product-category-tag").textContent = data.category;
             const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
             document.getElementById("production-date").textContent =
                 new Date(data.productionDate).toLocaleDateString("de-DE", options);
@@ -79,10 +80,10 @@ function InitializeMapAndData() {
                 console.warn("No ingredients  found.");
             } else {
                 data.ingredients.forEach((ingredient, index) => {
-                    ingredientsContainer.innerHTML += "," + ingredient.name + " " + ingredient.percentage + "%";
+                    ingredientsContainer.innerHTML += ", " + ingredient.name + " " + ingredient.percentage + "%";
                 });
 
-                ingredientsContainer.innerHTML = ingredientsContainer.innerHTML.replace(",,","");
+                ingredientsContainer.innerHTML = ingredientsContainer.innerHTML.replace(",, ","");
             }
 
 

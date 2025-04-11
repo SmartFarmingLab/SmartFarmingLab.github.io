@@ -118,7 +118,8 @@ body {
 
 .product-header {
   text-align: center;
-  padding: 8px 0;
+  padding: 0;
+  padding-bottom: 10px;
 }
 
 .product-brand {
@@ -139,6 +140,10 @@ body {
   font-weight: 600;
   margin: 0;
   color: var(--text-dark);
+  font-size: 30px;
+  font-weight: 500;
+  max-width: 700px;
+  line-height: 1.4;
 }
 
 .product-image-container {
@@ -268,6 +273,16 @@ body {
 }
 
 
+.arrow-link{
+  transform: rotate(45deg);
+  padding: 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+
 .info-card {
   background-color: none;
   /* ähnliches Grün */
@@ -323,6 +338,7 @@ body {
 
 .arrow {
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 
@@ -393,7 +409,7 @@ padding-top: 20px;
 .project-card.green {
   background-color: #dfeecb;
   background-image: radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.2) 100px, transparent 160px);
-  min-height: 200px;
+  min-height: 150px;
   position: relative;
   overflow: hidden;
 }
@@ -437,6 +453,16 @@ padding-top: 20px;
   transform: rotate(45deg);
 }
 
+.info{
+  font-weight: 300;
+  max-width: 700px;
+  line-height: 1.4;
+  /* justify-content: start; */
+  font-size: 18px;
+}
+.info p{
+  /* margin-bottom: 5px !important; */
+}
 
 .project-card.green::before {
   content: '';
