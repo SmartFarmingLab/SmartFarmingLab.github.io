@@ -103,4 +103,10 @@
     #map {
         height: 80vh;
     }
+
+
+    .leaflet-bottom {
+        bottom: 7vh !important;
+      }
+
 }

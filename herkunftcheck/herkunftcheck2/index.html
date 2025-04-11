@@ -43,6 +43,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       InitializeMapAndData();
+    //  toggleSheet();
     });
   </script>
 
@@ -59,7 +60,7 @@
   <div id="map"></div>
 
   <div class="bottom-sheet" id="product-card">
-    <div class="drag-handle" onclick="toggleSheet()"></div>
+
 
 
     <div class="sheet-content">
@@ -67,18 +68,28 @@
       <div class="product-header">
         <h1 id="product-name" class="product-name text-left">Produktname</h1>
         <div id="product-brand" class="product-brand text-left w-100"></div>
+        <button id="toggle-button" class="toggle-arrow">
+          <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+            </svg></span> <!-- ▲ -->
+        </button>
+
       </div>
 
       <div class="row d-flex align-items-stretch" style="padding-bottom: 15px;">
-        <div class="col-4 d-flex" style="padding-right: 0;">
+        <div class="col-5 d-flex product-image-col">
           <div id="product-image-container" class="info-card p-0 w-100 product-image-container"
-               style="background-image: url('https://smartfarminglab.github.io/data/flasche_stock.jpg');">
+            style="background-image: url('https://smartfarminglab.github.io/data/flasche_stock.jpg');">
           </div>
+
+          <h3 class="section-label">Saft</h3>
         </div>
-      
-        <div class="col-8 d-flex">
-          <div class="info-card w-100 h-100">
-            <h3>Produktinformationen</h3>
+
+        <div class="col-7 d-flex">
+          <div class="project-card light w-100 h-100">
+            <h3>Produkt</h3>
             <p>Hergestellt am: <span id="production-date">06.03.2025</span></p>
             <p>MHD: <span id="best-before">6.5.2026</span></p>
             <p>Kategorie: <span id="product-category">Saft</span></p>
@@ -86,50 +97,91 @@
           </div>
         </div>
       </div>
-      
 
 
 
 
+      <section class="projects">
 
-      <div class="product-info">
+        <h2 class="section-heading" id="product-description">
+          We hold various events, campaigns and raise funds for the implementation of projects to preserve
+          <span class="highlight">the environment</span>
+        </h2>
 
-        <div class="info-card">
-          <h3>Beschreibung</h3>
-          <p id="product-description">Apfelsaft (60 %), Birnensaft (40 %), ohne Zuckerzusatz, naturtrüb</p>
-        </div>
-
-
-        <div class="info-card">
-          <h3>Produktionsschritte</h3>
-          <ul class="steps-list" id="steps-list">
-            <li>1. Ernte der Früchte</li>
-            <li>2. Reinigung und Sortierung</li>
-            <li>3. Pressung</li>
-            <li>4. Pasteurisierung</li>
-            <li>5. Abfüllung</li>
-            <li>6. Etikettierung & Verpackung</li>
-          </ul>
-        </div>
-
-        <div class="info-card">
-          <h3>Zutaten</h3>
-          <p id="ingredients">Apfelsaft (60 %), Birnensaft (40 %), ohne Zuckerzusatz, naturtrüb</p>
-        </div>
-
-        <div class="info-card">
-          <h3>Zertifikate</h3>
-          <div class="certificate-images certificate-images-container" id="certificates">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Organic_Logo_EU.svg/120px-Organic_Logo_EU.svg.png"
-              alt="Bio" />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Fairtrade-logo.svg/120px-Fairtrade-logo.svg.png"
-              alt="Fairtrade" />
+        <div class="card-grid">
+          <!-- Card 1 -->
+          <div class="project-card light">
+            <h4>Produktionsschritte</h4>
+            <div class="content">
+              <ul class="steps-list" id="steps-list">
+                <li>1. Ernte der Früchte</li>
+                <li>2. Reinigung und Sortierung</li>
+                <li>3. Pressung</li>
+                <li>4. Pasteurisierung</li>
+                <li>5. Abfüllung</li>
+                <li>6. Etikettierung & Verpackung</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <span>Mehr erfahren</span>
+              <button class="circle-button">↗</button>
+            </div>
           </div>
+
+          <!-- Card 2 -->
+          <div class="project-card green">
+            <div class="project-title">Zutaten</div>
+            <p class="content" id="ingredients">Apfelsaft (60 %), Birnensaft (40 %), ohne Zuckerzusatz, naturtrüb</p>
+            <div class="card-footer">
+              <span>Read More</span>
+              <button class="circle-button">↗</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card green">
+            <div class="project-title">Werde Mitglied</div>
+
+            <p class="content" id="ingredients">Möchtest du dein Produkt auch für einen digitalen Produktpass einsetzen?
+              Schreib uns!</p>
+
+            <div class="card-footer">
+              <span>Kontakt</span>
+              <button class="circle-button">↗</button>
+            </div>
+          </div>
+
+
+          <!-- Card 4 -->
+          <div class="project-card light">
+            <h4>Zertifikate</h4>
+            <div class="content">
+              <div class="certificate-images certificate-images-container" id="certificates">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Organic_Logo_EU.svg/120px-Organic_Logo_EU.svg.png"
+                  alt="Bio" />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Fairtrade-logo.svg/120px-Fairtrade-logo.svg.png"
+                  alt="Fairtrade" />
+              </div>
+            </div>
+          </div>
+
+
+          <h5 class="section-footer ">
+            HerkunftCheck wurde im Projekt MIRO von dem
+            <a href="https://research.uni-leipzig.de/smart-farming" target="_blank"><span class="highlight">Smart
+                Farming Lab</span></a> der Universität Leipzig entwickelt.
+
+
+
+
+            </h2>
+
+
         </div>
 
-      </div>
+      </section>
 
     </div>
   </div>
@@ -142,29 +194,40 @@
       sheet.classList.toggle("open");
     }
 
-    sheet.addEventListener("touchstart", e => {
-      startY = e.touches[0].clientY;
-      isDragging = true;
+    /*  sheet.addEventListener("touchstart", e => {
+        startY = e.touches[0].clientY;
+        isDragging = true;
+      });
+  
+      sheet.addEventListener("touchmove", e => {
+        if (!isDragging) return;
+        currentY = e.touches[0].clientY;
+        let deltaY = currentY - startY;
+        if (deltaY > 0) {
+          sheet.style.transform = `translateY(${deltaY}px)`;
+        }
+      });
+  
+      sheet.addEventListener("touchend", () => {
+        isDragging = false;
+        if (currentY - startY > 100) {
+          sheet.classList.remove("open");
+        } else {
+          sheet.classList.add("open");
+        }
+        sheet.style.transform = "";
+      });
+  */
+
+
+    const toggleButton = document.getElementById("toggle-button");
+
+    toggleButton.addEventListener("click", () => {
+      toggleButton.classList.toggle("active");
+
+      toggleSheet();
     });
 
-    sheet.addEventListener("touchmove", e => {
-      if (!isDragging) return;
-      currentY = e.touches[0].clientY;
-      let deltaY = currentY - startY;
-      if (deltaY > 0) {
-        sheet.style.transform = `translateY(${deltaY}px)`;
-      }
-    });
-
-    sheet.addEventListener("touchend", () => {
-      isDragging = false;
-      if (currentY - startY > 100) {
-        sheet.classList.remove("open");
-      } else {
-        sheet.classList.add("open");
-      }
-      sheet.style.transform = "";
-    });
   </script>
 
 </body>
