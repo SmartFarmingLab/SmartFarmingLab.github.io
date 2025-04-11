@@ -518,8 +518,8 @@ color: inherit;}
 .logo-icon{
 
 width: 14px;
-
+height: 14px; /* Add this! */
 align-self: center;
-
 display: flex;
+
 }
