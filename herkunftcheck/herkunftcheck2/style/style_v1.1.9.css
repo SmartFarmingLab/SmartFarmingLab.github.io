@@ -294,6 +294,10 @@ body {
   width: 10px;
 }
 
+.arrow-link svg{
+  height: 22px;
+}
+
 
 .info-card {
   background-color: none;
@@ -422,7 +426,7 @@ padding-top: 20px;
 .project-card.green {
   background-color: #dfeecb;
   background-image: radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.2) 100px, transparent 160px);
-  min-height: 150px;
+  min-height: 100px;
   position: relative;
   overflow: hidden;
 }
