@@ -280,6 +280,8 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
+  height: 10px;
+  width: 10px;
 }
 
 
@@ -351,6 +353,7 @@ body {
 .projects {
   max-width: 1200px;
   margin: auto;
+  margin-top: 15px;
 }
 
 .section-label {
