@@ -6,7 +6,7 @@
     "bestBefore": "2026-05-06T19:03:01.334",
     "productName": "Apfel-Birnen-Saft",
     "productShortName": "Saft",
-    "description": "Der Saft wird regional in einer Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+    "description": "Der Saft wird regional in einer Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
     "category": "Saft",
     "imageSrc": "https://smartfarminglab.github.io/data/flasche_stock.jpg",
     "certificates": [
@@ -50,10 +50,17 @@
     "ingredients": [
         {
             "ingredientId": "ae57ed06-dd9a-47b9-bd8c-a15f379a2804",
-            "name": "Ingredient_nvicvxml",
+            "name": "Apfel",
             "produced": "2025-03-09T09:47:02.96",
             "processed": "2025-03-09T09:47:02.96",
             "percentage": 70
+        },
+        {
+            "ingredientId": "ae57ed06-dd9a-47b9-bd8c-a15f379a2805",
+            "name": "Birne",
+            "produced": "2025-03-09T09:47:02.96",
+            "processed": "2025-03-09T09:47:02.96",
+            "percentage": 30
         }
     ],
     "productBatchSteps": [
