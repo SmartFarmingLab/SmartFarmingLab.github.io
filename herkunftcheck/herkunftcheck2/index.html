@@ -2,10 +2,10 @@
 <html lang="de">
 
 <head>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HerkunftCheck</title>
+  <link rel="icon" type="image/x-icon" href="img/logo_2.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css">
 
   <link rel="stylesheet" href="style/style_v1.css" />
@@ -19,21 +19,21 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 
-   <!-- Polyline Decorator (if needed) -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.min.js"></script>
+  <!-- Polyline Decorator (if needed) -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.min.js"></script>
 
-    <!-- Working Leaflet.curve plugin -->
-    <script src="https://rawcdn.githack.com/elfalem/Leaflet.curve/master/src/leaflet.curve.js"></script>
+  <!-- Working Leaflet.curve plugin -->
+  <script src="https://rawcdn.githack.com/elfalem/Leaflet.curve/master/src/leaflet.curve.js"></script>
 
-    <!-- MarkerCluster CSS & JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/0.7.3/leaflet.polylineDecorator.min.js"></script>
+  <!-- MarkerCluster CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/0.7.3/leaflet.polylineDecorator.min.js"></script>
 
-    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+  <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
 
 
   <script src="script/map_1.1.2.js"></script>
@@ -65,32 +65,34 @@
     <div class="sheet-content">
 
       <div class="product-header">
-        <h1 id="product-name" class="product-name text-left">Apfel-Birnen-Saft</h1>
+        <h1 id="product-name" class="product-name text-left">Produktname</h1>
+        <div id="product-brand" class="product-brand text-left w-100"></div>
       </div>
 
-        <div class="row">
-          <div class="col-4">
-            <div class="info-card p-0">        
-              <img id="product-image" class="product-image" src="https://source.unsplash.com/400x220/?juice,fruit" alt="Produktbild">
-            </div>
+      <div class="row">
+        <div class="col-4">
+          <div  id="product-image-container" class="info-card p-0 h-100 product-image-container">
+
+
           </div>
-  
-          <div class="col-8">
-         
-              
-              
-        <div class="info-card">
-          <h3>Produktinformationen</h3>
-          <p><strong>Hergestellt am:</strong> <span id="production-date">01.04.2025</span></p>
-          <p><strong>MHD:</strong> <span id="best-before">01.10.2025</span></p>
-          <p><strong>Kategorie:</strong> <span id="product-category">Fruchtsaft</span></p>
-          <p><strong>Produzent:</strong> <span id="company-name">Obsthof Müller</span></p>
         </div>
 
-        
+        <div class="col-8">
+
+
+
+          <div class="info-card">
+            <h3>Produktinformationen</h3>
+            <p>Hergestellt am:<span id="production-date">01.04.2025</span></p>
+            <p>MHD: <span id="best-before">01.10.2025</span></p>
+            <p>Kategorie: <span id="product-category">Fruchtsaft</span></p>
+            <p>Produzent: <span id="company-name">Obsthof Müller</span></p>
           </div>
+
+
         </div>
-       
+      </div>
+
 
 
 
@@ -101,7 +103,7 @@
 
         <div class="info-card">
           <h3>Produktionsschritte</h3>
-          <ul class="steps-list">
+          <ul class="steps-list" id="steps-list">
             <li>1. Ernte der Früchte</li>
             <li>2. Reinigung und Sortierung</li>
             <li>3. Pressung</li>
@@ -118,7 +120,7 @@
 
         <div class="info-card">
           <h3>Zertifikate</h3>
-          <div class="certificate-images" id="certificates">
+          <div class="certificate-images certificate-images-container" id="certificates">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Organic_Logo_EU.svg/120px-Organic_Logo_EU.svg.png"
               alt="Bio" />

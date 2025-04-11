@@ -5,24 +5,24 @@ function InitializeMapAndData() {
 
     var map = L.map('map', { zoomControl: false });
 
-   /* L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 20
-    }).addTo(map);
-     */
+    /* L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+         subdomains: 'abcd',
+         maxZoom: 20
+     }).addTo(map);
+      */
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB',
         subdomains: 'abcd',
         maxZoom: 19,
-      }).addTo(map);
+    }).addTo(map);
 
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
         subdomains: 'abcd',
-        maxZoom: 20, 
+        maxZoom: 20,
     }).addTo(map);
 
 
@@ -40,7 +40,7 @@ function InitializeMapAndData() {
         .then(data => {
 
             // Display Product Card Info
-        // document.getElementById("product-card").style.display = "grid";
+            // document.getElementById("product-card").style.display = "grid";
             document.getElementById("product-name").textContent = data.productName;
             document.getElementById("product-category").textContent = data.category;
             const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
@@ -49,9 +49,14 @@ function InitializeMapAndData() {
 
             document.getElementById("best-before").textContent = new Date(data.bestBefore).toLocaleDateString();
             document.getElementById("company-name").textContent = data.productOwner.companyName;
+            document.getElementById("product-brand").textContent = data.productOwner.companyName;
             //document.getElementById("product-image").src = data.imageSrc;
-            document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
-
+            //document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
+            const container = document.getElementById("product-image-container");
+            container.style.backgroundImage =
+                typeof data.imageSrc === "string"
+                    ? `url('${data.imageSrc}')`
+                    : "url('https://via.placeholder.com/100')";
 
 
             // Load Certificates
@@ -71,6 +76,19 @@ function InitializeMapAndData() {
                 return;
             }
 
+
+            const stepsList = document.getElementById("steps-list");
+
+            // Clear existing list items (optional)
+            stepsList.innerHTML = "";
+            
+            // Fill with new steps
+            data.productBatchSteps.forEach((step, index) => {
+              const li = document.createElement("li");
+              li.textContent = `${index + 1}. ${step.name}`;
+              stepsList.appendChild(li);
+            });
+            
 
             // Clustergruppe initialisieren
             const markerClusterGroup = L.markerClusterGroup();

@@ -1,189 +1,215 @@
 :root {
-    --background-gray: #f2f2f7;
-    --background-gray: #f7f6f4;
-    --background-gray: #fff;
-    --card-white: #efefef;
-    --text-dark: #1c1c1e;
-    --text-gray: #8e8e93;
-    --accent: #007aff;
-  }
+  --background-gray: #f2f2f7;
+  --background-gray: #f7f6f4;
+  --background-gray: #fff;
+  --card-white: #efefef;
+  --text-dark: #1c1c1e;
+  --text-gray: #8e8e93;
+  --accent: #007aff;
+}
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--background-gray);
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--background-gray);
+}
 
 
-  .highlight {
-    background-color: #d9ebd2;
-    background-color: #d6e5be;
-    border-radius: 2em;
-    padding: 0.1em 0.2em;
+.highlight {
+  background-color: #d9ebd2;
+  background-color: #d6e5be;
+  border-radius: 2em;
+  padding: 0.1em 0.2em;
+}
+
+.h-100{
+   height: 100%; 
+}
+
+.w-100{
+  width:100%;
 }
 
 .logo {
-    width: 30px;
+  width: 30px;
+}
+
+.leaflet-bottom {
+  top: 0;
 }
 
 .copyright {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #ffffff;
-    height: 15px;
-    width: 100px;
-    z-index: 12000;
-    padding: 5px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-radius: ;
-    background: #e4eee3;
-    border: 1px solid #E2E1F1;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  height: 15px;
+  width: 100px;
+  z-index: 12000;
+  padding: 5px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #E2E1F1;
 }
 
 .copyright .logo {
-    width: 15px;
+  width: 15px;
 }
 
 .copyright-container {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
 .copyright-title {
-    font-size: 10px;
-    font-weight: 700;
+  font-size: 10px;
+  font-weight: 700;
 }
 
-  #map {
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    position: absolute;
-  }
+#map {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  position: absolute;
+}
 
-  .bottom-sheet {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 88%;
-    background: var(--background-gray);
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
-    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
-    transform: translateY(70%);
-    transition: transform 0.3s ease;
-    /*display: flex;*/
-    flex-direction: column;
-    overflow-y: hidden;
-    z-index: 999;
-  }
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 88%;
+  background: var(--background-gray);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(70%);
+  transition: transform 0.3s ease;
+  /*display: flex;*/
+  flex-direction: column;
+  overflow-y: hidden;
+  z-index: 999;
+  max-width: 700px;
+  margin: auto;
+}
 
-  .bottom-sheet.open {
-    transform: translateY(0%);
-    overflow-y: auto;
-  }
+.bottom-sheet.open {
+  transform: translateY(0%);
+  overflow-y: auto;
+}
 
-  .drag-handle {
-    width: 44px;
-    height: 5px;
-    background: #ccc;
-    border-radius: 3px;
-    margin: 12px auto;
-  }
+.drag-handle {
+  width: 44px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 3px;
+  margin: 12px auto;
+}
 
-  .sheet-content {
-    padding: 0 20px 24px;
-  }
+.sheet-content {
+  padding: 0 20px 24px;
+}
 
-  .product-header {
-    text-align: center;
-    padding: 8px 0;
-  }
+.product-header {
+  text-align: center;
+  padding: 8px 0;
+}
 
-  .product-header img,.product-image {
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
-    border-radius: 16px;
-    margin-bottom: 0px;
-  }
+.product-brand {
+  color: var(--text-gray);
+}
 
-  .product-name {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0;
-    color: var(--text-dark);
-  }
+.product-header img,.product-image {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 0px;
+}
 
-  .info-card {
-    background: var(--card-white);
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 16px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-  }
+.product-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-dark);
+}
 
-  .product-header .info-card{
-    padding:0;
-    background: none;
+.product-image-container{
+  height: 170px;
+  width:100%;
+  background-size: cover !important;
   }
+  
 
-  .info-card h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: var(--text-dark);
-  }
+.info-card {
+  background: var(--card-white);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
 
-  .info-card p,
-  .info-card li {
-    color: var(--text-gray);
-    font-size: 15px;
-    margin: 6px 0;
-  }
+.product-header .info-card{
+  padding:0;
+  background: none;
+}
 
-  .steps-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+.info-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--text-dark);
+}
 
-  .certificate-images {
-    margin-top: 10px;
-    display: flex;
-    gap: 8px;
-  }
+.info-card p,
+.info-card li {
+  color: var(--text-gray);
+  font-size: 15px;
+  margin: 6px 0;
+}
 
-  .certificate-images img {
-    height: 32px;
-    border-radius: 4px;
-  }
+.steps-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .leaflet-container {
-    border-radius: 0;
-    filter: grayscale(10%) brightness(0.95);
-  }
+.certificate-images {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
 
-  .leaflet-control-zoom {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
+.certificate-images img {
+  height: 32px;
+  border-radius: 4px;
+}
 
-  .leaflet-control-zoom a {
-    background-color: #fff;
-    color: var(--text-dark);
-  }
+.leaflet-container {
+  border-radius: 0;
+  filter: grayscale(10%) brightness(0.95);
+}
 
-  .text-left{
-    text-align: left;
-  }
+.leaflet-control-zoom {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-  .p-0{
-    padding: 0 !important;
-  }
+.leaflet-control-zoom a {
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+.text-left{
+  text-align: left;
+}
+
+.p-0{
+  padding: 0 !important;
+}

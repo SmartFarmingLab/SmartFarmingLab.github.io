@@ -8,7 +8,7 @@
     "productShortName": "Saft",
     "description": "string",
     "category": "Saft",
-    "imageSrc": "https://smartfarminglab.github.io/data/flasche.jpg",
+    "imageSrc": "https://smartfarminglab.github.io/data/flasche_stock.jpg",
     "certificates": [
         {
             "id": "068f31bb-feaf-4e64-a013-5774c52d3e74",
