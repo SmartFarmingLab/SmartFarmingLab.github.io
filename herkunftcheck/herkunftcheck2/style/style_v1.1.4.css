@@ -140,7 +140,7 @@ body {
   font-weight: 600;
   margin: 0;
   color: var(--text-dark);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 500;
   max-width: 700px;
   line-height: 1.4;
@@ -431,7 +431,7 @@ padding-top: 20px;
   font-size: 16px;
   margin-top: 20px;
   z-index:1;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .circle-button {
@@ -458,7 +458,7 @@ padding-top: 20px;
   max-width: 700px;
   line-height: 1.4;
   /* justify-content: start; */
-  font-size: 18px;
+  font-size: 17px;
 }
 .info p{
   /* margin-bottom: 5px !important; */
@@ -505,6 +505,21 @@ h5.section-footer {
 text-decoration: none;
 color: inherit;}
 
-svg{
-  width: 100%;
+.info .label{
+  font-weight: 500;
+  display: flex;
+  gap: 5px;
+  /* justify-content: flex-start; */
+  align-items: center;
+  justify-items: center;
+  align-content: end;
+}
+
+.logo-icon{
+
+width: 14px;
+
+align-self: center;
+
+display: flex;
 }
