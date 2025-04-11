@@ -139,11 +139,13 @@ html, body {
   color: var(--text-dark);
 }
 
-.product-image-container{
-  height: 170px;
-  width:100%;
+.product-image-container {
+  height: 100%;
+  width: 100%;
   background-size: cover !important;
-  }
+  background-position: center center !important;
+}
+
   
 
 .info-card {

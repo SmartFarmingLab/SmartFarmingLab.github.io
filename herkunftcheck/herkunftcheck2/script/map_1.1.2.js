@@ -50,6 +50,7 @@ function InitializeMapAndData() {
             document.getElementById("best-before").textContent = new Date(data.bestBefore).toLocaleDateString();
             document.getElementById("company-name").textContent = data.productOwner.companyName;
             document.getElementById("product-brand").textContent = data.productOwner.companyName;
+            document.getElementById("product-description").textContent = data.description;
             //document.getElementById("product-image").src = data.imageSrc;
             //document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
             const container = document.getElementById("product-image-container");
@@ -70,25 +71,40 @@ function InitializeMapAndData() {
                 certificateContainer.appendChild(img);
             });
 
+
+            let ingredientsContainer = document.getElementById("ingredients");
+            ingredientsContainer.innerHTML = ",";
+
+            if (!data.ingredients || data.ingredients.length === 0) {
+                console.warn("No ingredients  found.");
+            } else {
+                data.ingredients.forEach((ingredient, index) => {
+                    ingredientsContainer.innerHTML += "," + ingredient.name + " " + ingredient.percentage + "%";
+                });
+
+                ingredientsContainer.innerHTML = ingredientsContainer.innerHTML.replace(",,","");
+            }
+
+
             if (!data.productBatchSteps || data.productBatchSteps.length === 0) {
                 console.warn("No product batch steps found.");
                 map.setView([51.1657, 10.4515], 6); // Fallback center
                 return;
             }
+            else {
 
+                const stepsList = document.getElementById("steps-list");
 
-            const stepsList = document.getElementById("steps-list");
+                // Clear existing list items (optional)
+                stepsList.innerHTML = "";
 
-            // Clear existing list items (optional)
-            stepsList.innerHTML = "";
-            
-            // Fill with new steps
-            data.productBatchSteps.forEach((step, index) => {
-              const li = document.createElement("li");
-              li.textContent = `${index + 1}. ${step.name}`;
-              stepsList.appendChild(li);
-            });
-            
+                // Fill with new steps
+                data.productBatchSteps.forEach((step, index) => {
+                    const li = document.createElement("li");
+                    li.textContent = `${index + 1}. ${step.name}`;
+                    stepsList.appendChild(li);
+                });
+            }
 
             // Clustergruppe initialisieren
             const markerClusterGroup = L.markerClusterGroup();
