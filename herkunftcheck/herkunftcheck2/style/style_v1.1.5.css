@@ -384,12 +384,12 @@ body {
 
 .project-card {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   border-radius: 24px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: normal;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   z-index:1;
 }
@@ -459,6 +459,7 @@ padding-top: 20px;
   line-height: 1.4;
   /* justify-content: start; */
   font-size: 17px;
+  height: auto !important;
 }
 .info p{
   /* margin-bottom: 5px !important; */
