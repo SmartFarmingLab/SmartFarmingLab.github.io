@@ -8,7 +8,7 @@
     "productShortName": "Saft",
     "description": "Der Saft wird regional in einer Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
     "category": "Saft",
-    "imageSrc": "https://smartfarminglab.github.io/data/flasche_stock.jpg",
+    "imageSrc": "https://smartfarminglab.github.io/data/flasche_stock.jpg",   
     "certificates": [
         {
             "id": "068f31bb-feaf-4e64-a013-5774c52d3e74",
@@ -35,7 +35,7 @@
     "productOwner": {
         "id": "2479b933-3fdc-40ac-a059-c6d183cbdb3d",
         "companyName": "SonntagsSAFT GmbH",
-        "imgSrc": "string",
+        "imgSrc": "https://www.sonntagssaft.de/images/Logo/SonntagsSaft_Logo-Claim_RGB.svg",
         "address": {
             "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
             "name": "Universität Leipzig",
