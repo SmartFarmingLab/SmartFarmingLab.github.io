@@ -52,8 +52,19 @@ function InitializeMapAndData() {
             document.getElementById("company-name").textContent = data.productOwner.companyName;
             document.getElementById("product-brand").textContent = data.productOwner.companyName;
             document.getElementById("product-description").textContent = data.description;
+          
             //document.getElementById("product-image").src = data.imageSrc;
             //document.getElementById("product-image").src = data.imageSrc !== "string" ? data.imageSrc : "https://via.placeholder.com/100";
+          
+            if(data.productOwner.imageSrc!="undefined"){
+ 
+                document.getElementById("company-logo").src = data.productOwner.imageSrc;
+          
+     
+            }
+              
+          
+          
             const container = document.getElementById("product-image-container");
             container.style.backgroundImage =
                 typeof data.imageSrc === "string"
@@ -117,7 +128,7 @@ function InitializeMapAndData() {
                         icon: L.divIcon({
                             className: 'custom-marker',
                             html: `<div></div>`,
-                            iconSize: [25, 25],
+                            iconSize: [35, 35],
                             popupAnchor: [0, -10]
                         })
                     }).on('click', function (e) {
@@ -228,7 +239,7 @@ function InitializeMapAndData() {
             if (bounds.isValid()) {
                 //map.fitBounds(bounds);
                 const zoom = map.getBoundsZoom(bounds);
-                map.setView(bounds.getCenter(), zoom - 1); // Zoom um 1 verringert
+                map.setView(bounds.getCenter(), zoom - 0.5); // Zoom um 1 verringert
 
             } else {
                 console.warn("No valid coordinates found.");

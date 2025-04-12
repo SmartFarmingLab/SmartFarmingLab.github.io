@@ -53,7 +53,7 @@ body {
   padding: 10px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  border: 1px solid #E2E1F1;
+  border: 1px solid #f5f5f5;
 }
 
 .copyright .logo {
@@ -68,7 +68,7 @@ body {
 }
 
 .copyright-title {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
 }
 
@@ -220,6 +220,20 @@ body {
   border-radius: 4px;
 }
 
+
+.company-logo{
+  width:50px !important;
+}
+
+.company-logo-col{
+  /* width: 50px; */
+  flex: 0;
+  justify-content: start;
+  align-items: center;
+  justify-items: center;
+  display: flex;
+}
+
 .leaflet-container {
   border-radius: 0;
   filter: grayscale(10%) brightness(0.95);
@@ -305,7 +319,8 @@ body {
   border-radius: 24px;
   padding: 20px;
   width: 250px;
-  height: 250px;
+  height: 100%x;
+  min-height: 250px;
   position: relative;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
@@ -542,3 +557,24 @@ align-self: center;
 display: flex;
 }
 
+.extra-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.extra-info.expanded {
+  max-height: 500px; /* oder genug für deinen Inhalt */
+}
+
+.hidden {
+  display: block;
+}
+.toggle-button{
+  max-height:100px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.expanded-container .toggle-button{
+  max-height: 0;
+}
