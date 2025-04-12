@@ -5,13 +5,8 @@ function InitializeMapAndData() {
 
     var map = L.map('map', { zoomControl: false });
 
-    /* L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
-         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-         subdomains: 'abcd',
-         maxZoom: 20
-     }).addTo(map);
-      */
 
+     /*
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB',
         subdomains: 'abcd',
@@ -24,6 +19,16 @@ function InitializeMapAndData() {
         subdomains: 'abcd',
         maxZoom: 20,
     }).addTo(map);
+ */mapbox://styles/kobers/cm9e2m79p00fx01r3ahud1s52mapbox://styles/kobers/cm9e2m79p00fx01r3ahud1s52
+
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/512/{z}/{x}/{y}@2x?access_token={accessToken}', {
+        id: 'kobers/cm9e2m79p00fx01r3ahud1s52',
+        accessToken: 'pk.eyJ1Ijoia29iZXJzIiwiYSI6ImNsNjUwNTIzZzAxbmMzYm5vZGsxaTF2OTEifQ.dsJnTEm6J2YYWTN1W7ZvYA',
+        tileSize: 512,
+        zoomOffset: -1,
+        attribution: '© <a href="https://www.mapbox.com/">Mapbox</a>'
+      }).addTo(map);
 
 
     // Create bounds object
