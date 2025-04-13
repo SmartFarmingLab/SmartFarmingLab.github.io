@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "HeFont";
+    src: url("https://db.onlinewebfonts.com/t/a231aa387e7fb896781f04805167556d.eot");
+    src: url("https://db.onlinewebfonts.com/t/a231aa387e7fb896781f04805167556d.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/a231aa387e7fb896781f04805167556d.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/a231aa387e7fb896781f04805167556d.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/a231aa387e7fb896781f04805167556d.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/a231aa387e7fb896781f04805167556d.svg#Moderat Extended")format("svg");
+}
+
+
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #f4f4f4;
+    color: #1F1D42;
+    font-family: "Fira Sans", sans-serif;
+    font-family: "Hind", system-ui;
+    font-family: "IBM Plex Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Boldonse", system-ui;
+    font-family: "Hind", system-ui;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "HeFont", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.highlight {
+    background-color: #d9ebd2;
+    background-color: #d6e5be;
+    border-radius: 2em;
+    padding: 0.1em 0.2em;
+}
+
+.logo {
+    width: 30px;
+}
+
+.copyright {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    height: 25px;
+    width: 100px;
+    z-index: 12000;
+    padding: 5px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-radius: ;
+    background: #e4eee3;
+    border: 1px solid #E2E1F1;
+}
+
+.copyright .logo {
+    width: 15px;
+}
+
+.copyright-container {
+    display: flex;
+    gap: 5px;
+}
+
+.copyright-title {
+    font-size: 10px;
+    font-weight: 700;
+}
