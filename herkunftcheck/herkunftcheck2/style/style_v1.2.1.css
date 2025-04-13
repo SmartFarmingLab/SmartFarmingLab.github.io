@@ -203,6 +203,12 @@ body {
   margin: 6px 0;
 }
 
+.info-card-border-radius-right-0{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+
+}
+
 .steps-list {
   list-style-type: none;
   padding: 0;
@@ -577,4 +583,19 @@ display: flex;
 }
 .expanded-container .toggle-button{
   max-height: 0;
+}
+
+
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
 }

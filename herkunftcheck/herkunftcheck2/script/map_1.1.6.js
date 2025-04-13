@@ -1,3 +1,5 @@
+const markers = [];
+
 function InitializeMapAndData() {
 
 
@@ -33,7 +35,7 @@ function InitializeMapAndData() {
 
     // Create bounds object
     var bounds = L.latLngBounds();
-
+   
     // Fetch and process product batch steps
     fetch("https://smartfarminglab.github.io/data/productpassport.json")
         .then(response => {
@@ -137,8 +139,25 @@ function InitializeMapAndData() {
                             popupAnchor: [0, -10]
                         })
                     }).on('click', function (e) {
-                        showSidebarWithStep(step);
-                    });//.addTo(map)
+
+                        markers.forEach(m => {
+                            const el = m.getElement();
+                            if (el) el.classList.remove('pulse');
+                        });
+                
+                        // Step 3: Add 'pulse' to clicked marker
+                        const el = marker.getElement();
+                        if (el) el.classList.add('pulse');
+
+                        showSidebarWithStep(e, step);
+                    });
+                    
+                    
+                    markers.push(marker);
+                    
+                    
+                    
+                    //.addTo(map)
                     //.bindPopup(`<b>${step.name}</b><br>${step.address.name}, ${step.address.city}`);
 
 
@@ -253,4 +272,12 @@ function InitializeMapAndData() {
         })
         .catch(error => console.error("Error loading data:", error));
 
+}
+
+
+function removePulse(){
+    markers.forEach(m => {
+        const el = m.getElement();
+        if (el) el.classList.remove('pulse');
+    });
 }

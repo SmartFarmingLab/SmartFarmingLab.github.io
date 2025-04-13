@@ -279,10 +279,10 @@
 
       <section class="projects">
         <div class="card-grid mt-2">
-          <div class="project-card light info">
+          <div class="w-100 info">
             <div class="row d-flex align-items-stretch">
-              <div class="col-6">
-
+              <div class="col-5 pt-4 pb-4 pe-0">
+                <div class="project-card light info info-card-border-radius-right-0">
                 <h4>Info</h4>
                 <div class="content">
 
@@ -319,8 +319,9 @@
                   </div>
                 </div>
               </div>
+              </div>
 
-              <div class="col-6">
+              <div class="col-7 ps-0">
                 <div id="product-step-image-container"
                   class="info-card p-0 m-0 w-100 product-image-container shadow-none"
                   style="background-image: url('https://smartfarminglab.github.io/data/flasche_stock.jpg');">
@@ -337,7 +338,7 @@
           </h2>
         </div>
 
-        <div class="card-grid mt-2" id="step-entries">
+        <div class="card-grid mt-4" id="step-entries">
 
         </div>
 
@@ -371,6 +372,12 @@
 
     function toggleStepSheet() {
       sheetStep.classList.toggle("open");
+
+
+        if(!sheetStep.classList.contains("open")){
+          removePulse();
+        }
+
     }
 
     /*  sheet.addEventListener("touchstart", e => {
@@ -408,7 +415,9 @@
 
 
 
-    function showSidebarWithStep(step) {
+    function showSidebarWithStep(e, step) {
+
+      console.log(e);
 
       sheetStep.classList.add("open");
 
@@ -443,14 +452,10 @@
 
 <div class="project-card green info" onclick="toogleStepEntry(${index + 1})" id="step-entry-${index + 1}-container">
   <div class="project-title">Eintrag ${index + 1}</div>
-  <div class="content">
-    
-    <div class="toggle-button" style="cursor:pointer;">Hier klicken für mehr Informationen</div>
-    
-    <div class="extra-info hidden" id="step-entry-${index + 1}">
-  
-
-    <div>
+          <div class="content">    
+          <div class="toggle-button" style="cursor:pointer;">Hier klicken für mehr Informationen</div>    
+          <div class="extra-info hidden" id="step-entry-${index + 1}">  
+          <div>
                          <div class="label">
                       <div class="logo-icon">
                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -463,7 +468,7 @@
 
                          <span>Beschreibung</span>
                     </div>
-                    <span>${entry.description || "-"}</span>
+                                        <span>${entry.description || "-"}</span>
 
                   
                
@@ -488,7 +493,11 @@
           entriesContainer.insertAdjacentHTML("beforeend", entryHtml);
         });
       } else {
-        entriesContainer.innerHTML = "<p>Keine Einträge vorhanden.</p>";
+        entriesContainer.innerHTML = ` <div class="project-card green">
+              <div class="project-title">Eintrag</div>
+              <p class="content">Keine Einträge vorhanden</p>
+
+            </div>`;
       }
 
     }
