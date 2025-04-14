@@ -35,7 +35,9 @@ h4 {
     font-family: "HeFont", sans-serif;
     font-optical-sizing: auto;
 }
-
+.cursor-pointer{
+    cursor: pointer !important;
+}
 .highlight {
     background-color: #d9ebd2;
     background-color: #d6e5be;

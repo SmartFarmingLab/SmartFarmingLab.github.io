@@ -19,6 +19,9 @@ body {
   background: var(--background-gray);
 }
 
+.cursor-pointer{
+  cursor: pointer !important;
+}
 
 .highlight {
   background-color: #d9ebd2;
@@ -39,8 +42,6 @@ body {
   width: 30px;
 }
 
-
-
 .copyright {
   display: flex;
   position: fixed;
@@ -56,8 +57,20 @@ body {
   border: 1px solid #f5f5f5;
 }
 
+.copyright:hover {
+ 
+  background: #3e793a;
+  color: #fff;
+ 
+}
+
+
 .copyright .logo {
   width: 15px;
+}
+
+.copyright:hover .logo {
+  filter: invert(1) brightness(2) grayscale(1) contrast(1.5);
 }
 
 .copyright-container {
