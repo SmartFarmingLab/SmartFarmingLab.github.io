@@ -1,0 +1,31 @@
+{
+  "id": "a7c4e2d1-5b8f-47e6-9a3c-0d4f2b1e8c73",
+  "farmId": "FARM001",
+  "name": "Sunrise Farm",
+  "owner": "Greta Bauer",
+  "location": {
+    "latitude": 52.5208,
+    "longitude": 13.4094
+  },
+  "field": {
+    "fieldId": "FIELD01",
+    "areaHectares": 2.3,
+    "currentCrop": {
+      "type": "Wheat",
+      "plantingDate": "2025-04-10",
+      "expectedHarvest": "2025-09-15"
+    }
+  },
+  "irrigationMethod": "Drip",
+  "lastSoilTest": {
+    "date": "2025-06-01",
+    "ph": 6.7,
+    "moisturePercent": 22
+  },
+  "equipment": {
+    "tractor": {
+      "id": "EQ-TRAC01",
+      "lastServiced": "2025-03-20"
+    }
+  }
+}

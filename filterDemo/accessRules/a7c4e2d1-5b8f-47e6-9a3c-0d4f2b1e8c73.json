@@ -1,0 +1,33 @@
+{
+  "objectId": "a7c4e2d1-5b8f-47e6-9a3c-0d4f2b1e8c73",
+  "objectEntityClass": "Farm",
+  "identityId": "3accdce3-d385-45e8-83cc-fe6776c828e2",
+  "objectProperties": {
+    "readProperties": [
+      "farmId",
+      "name",
+      "owner",
+      "location",
+      "field"
+    ],
+    "writeProperties": [
+      "irrigationMethod",
+      "lastSoilTest",
+      "equipment"
+    ],
+    "shareReadProperties": [
+      "farmId",
+      "name",
+      "owner",
+      "location",
+      "field",
+      "irrigationMethod",
+      "lastSoilTest"
+    ],
+    "shareWriteProperties": [
+      "irrigationMethod",
+      "lastSoilTest",
+      "equipment"
+    ]
+  }
+}

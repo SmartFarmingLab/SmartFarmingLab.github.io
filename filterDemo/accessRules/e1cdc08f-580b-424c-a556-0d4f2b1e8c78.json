@@ -1,0 +1,64 @@
+[
+  {
+    "objectId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d6",
+    "objectEntityClass": "ProductBatchStepEntry",
+    "identityId": "3accdce3-d385-45e8-83cc-fe6776c828e2",
+    "objectProperties": {
+      "readProperties": [
+        "productBatchStepId",
+        "date",
+        "previousStepEntryId",
+        "nextStepEntryId",
+        "amount",
+        "amountUnit"
+      ],
+      "writeProperties": [
+        "imageSrc",
+        "description",
+        "energyConsumption",
+        "co2Emission"
+      ],
+      "shareReadProperties": [
+        "productBatchStepId",
+        "date",
+        "amount",
+        "amountUnit"
+      ],
+      "shareWriteProperties": [
+        "description",
+        "imageSrc"
+      ]
+    }
+  },
+  {
+    "objectId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d9",
+    "objectEntityClass": "ProductBatchStepEntry",
+    "identityId": "3accdce3-d385-45e8-83cc-fe6776c828e2",
+    "objectProperties": {
+      "readProperties": [
+        "productBatchStepId",
+        "date",
+        "previousStepEntryId",
+        "nextStepEntryId",
+        "amount",
+        "amountUnit"
+      ],
+      "writeProperties": [
+        "imageSrc",
+        "description",
+        "energyConsumption",
+        "co2Emission"
+      ],
+      "shareReadProperties": [
+        "productBatchStepId",
+        "date",
+        "amount",
+        "amountUnit"
+      ],
+      "shareWriteProperties": [
+        "description",
+        "imageSrc"
+      ]
+    }
+  }
+]

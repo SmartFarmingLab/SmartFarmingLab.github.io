@@ -1,0 +1,29 @@
+{
+  "objectId": "3f1d8b7e-9c2a-4f53-8e2d-1b7a5c6d9f02",
+  "objectEntityClass": "Medicin",
+  "identityId": "3accdce3-d385-45e8-83cc-fe6776c828e2",
+  "objectProperties": {
+    "readProperties": [
+      "medicinId",
+      "name",
+      "form",
+      "strength"
+    ],
+    "writeProperties": [
+      "manufacturer",
+      "price",
+      "form"
+    ],
+    "shareReadProperties": [
+      "manufacturer",
+      "price",
+      "form",
+      "strength"
+    ],
+    "shareWriteProperties": [
+      "manufacturer",
+      "price",
+      "form"
+    ]
+  }
+}

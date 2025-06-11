@@ -1,0 +1,15 @@
+  {
+    "id": "3f1d8b7e-9c2a-4f53-8e2d-1b7a5c6d9f02",
+    "medicinId": "MED001",
+    "name": "Paracetamol",
+    "form": "Tablet",
+    "strength": "500 mg",
+    "manufacturer": "Acme Pharmaceuticals",
+    "price": 3.99,
+    "expiryDate": "2026-05-31",
+    "sideEffects": [
+      "Nausea",
+      "Rash",
+      "Headache"
+    ]
+  }

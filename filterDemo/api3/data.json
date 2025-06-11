@@ -1,0 +1,156 @@
+{
+    "id": "e1cdc08f-580b-424c-a556-0d4f2b1e8c78",
+    "productBatchId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
+    "productId": "f9b6f4d9-5e31-4ec9-93f5-c5e194feda50",
+    "regioDataId": "fea90862-69fa-46e9-84f4-0dad0f964849",
+    "productionDate": "2025-03-06T19:03:01.334",
+    "bestBefore": "2026-05-06T19:03:01.334",
+    "productName": "Apfel-Birnen-Saft",
+    "productShortName": "Saft",
+    "description": "Der Saft wird regional in einer Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
+    "category": "Saft",
+    "imageSrc": "https://smartfarminglab.github.io/data/flasche_stock.jpg",   
+    "certificates": [
+        {
+            "id": "068f31bb-feaf-4e64-a013-5774c52d3e74",
+            "name": "Fair Trade",
+            "description": "Fairtrade steht für fairen Handel, bessere Preise und menschenwürdige Arbeitsbedingungen.",
+            "link": "https://www.fairtrade.net/",
+            "imageSrc": "https://www.fairtrade.net/content/dam/fairtrade/fairtrade-germany/logos-und-siegel/Fairtrade%20Deutschland%20Logo_schwarz-grau.png"
+        },
+        {
+            "id": "63e5ce05-5607-4e83-9ace-6684c91f613b",
+            "name": "Bio",
+            "description": "Das Siegel ist ein bundeseinheitliches Zeichen für ökologisch erzeugte Produkte, die nach den Anforderungen der EU-Öko-Verordnung hergestellt werden.",
+            "link": "https://www.oekolandbau.de/bio-zertifizierung/bio-siegel/",
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Bio-Siegel-EG-%C3%96ko-VO-Deutschland.svg/1200px-Bio-Siegel-EG-%C3%96ko-VO-Deutschland.svg.png"
+        },
+        {
+            "id": "6ab28b06-c0f8-4c0a-9c8a-96e542fbaf86",
+            "name": "EU Organic",
+            "description": "",
+            "link": "https://euorganicproducts.eu/",
+            "imageSrc": "https://agriculture.ec.europa.eu/sites/default/files/styles/embed_medium/public/2019-06/eu-organic-logo-600x400_0.png?itok=SDmKtmW5"
+        }
+    ],
+    "productOwner": {
+        "id": "2479b933-3fdc-40ac-a059-c6d183cbdb3d",
+        "companyName": "SonntagsSAFT GmbH",
+        "imageSrc": "https://www.sonntagssaft.de/images/Logo/SonntagsSaft_Logo-Claim_RGB.svg",
+        "address": {
+            "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+            "name": "Universität Leipzig",
+            "street": "Grimmaische Str. 12",
+            "zip": "04109",
+            "city": "Leipzig",
+            "country": "Deutschland",
+            "latitude": 51.339334,
+            "longitude": 12.378398
+        }
+    },
+    "ingredients": [
+        {
+            "ingredientId": "ae57ed06-dd9a-47b9-bd8c-a15f379a2804",
+            "name": "Apfel",
+            "produced": "2025-03-09T09:47:02.96",
+            "processed": "2025-03-09T09:47:02.96",
+            "percentage": 70
+        },
+        {
+            "ingredientId": "ae57ed06-dd9a-47b9-bd8c-a15f379a2805",
+            "name": "Birne",
+            "produced": "2025-03-09T09:47:02.96",
+            "processed": "2025-03-09T09:47:02.96",
+            "percentage": 30
+        }
+    ],
+    "productBatchSteps": [
+        {
+            "id": "6f1284af-1f6c-4c7e-82f3-b01240e233a9",
+            "productBatchId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
+            "name": "Apfel Ernte",
+            "previousStepId": null,
+            "nextStepId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
+            "address": {
+                "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+                "name": "Apfelbäume",
+                "street": "Glashütter Str. 50",
+                "zip": "01744",
+                "city": "Dippoldiswalde",
+                "country": "Deutschland",
+                "latitude": 50.889817561217775,
+                "longitude": 13.707114509141743
+            },
+            "imageSrc": "https://smartfarminglab.github.io/data/example_harvesting.jpg",
+            "description": "Die Äpfel wurden am Standort 'Apfelbäume' in Dippoldiswalde von Hand geerntet. Dabei wurde auf eine schonende Behandlung der Früchte geachtet, um die Qualität für die Weiterverarbeitung sicherzustellen.",
+            "stepEntries": []
+        },
+        {
+            "id": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
+            "productBatchId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
+            "name": "Saftpressung",
+            "previousStepId": "6f1284af-1f6c-4c7e-82f3-b01240e233a9",
+            "nextStepId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
+            "address": {
+                "id": "0edbbc2c-588a-4df2-8b55-a6d2e12134e8",
+                "name": "SonntagsSAFT GmbH",
+                "street": "Kreischaer Straße 8a",
+                "zip": "01728",
+                "city": "Bannewitz",
+                "country": "Deutschland",
+                "latitude": 50.965019,
+                "longitude": 13.718952
+            },
+            "imageSrc": "https://smartfarminglab.github.io/data/example_pressing.jpg",
+            "description": "In der Saftmanufaktur 'SonntagsSAFT GmbH' in Bannewitz wurden die frisch geernteten Äpfel gewaschen, zerkleinert und gepresst. Der gewonnene Rohsaft wurde gefiltert und für die Abfüllung vorbereitet.",
+            "stepEntries": []
+        },
+        {
+            "id": "8c684ff8-6da0-4763-9308-fd93ba986e60",
+            "productBatchId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
+            "name": "Abfüllung",
+            "previousStepId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
+            "nextStepId": null,
+           "address": {
+                "id": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+                "name": "Universität Leipzig",
+                "street": "Grimmaische Str. 12",
+                "zip": "04109",
+                "city": "Leipzig",
+                "country": "Deutschland",
+                "latitude": 51.339334,
+                "longitude": 12.378398
+            },
+            "imageSrc": "https://smartfarminglab.github.io/data/example_filling.jpg",
+            "description": "An der Universität Leipzig fand die Abfüllung des Apfelsafts in Glasflaschen statt. Zunächst wurden die Flaschen gereinigt, bevor der Saft unter hygienischen Bedingungen abgefüllt und versiegelt wurde.",
+            "stepEntries": [
+                {
+                    "id": "10481447-4cc9-46b5-b3dc-5a86ef24a4d6",
+                    "productBatchStepId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
+                    "date": "2025-03-08T20:57:35.582",
+                    "previousStepEntryId": null,
+                    "nextStepEntryId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d9",
+                    "imageSrc": "string",
+                    "amount": "100",
+                    "amountUnit": "Stück",
+                    "description": "Flaschen spülen",
+                    "energyConsumption": "3kw/h",
+                    "co2Emission": "undefined"
+                },
+                {
+                    "id": "10481447-4cc9-46b5-b3dc-5a86ef24a4d9",
+                    "productBatchStepId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
+                    "date": "2025-03-10T20:57:35.582",
+                    "previousStepEntryId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d6",
+                    "nextStepEntryId": null,
+                    "imageSrc": "string",
+                    "amount": "100",
+                    "amountUnit": "Stück",
+                    "description": "Flaschen abfüllen",
+                    "energyConsumption": "1kw/h",
+                    "co2Emission": "undefined"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,172 @@
+{
+  "access_rules": [
+    {
+      "objectId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
+      "objectEntityClass": "ProductPassport",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": [
+          "productName",
+          "productShortName",
+          "description",
+          "category",
+          "imageSrc",
+          "productionDate",
+          "bestBefore",
+          "certificates",
+          "productOwner",
+          "ingredients",
+          "productBatchSteps"
+        ],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "068f31bb-feaf-4e64-a013-5774c52d3e74",
+      "objectEntityClass": "Certificate",
+      "path": "certificates",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "link", "imageSrc"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "63e5ce05-5607-4e83-9ace-6684c91f613b",
+      "objectEntityClass": "Certificate",
+      "path": "certificates",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "description"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "6ab28b06-c0f8-4c0a-9c8a-96e542fbaf86",
+      "objectEntityClass": "Certificate",
+      "path": "certificates",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "link"],
+        "writeProperties": ["description"],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "ae57ed06-dd9a-47b9-bd8c-a15f379a2804",
+      "objectEntityClass": "Ingredient",
+      "path": "ingredients",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "percentage"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "ae57ed06-dd9a-47b9-bd8c-a15f379a2805",
+      "objectEntityClass": "Ingredient",
+      "path": "ingredients",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "percentage"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "6f1284af-1f6c-4c7e-82f3-b01240e233a9",
+      "objectEntityClass": "ProductBatchStep",
+      "path": "productBatchSteps",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "description", "imageSrc"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "5a4fefe6-0544-4762-828f-5ab5ee6e741e",
+      "objectEntityClass": "ProductBatchStep",
+      "path": "productBatchSteps",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "description", "imageSrc"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "8c684ff8-6da0-4763-9308-fd93ba986e60",
+      "objectEntityClass": "ProductBatchStep",
+      "path": "productBatchSteps",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "description", "imageSrc"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d6",
+      "objectEntityClass": "StepEntry",
+      "path": "productBatchSteps[2].stepEntries",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["date", "description", "amount", "amountUnit"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "10481447-4cc9-46b5-b3dc-5a86ef24a4d9",
+      "objectEntityClass": "StepEntry",
+      "path": "productBatchSteps[2].stepEntries",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["date", "description", "amount", "amountUnit"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+  
+    {
+      "objectId": "2479b933-3fdc-40ac-a059-c6d183cbdb3d",
+      "objectEntityClass": "ProductOwner",
+      "path": "productOwner",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["companyName", "imageSrc"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    },
+    {
+      "objectId": "108ffdb8-657e-4ca7-9045-5dc07b24b8bf",
+      "objectEntityClass": "Address",
+      "path": "productOwner.address",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": ["name", "street", "zip", "city", "country"],
+        "writeProperties": [],
+        "shareReadProperties": [],
+        "shareWriteProperties": []
+      }
+    }
+  ]
+}

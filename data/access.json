@@ -1,0 +1,37 @@
+{
+  "access_rules": [
+    {
+      "objectId": "e1cdc08f-580b-424c-a556-0701dff57bbb",
+      "objectEntityClass": "ProductPassport",
+      "identityId": "f7e1f51c-1dd6-40d1-8269-4055b99f6b2b",
+      "identityProperties": {
+        "readProperties": [
+          "productName",
+          "productShortName",
+          "description",
+          "category",
+          "imageSrc",
+          "productionDate",
+          "bestBefore",
+          "certificates",
+          "productOwner",
+          "ingredients",
+          "productBatchSteps"
+        ],
+        "writeProperties": [
+          "description",
+          "category",
+          "certificates"
+        ],
+        "shareReadProperties": [
+          "productName",
+          "certificates",
+          "ingredients"
+        ],
+        "shareWriteProperties": [
+          "description"
+        ]
+      }
+    }
+  ]
+}
