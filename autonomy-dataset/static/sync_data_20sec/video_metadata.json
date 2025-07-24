@@ -1,0 +1,49 @@
+{
+  "duration_seconds": 20.0,
+  "min_time": 0.0,
+  "max_time": 20.0,
+  "cameras": {
+    "front": {
+      "video_file": "front_real.mp4",
+      "frame_count": 420,
+      "fps": 21.0,
+      "first_time": 0.0,
+      "last_time": 19.971037096
+    },
+    "rear_left": {
+      "video_file": "rear_left_real.mp4",
+      "frame_count": 472,
+      "fps": 23.6,
+      "first_time": 0.137938618,
+      "last_time": 19.972458774
+    },
+    "rear_mid": {
+      "video_file": "rear_mid_real.mp4",
+      "frame_count": 465,
+      "fps": 23.25,
+      "first_time": 0.036907441,
+      "last_time": 19.991773879
+    },
+    "rear_right": {
+      "video_file": "rear_right_real.mp4",
+      "frame_count": 475,
+      "fps": 23.75,
+      "first_time": 0.069335303,
+      "last_time": 19.982328729
+    },
+    "side_left": {
+      "video_file": "side_left_real.mp4",
+      "frame_count": 463,
+      "fps": 23.15,
+      "first_time": 0.061151783,
+      "last_time": 19.986301632
+    },
+    "side_right": {
+      "video_file": "side_right_real.mp4",
+      "frame_count": 457,
+      "fps": 22.85,
+      "first_time": 0.064732489,
+      "last_time": 19.977554761
+    }
+  }
+}
