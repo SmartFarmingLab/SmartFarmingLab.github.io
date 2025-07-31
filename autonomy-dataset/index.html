@@ -109,12 +109,18 @@
         <div class="content has-text-justified">
           <div class="columns">
             <div class="column">
-              <h4>Sensors</h4>
+              <h4>Key Components</h4>
               <ul>
-                <li>6 RGB Cameras (multiple viewpoints)</li>
-                <li>Ouster LiDAR (3D point clouds)</li>
-                <li>Novatel OEM7 GPS/INS</li>
-                <li>High-frequency IMU</li>
+                <li>ZED 2i Stereo Camera</li>
+                <li>5x ArkVision Basic+ Mini 120° RGB Cameras</li>
+                <li>Ouster OS0 LiDAR (3D point clouds)</li>
+                <li>Blickfeld Qb2 LiDAR (3D point clouds)</li>
+                <li>Novatel Smart7/Smart2 GNSS/INS/RTK/NTRIP</li>
+                <li>NVidia Jetson Orin AGX</li>
+                <li>Teltonica RUTX50 Smart7/Smart2 GNSS/INS/RTK/NTRIP</li>
+                <li>MittX Roof Bar (Customized)</li>
+                <li>10x Hella LED Black Magic Cube 3.2" 3000 lm</li>
+                <li>U</li>
               </ul>
             </div>
             <div class="column">
@@ -138,12 +144,10 @@
     <!-- Camera Views -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Multi-Camera System</h2>
+        <h2 class="title is-3">360° Multi Camera System</h2>
         <div class="content has-text-justified">
           <p>
-            Our agricultural vehicle is equipped with 6 cameras providing comprehensive 360° coverage
-            for robust safe perception in farming environments. All cameras are synchronized. 
-            Below they are displayed in a single composite video view extracted from the rosbag data.
+            Our agricultural vehicle is equipped with five monocular cameras and one front-facing stereo camera, providing comprehensive 360° coverage of the surroundings. Below is a composite video view, extracted from a rosbag recording, showcasing all camera perspectives.
           </p>
         </div>
 
@@ -170,11 +174,10 @@
     <!-- LiDAR Registration Visualization -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Precision LIDAR Point Clouds</h2>
+        <h2 class="title is-3">LiDAR Point Clouds</h2>
         <div class="content has-text-justified">
           <p>
-            The Ouster OS1 LiDAR (128 scanlines) is mounted <strong>60° downward-facing at 2m height</strong>. This enables a high-resolution 3D point cloud of the environment that can be used for precise mapping and localization, 
-            for object detection and classification and as a deterministic safety sensor. Below is a point cloud of the farmyard environment as seen by the LiDAR.
+            The Ouster OS0 LiDAR (128 scanlines) is mounted forward-facing with a 45° downward tilt at a height of 3 meters. This configuration captures a high-resolution 3D point cloud of the environment, supporting precise mapping and localization, object detection, and use as a deterministic safety sensor. Below is a registered point cloud of the farmyard environment as captured by the LiDAR.
           </p>
         </div>
 
@@ -185,7 +188,7 @@
                  style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
           </figure>
           <p class="has-text-grey mt-2">
-            <em>LiDAR registration showing the farmyard of the Lehr- und Forschungsgut Oberholz.</em>
+            <em>LiDAR registration showing the farmyard of the research farm of the Leipzig Universtiy (Lehr- und Forschungsgut Oberholz).</em>
           </p>
         </div>
       </div>
