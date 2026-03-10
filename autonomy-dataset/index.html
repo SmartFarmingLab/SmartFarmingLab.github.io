@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<section class="hero">
+<section class="hero dataset-hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -47,6 +47,11 @@
             <span class="author-block">Leipzig University</span>
           </div>
 
+          <p class="hero-summary">
+            A multi-modal agricultural autonomy dataset designed for perception, mapping, navigation,
+            and safety research in real farm environments.
+          </p>
+
           <!-- Logos -->
           <div class="columns is-centered mt-2">
             <div class="column is-narrow">
@@ -57,13 +62,20 @@
             </div>
           </div>
 
+          <div class="hero-highlights">
+            <span class="hero-pill">25 TB and growing</span>
+            <span class="hero-pill">Multi-camera + stereo vision</span>
+            <span class="hero-pill">LiDAR and GNSS/INS</span>
+            <span class="hero-pill">Field robotics research</span>
+          </div>
+
           <!-- Agricultural Vehicle Image -->
           <div class="columns is-centered mt-4">
             <div class="column is-three-quarters">
-              <figure class="image">
+              <figure class="image hero-media-card">
                 <img src="./static/images/dachtreager.jpg" 
                      alt="Fendt 724 Vario Tractor with sensor setup" 
-                     style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                     style="width: 100%; height: auto;">
               </figure>
               <p class="has-text-grey mt-2 has-text-centered">
                 <em>Fendt 724 Vario Tractor equipped with multi-modal sensor setup.</em>
@@ -75,7 +87,7 @@
     </div>
   </div>
 </section>
-<section class="section" style="padding-top: 1.5rem;">
+<section class="section soft-section" style="padding-top: 1.5rem;">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -101,8 +113,9 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Dataset Overview</h2>
         <div class="content has-text-justified">
-          <div class="columns">
+          <div class="columns is-variable is-6">
             <div class="column">
+              <div class="info-panel">
               <h4>Key Components</h4>
               <ul>
                 <li>ZED 2i Stereo Camera</li>
@@ -115,14 +128,17 @@
                 <li>MittX Roof Bar (Customized)</li>
                 <li>10x Hella LED Black Magic Cube 3.2" 3000 lm</li>
               </ul>
+              </div>
             </div>
             <div class="column">
+              <div class="info-panel">
               <h4>Data Characteristics</h4>
               <ul>
                 <li>Location: Research Farm of the Leipzig University (Lehr- und Forschungsgut Oberholz)</li>
                 <li>Seasons: Currently Spring and Summer; will be expanded to include multiple growing seasons.</li>
                 <li>Tasks: plowing, tilling, cultivating, mowing; will be expanded to include planting, harvesting, fertilizing and more.</li>
               </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -137,10 +153,10 @@
     <!-- Camera Views -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">360° Multi Camera System</h2>
+        <h2 class="title is-3">Data Collection from Real Fieldwork</h2>
         <div class="content has-text-justified">
           <p>
-            Our agricultural vehicle is equipped with five monocular cameras and one front-facing stereo camera, providing comprehensive 360° coverage of the surroundings. Below is a composite video view, extracted from a rosbag recording, showcasing all camera perspectives.
+            In collaboration with the Lehr- und Forschungsgut Oberholz of Leipzig University, we equipped a Fendt 724 tractor with a multi-modal sensor setup to record daily field operations under real working conditions. The video below shows an example scene from our synchronized recording pipeline and illustrates the rich visual context captured for agricultural autonomy research.
           </p>
         </div>
 
@@ -151,15 +167,106 @@
       </div>
     </div>
 
-    <!-- GPS Trajectory -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">GNSS Trajectory</h2>
+        <h2 class="title is-3">Perception Demonstrators</h2>
         <div class="content has-text-justified">
+          <p>
+            Beyond raw sensor collection, the dataset supports perception-oriented autonomy tasks such as free-space reasoning and human-aware scene understanding in agricultural environments.
+          </p>
         </div>
 
-        <div id="gps-live-plot" style="width: 100%; height: 400px; border: 1px solid #ccc;">
-          <!-- Complete GPS trajectory map -->
+        <div class="columns is-variable is-6 is-multiline">
+          <div class="column is-6-desktop">
+            <div class="showcase-card">
+              <div class="showcase-image-wrapper">
+                <img src="./static/images/free_space_detection.png"
+                     alt="Traversability estimation visualization"
+                     class="showcase-image">
+              </div>
+              <div class="showcase-content">
+                <p class="showcase-eyebrow">Traversability Estimation</p>
+                <h3 class="title is-4">Free-space reasoning for safe navigation</h3>
+                <p>
+                  Traversability estimation highlights drivable free space in front of the vehicle and provides a strong basis for route planning, control, and safety monitoring in unstructured field conditions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6-desktop">
+            <div class="showcase-card">
+              <div class="showcase-image-wrapper">
+                <img src="./static/sync_data_20sec/videos/people_detection.png"
+                     alt="People detection visualization"
+                     class="showcase-image">
+              </div>
+              <div class="showcase-content">
+                <p class="showcase-eyebrow">People Detection</p>
+                <h3 class="title is-4">Human-aware perception in the field</h3>
+                <p>
+                  People detection supports safety-critical autonomy by identifying nearby workers and bystanders in challenging outdoor scenes, enabling risk-aware operation around humans and machinery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Windrow Detection Paper</h2>
+        <div class="columns is-variable is-6 is-vcentered">
+          <div class="column is-6-desktop">
+            <div class="showcase-card">
+              <div class="showcase-image-wrapper">
+                <video class="showcase-image"
+                       controls
+                       muted
+                       loop
+                       playsinline
+                       preload="metadata">
+                  <source src="./static/sync_data_20sec/videos/windrow_filter.webm" type="video/webm">
+                  Your browser does not support video playback.
+                </video>
+              </div>
+              <div class="showcase-content">
+                <p class="showcase-eyebrow">Publication Demo</p>
+                <h3 class="title is-4">Real-time windrow detection for automated following</h3>
+                <p>
+                  The demonstrator visualizes the centerline extraction pipeline used for automated windrow following from onboard stereo and LiDAR measurements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6-desktop">
+            <div class="info-panel paper-panel">
+              <p class="showcase-eyebrow">Paper</p>
+              <h3 class="title is-4">Real-Time Windrow Detection from Onboard Tractor Sensors for Automated Following</h3>
+              <p>
+                This paper presents a real-world multi-modal dataset for windrow-following research, recorded during baling operations with tractor-mounted stereo vision, LiDAR, and GNSS sensors. Based on this dataset, the work introduces a real-time centroid-based detection pipeline running at more than 20 Hz on a Jetson AGX Orin and shows strong agreement between stereo and LiDAR measurements in the key 4-10 m guidance range.
+              </p>
+              <div class="paper-actions">
+                <a class="button is-link is-medium"
+                   href="./static/pdf/Gunreben_Realtime_Windrow_Detection_GIL_2026.pdf"
+                   target="_blank"
+                   rel="noopener">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Download Paper</span>
+                </a>
+              </div>
+              <div class="citation-block">
+                <strong>Citation</strong>
+                <p>
+                  L. Gunreben, N. Heider, S. Z&uuml;rner, M. Schieck, and B. Franczyk, "Real-time windrow detection from onboard tractor sensors for automated following," in 46. GIL-Jahrestagung, Gesellschaft f&uuml;r Informatik e.V., 2026, in press.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -175,13 +282,13 @@
         </div>
 
         <div class="has-text-centered">
-          <figure class="image">
+          <figure class="image media-frame">
             <img src="./static/images/lidar_registration.png" 
                  alt="LiDAR-Camera Registration Visualization" 
-                 style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+                 style="max-width: 100%; height: auto;">
           </figure>
           <p class="has-text-grey mt-2">
-            <em>LiDAR registration showing the farmyard of the research farm of the Leipzig Universtiy (Lehr- und Forschungsgut Oberholz).</em>
+            <em>LiDAR registration showing the farmyard of the research farm of Leipzig University (Lehr- und Forschungsgut Oberholz).</em>
           </p>
         </div>
       </div>
@@ -193,7 +300,7 @@
   <div class="column is-full-width">
     <h2 class="title is-3" style="margin-left: 3rem;">Funded by</h2>
     <div class="has-text-centered">
-      <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+      <div class="funding-strip">
         <img src="./static/images/bmftr_logo.svg" 
              alt="BMFtR Logo" 
              style="height: 80px; border: 0px solid #ccc;">
@@ -205,6 +312,9 @@
              style="height: 80px; border: 0px solid #ccc;">
         <img src="./static/images/rubin_logo.jpg" 
              alt="Rubin Logo" 
+             style="height: 80px; border: 0px solid #ccc;">
+        <img src="./static/images/nvidia_logo.png" 
+             alt="NVIDIA Research Grant Logo" 
              style="height: 80px; border: 0px solid #ccc;">
       </div>
     </div>

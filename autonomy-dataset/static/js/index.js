@@ -98,16 +98,17 @@ function loadSynchronizedCameraVideos() {
 }
 
 function createDirectVideoGrid() {
-    console.log('🎯 Creating single composite video...');
+    console.log('🎯 Creating main demonstrator video...');
     
     const cameraGrid = $('#camera-grid');
     const dataPath = './static/sync_data_20sec';
     
     cameraGrid.empty(); // Clear any existing content
     
-    // Single composite video with all 6 camera views
-    const videoSrc = `${dataPath}/videos/multicamera_composite.mp4`;
-    console.log(`🎥 Creating composite video: ${videoSrc}`);
+    // Main demonstrator video
+    const videoSrc = `${dataPath}/videos/main_video.mp4`;
+    const posterSrc = './static/images/poster_image_main_video.png';
+    console.log(`🎥 Creating demonstrator video: ${videoSrc}`);
     
     const compositeVideoElement = `
         <div class="column is-full">
@@ -115,8 +116,9 @@ function createDirectVideoGrid() {
                 <div style="position: relative; background: #000; width: 100%; max-width: 1920px; margin: 0 auto;">
                     <video id="sync-camera-composite" 
                            src="${videoSrc}"
+                           poster="${posterSrc}"
                            style="width: 100%; height: auto; object-fit: contain;"
-                           muted loop preload="metadata" controls>
+                           muted loop preload="none" playsinline controls>
                         Your browser does not support video playback.
                     </video>
 
@@ -127,7 +129,7 @@ function createDirectVideoGrid() {
     
     cameraGrid.append(compositeVideoElement);
     
-    console.log('✅ Composite video created - all cameras in sync!');
+    console.log('✅ Demonstrator video created!');
 }
 
 function createSynchronizedCameraGrid(videoMetadata) {
