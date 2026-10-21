@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LOAM | Leipzig Offroad Agricultural Machinery Initiative</title>
+  <title>Agricultural Robotics | Smart Farming Lab &middot; Leipzig University</title>
   <meta name="description"
-        content="LOAM, the Leipzig Offroad Agricultural Machinery Initiative: datasets, perception and simulation for autonomous agricultural machinery from the Smart Farming Lab, Leipzig University.">
-  <meta name="keywords" content="LOAM, LOAM-D, Agriculture, Autonomous Driving, Dataset, Perception, Tractor, Simulation, Smart Farming">
+        content="Agricultural robotics at the Smart Farming Lab, Leipzig University: from heavy agricultural machinery and drones to robotic dogs, from simulation to real-world deployment.">
+  <meta name="keywords" content="Agricultural Robotics, Smart Farming, Leipzig University, Autonomous Tractor, Perception, Dataset, Simulation, LOAM-D">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +19,14 @@
 
 <header class="site-header is-overlay">
   <div class="container header-inner">
-    <a class="brand" href="index.html">LOAM <small>Leipzig University</small></a>
+    <a class="brand" href="index.html">Agricultural Robotics <small>Smart Farming Lab &middot; Leipzig University</small></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
     <ul class="nav-menu">
       <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
       <li class="nav-item">
         <a class="nav-link" href="research.html">Research <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown">
+          <li><a href="research.html#recordings"><span>Raw Recordings</span><small>60 h of multi-modal field and farmyard data</small></a></li>
           <li><a href="research.html#wacv"><span>LOAM-D &middot; WACV 2027</span><small>Agricultural semantic segmentation dataset</small></a></li>
           <li><a href="research.html#windrow"><span>Windrow Detection &middot; GIL 2026</span><small>Real-time detection for automated following</small></a></li>
         </ul>
@@ -43,48 +44,36 @@
   </div>
 </header>
 
-<section class="hero">
-  <video class="hero-video"
-         src="./static/sync_data_20sec/videos/presentation_v5_bg.mp4"
-         poster="./static/images/poster_hero.jpg"
-         autoplay muted loop playsinline preload="auto"
-         aria-hidden="true"></video>
+<!-- Scroll-driven hero: the video advances as you scroll (see site.js) -->
+<section class="scroll-hero">
+  <div class="hero scroll-hero-sticky">
+    <video class="hero-video"
+           data-scroll-video
+           src="./static/sync_data_20sec/videos/hero_scroll.mp4"
+           poster="./static/images/poster_hero.jpg"
+           muted playsinline preload="auto"
+           aria-hidden="true"></video>
 
-  <div class="container hero-content">
-    <a class="badge badge-light" href="research.html#wacv">
-      <span class="badge-tag">New</span>
-      LOAM-D accepted at WACV 2027
-    </a>
-    <h1 class="hero-title">LOAM</h1>
-    <p class="hero-subtitle"><b>L</b>eipzig <b>O</b>ffroad <b>A</b>gricultural <b>M</b>achinery Initiative</p>
-    <p class="hero-lead">
-      Datasets, perception and simulation for autonomous agricultural machinery &ndash;
-      developed and validated on a series-production tractor during real farm work.
-    </p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="research.html">
-        <i class="fas fa-flask"></i> Research
+    <div class="container hero-content" data-scroll-fade>
+      <a class="badge badge-light" href="research.html#wacv">
+        <span class="badge-tag">New</span>
+        LOAM-D accepted at WACV 2027
       </a>
-      <a class="btn btn-ghost" href="industry.html">
-        <i class="fas fa-industry"></i> Industry
-      </a>
-      <button class="btn btn-ghost" type="button" data-open-video>
-        <i class="fas fa-play"></i> Watch the video
-      </button>
+      <h1 class="hero-title">Agricultural Robotics</h1>
+      <p class="hero-subtitle">Smart Farming Lab</p>
+      <p class="hero-org">Leipzig University</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="research.html">
+          <i class="fas fa-flask"></i> Research
+        </a>
+        <a class="btn btn-ghost" href="industry.html">
+          <i class="fas fa-industry"></i> Industry
+        </a>
+      </div>
     </div>
-  </div>
-  <a class="hero-scroll" href="#overview" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
-</section>
-
-<section class="section" id="overview">
-  <div class="container">
-    <div class="stats">
-      <div class="stat"><b>60 h</b><span>field recordings (40 TB)</span></div>
-      <div class="stat"><b>19 h</b><span>farmyard recordings (13 TB)</span></div>
-      <div class="stat"><b>1,512</b><span>human-annotated images</span></div>
-      <div class="stat"><b>121</b><span>GOOSE-compatible classes</span></div>
-      <div class="stat"><b>360&deg;</b><span>7 cameras, 2 LiDARs, RTK-GNSS/INS</span></div>
-      <div class="stat"><b>&gt;20 Hz</b><span>onboard perception on Jetson AGX Orin</span></div>
+    <div class="scroll-hint" data-scroll-hint>
+      Scroll
+      <i class="fas fa-chevron-down"></i>
     </div>
   </div>
 </section>
@@ -92,18 +81,47 @@
 <section class="section section-dark">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">See LOAM in action</span>
-      <h2>Recording, perception and integration in 90 seconds</h2>
+      <span class="eyebrow">See it in action</span>
+      <h2>From sensor setup to integrated perception</h2>
       <p>
-        From the sensor setup and recorded scenarios to semantic segmentation, semantic LiDAR, people detection and
+        Our sensor-equipped tractor during real field work: semantic segmentation, semantic LiDAR, people detection and
         integrated bird's-eye perception.
       </p>
     </div>
     <figure class="media">
-      <video src="./static/sync_data_20sec/videos/presentation_v5.mp4"
+      <video src="./static/sync_data_20sec/videos/presentation_v5_main.mp4"
              poster="./static/images/poster_presentation_v5.jpg"
-             controls muted playsinline preload="none"></video>
+             data-autoplay-in-view
+             controls muted loop playsinline preload="metadata"></video>
     </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">About us</span>
+      <h2>Agricultural robotics at Leipzig University</h2>
+      <p>
+        As the Smart Farming Lab at Leipzig University, we work on many aspects of agricultural robotics &ndash;
+        from heavy agricultural machinery and drones to robotic dogs.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="statement">
+        <span class="statement-from">From simulation</span>
+        <span class="statement-to">to real-world deployment</span>
+      </div>
+      <div class="statement">
+        <span class="statement-from">From research</span>
+        <span class="statement-to">to real-world applications</span>
+      </div>
+      <div class="statement">
+        <span class="statement-from">From regional</span>
+        <span class="statement-to">to international</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -112,16 +130,12 @@
     <div class="section-head">
       <span class="eyebrow">What we do</span>
       <h2>From real field data to deployable autonomy</h2>
-      <p>
-        Agricultural machines work in conditions that urban and off-road datasets do not cover: implements in view,
-        changing soil states, dust, headlands and cluttered farmyards. LOAM records, annotates and simulates exactly these situations.
-      </p>
     </div>
     <div class="grid grid-3">
       <a class="card card-link" href="research.html">
         <span class="icon-box"><i class="fas fa-database"></i></span>
         <h3>Datasets &amp; Research</h3>
-        <p>LOAM-D, the first large-scale semantic segmentation dataset for tractors in farmyards and fields, plus peer-reviewed perception methods.</p>
+        <p>60 h of raw multi-modal recordings, the LOAM-D segmentation dataset and peer-reviewed perception methods.</p>
         <span class="more">Research <i class="fas fa-arrow-right"></i></span>
       </a>
       <a class="card card-link" href="industry.html#perception">
@@ -173,8 +187,8 @@
   <div class="container">
     <div class="cta">
       <div>
-        <h2>Building autonomous agricultural machinery?</h2>
-        <p>Let's talk about benchmarking, joint data collection or co-developing perception functions.</p>
+        <h2>Working on agricultural robotics?</h2>
+        <p>Let's talk about research collaborations, joint data collection or co-developing perception functions.</p>
       </div>
       <a class="btn btn-primary" href="contact.html"><i class="fas fa-envelope"></i> Get in touch</a>
     </div>
@@ -207,13 +221,6 @@
     </div>
   </div>
 </footer>
-
-<div class="modal" role="dialog" aria-label="LOAM presentation video">
-  <button class="modal-close" type="button" aria-label="Close video"><i class="fas fa-times"></i></button>
-  <video src="./static/sync_data_20sec/videos/presentation_v5.mp4"
-         poster="./static/images/poster_presentation_v5.jpg"
-         controls playsinline preload="none"></video>
-</div>
 
 </body>
 </html>

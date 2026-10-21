@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research | LOAM</title>
+  <title>Research | Agricultural Robotics &middot; Smart Farming Lab</title>
   <meta name="description"
-        content="LOAM research: the LOAM-D agricultural semantic segmentation dataset (WACV 2027) and real-time windrow detection from onboard tractor sensors (GIL 2026).">
+        content="Agricultural robotics research at the Smart Farming Lab, Leipzig University: raw multi-modal recordings, the LOAM-D agricultural semantic segmentation dataset (WACV 2027) and real-time windrow detection from onboard tractor sensors (GIL 2026).">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,13 +18,14 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="index.html">LOAM <small>Leipzig University</small></a>
+    <a class="brand" href="index.html">Agricultural Robotics <small>Smart Farming Lab &middot; Leipzig University</small></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
     <ul class="nav-menu">
       <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
       <li class="nav-item">
         <a class="nav-link" href="research.html" aria-current="page">Research <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown">
+          <li><a href="research.html#recordings"><span>Raw Recordings</span><small>60 h of multi-modal field and farmyard data</small></a></li>
           <li><a href="research.html#wacv"><span>LOAM-D &middot; WACV 2027</span><small>Agricultural semantic segmentation dataset</small></a></li>
           <li><a href="research.html#windrow"><span>Windrow Detection &middot; GIL 2026</span><small>Real-time detection for automated following</small></a></li>
         </ul>
@@ -50,15 +51,43 @@
       Openly available data for agricultural autonomy &ndash; especially for large machinery like tractors &ndash; is still scarce.
       We publish datasets, ontologies and baselines recorded during real farm work.
     </p>
-    <nav class="subnav" aria-label="Publications on this page">
+    <nav class="subnav" aria-label="Sections on this page">
+      <a href="#recordings">Raw Recordings</a>
       <a href="#wacv">LOAM-D &middot; WACV 2027</a>
       <a href="#windrow">Windrow Detection &middot; GIL 2026</a>
     </nav>
   </div>
 </section>
 
+<!-- Raw recordings -->
+<section class="section" id="recordings">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Raw Recordings</span>
+      <h2>60 hours of real farm work, recorded continuously</h2>
+      <p>
+        Our Fendt 724 Vario records raw multi-modal sensor data during routine operations on the research farm of
+        Leipzig University (Lehr- und Forschungsgut Oberholz): plowing, tilling, cultivating, mowing and baling.
+        These recordings are the basis for all datasets and methods below.
+      </p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>60 h</b><span>field recordings (40 TB)</span></div>
+      <div class="stat"><b>19 h</b><span>farmyard recordings (13 TB)</span></div>
+      <div class="stat"><b>7</b><span>cameras with 360&deg; coverage</span></div>
+      <div class="stat"><b>2</b><span>LiDARs (Ouster OS0-128, Blickfeld Qb2)</span></div>
+      <div class="stat"><b>RTK</b><span>GNSS/INS (NovAtel Smart7/Smart2)</span></div>
+      <div class="stat"><b>&gt;20 Hz</b><span>onboard perception on Jetson AGX Orin</span></div>
+    </div>
+    <p class="note">
+      Currently spring and summer operations; we are expanding to further seasons, crops, growth stages and tasks such as
+      planting, harvesting and fertilizing. Details on the sensor kit: <a href="industry.html#perception">Full Perception Integration</a>.
+    </p>
+  </div>
+</section>
+
 <!-- LOAM-D (WACV 2027) -->
-<section class="section" id="wacv">
+<section class="section section-soft" id="wacv">
   <div class="container">
     <div class="pub-meta">
       <span class="pill">WACV 2027</span>
@@ -135,7 +164,7 @@
 </section>
 
 <!-- Windrow detection (GIL 2026) -->
-<section class="section section-soft" id="windrow">
+<section class="section" id="windrow">
   <div class="container">
     <div class="pub-meta">
       <span class="pill">GIL 2026</span>

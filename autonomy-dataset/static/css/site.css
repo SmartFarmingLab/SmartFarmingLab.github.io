@@ -1,4 +1,4 @@
-/* LOAM site styles */
+/* Smart Farming Lab - Agricultural Robotics site styles */
 
 :root {
   --ink: #0f1a14;
@@ -447,16 +447,6 @@ p {
   margin-bottom: 28px;
   color: rgba(255, 255, 255, 0.82);
   font-size: 1.08rem;
-}
-
-.hero-scroll {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.1rem;
 }
 
 /* ---------- Page heading (sub pages) ---------- */
@@ -933,40 +923,6 @@ address {
   color: var(--ink-soft);
 }
 
-/* ---------- Video modal ---------- */
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.modal.is-open {
-  display: flex;
-}
-
-.modal video {
-  width: min(1200px, 100%);
-  max-height: 85vh;
-  border-radius: 12px;
-  background: #000;
-}
-
-.modal-close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  background: none;
-  border: 0;
-  color: #fff;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
 /* ---------- Footer ---------- */
 .site-footer {
   padding: 56px 0 32px;
@@ -1044,10 +1000,6 @@ address {
 @media (max-width: 860px) {
   .nav-toggle {
     display: block;
-  }
-
-  .hero-scroll {
-    display: none;
   }
 
   .nav-menu {
@@ -1169,5 +1121,109 @@ address {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* ---------- Scroll-driven front-page hero ---------- */
+.scroll-hero {
+  position: relative;
+  height: 260vh;
+  background: var(--bg-deep);
+}
+
+.scroll-hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+}
+
+.scroll-hero.is-static {
+  height: auto;
+}
+
+.scroll-hero [data-scroll-fade] {
+  will-change: opacity, transform;
+}
+
+.hero-org {
+  margin: -12px 0 28px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.scroll-hero .hero-title {
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+}
+
+.scroll-hint {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+  animation: hint-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes hint-bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+
+/* ---------- About statements ---------- */
+.statement {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  border-left: 4px solid var(--accent);
+}
+
+.statement-from {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.statement-to {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent-strong);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.section-soft .citation {
+  background: #fff;
+}
+
+.brand {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 720px) {
+  .scroll-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 1020px) {
+  .brand small {
+    display: none;
   }
 }
