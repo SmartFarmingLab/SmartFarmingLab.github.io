@@ -1,365 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Agricultural Autonomous Driving Dataset from Smart Farming Lab Leipzig University">
-  <meta name="keywords" content="Agriculture, Autonomous Driving, Dataset, Smart Farming">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agricultural Autonomous Driving Dataset</title>
+  <title>LOAM | Leipzig Offroad Agricultural Machinery Initiative</title>
+  <meta name="description"
+        content="LOAM, the Leipzig Offroad Agricultural Machinery Initiative: datasets, perception and simulation for autonomous agricultural machinery from the Smart Farming Lab, Leipzig University.">
+  <meta name="keywords" content="LOAM, LOAM-D, Agriculture, Autonomous Driving, Dataset, Perception, Tractor, Simulation, Smart Farming">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/site.css">
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
-
-  
-  <!-- Plotly for interactive plots -->
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script defer src="./static/js/site.js"></script>
 </head>
 <body>
 
-<section class="hero dataset-hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Agricultural Autonomous Driving Dataset (Preview)</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://research.uni-leipzig.de/smart-farming/#/en" target="_blank" rel="noopener">Smart Farming Lab</a></span>
-          </div>
+<header class="site-header is-overlay">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">LOAM <small>Leipzig University</small></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu">
+      <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="research.html">Research <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="research.html#wacv"><span>LOAM-D &middot; WACV 2027</span><small>Agricultural semantic segmentation dataset</small></a></li>
+          <li><a href="research.html#windrow"><span>Windrow Detection &middot; GIL 2026</span><small>Real-time detection for automated following</small></a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="industry.html">Industry <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="industry.html#perception"><span>Full Perception Integration</span><small>Sensors, compute and perception on a series tractor</small></a></li>
+          <li><a href="industry.html#partners"><span>Established Partnerships</span><small>Main Street Autonomy, NVIDIA</small></a></li>
+          <li><a href="industry.html#simulation"><span>Simulation</span><small>Full sensor simulation and HIL testing</small></a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Leipzig University</span>
-          </div>
+<section class="hero">
+  <video class="hero-video"
+         src="./static/sync_data_20sec/videos/presentation_v5_bg.mp4"
+         poster="./static/images/poster_hero.jpg"
+         autoplay muted loop playsinline preload="auto"
+         aria-hidden="true"></video>
 
-          <p class="hero-summary">
-            A multi-modal agricultural autonomy dataset designed for perception, mapping, navigation,
-            and safety research in real farm environments.
-          </p>
+  <div class="container hero-content">
+    <a class="badge badge-light" href="research.html#wacv">
+      <span class="badge-tag">New</span>
+      LOAM-D accepted at WACV 2027
+    </a>
+    <h1 class="hero-title">LOAM</h1>
+    <p class="hero-subtitle"><b>L</b>eipzig <b>O</b>ffroad <b>A</b>gricultural <b>M</b>achinery Initiative</p>
+    <p class="hero-lead">
+      Datasets, perception and simulation for autonomous agricultural machinery &ndash;
+      developed and validated on a series-production tractor during real farm work.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="research.html">
+        <i class="fas fa-flask"></i> Research
+      </a>
+      <a class="btn btn-ghost" href="industry.html">
+        <i class="fas fa-industry"></i> Industry
+      </a>
+      <button class="btn btn-ghost" type="button" data-open-video>
+        <i class="fas fa-play"></i> Watch the video
+      </button>
+    </div>
+  </div>
+  <a class="hero-scroll" href="#overview" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+</section>
 
-          <!-- Logos -->
-          <div class="columns is-centered mt-2">
-            <div class="column is-narrow">
-              <img src="./static/images/567-258-max.png" alt="Smart Farming Lab" style="height: 160px; margin: 10px;">
-            </div>
-            <div class="column is-narrow">
-              <img src="./static/images/1181-1181-max.png" alt="Leipzig University" style="height: 160px; margin: 10px;">
-            </div>
-          </div>
-
-          <div class="hero-highlights">
-            <span class="hero-pill">60 h (40 TB) of field recordings</span>
-            <span class="hero-pill">19 h (13 TB) at farmyards</span>
-            <span class="hero-pill">Multi-camera + stereo vision</span>
-            <span class="hero-pill">LiDAR and GNSS/INS</span>
-            <span class="hero-pill">Field robotics research</span>
-          </div>
-
-          <!-- Agricultural Vehicle Image -->
-          <div class="columns is-centered mt-4">
-            <div class="column is-three-quarters">
-              <figure class="image hero-media-card">
-                <img src="./static/images/dachtreager.jpg" 
-                     alt="Fendt 724 Vario Tractor with sensor setup" 
-                     style="width: 100%; height: auto;">
-              </figure>
-              <p class="has-text-grey mt-2 has-text-centered">
-                <em>Fendt 724 Vario Tractor equipped with multi-modal sensor setup.</em>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="section" id="overview">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><b>60 h</b><span>field recordings (40 TB)</span></div>
+      <div class="stat"><b>19 h</b><span>farmyard recordings (13 TB)</span></div>
+      <div class="stat"><b>1,512</b><span>human-annotated images</span></div>
+      <div class="stat"><b>121</b><span>GOOSE-compatible classes</span></div>
+      <div class="stat"><b>360&deg;</b><span>7 cameras, 2 LiDARs, RTK-GNSS/INS</span></div>
+      <div class="stat"><b>&gt;20 Hz</b><span>onboard perception on Jetson AGX Orin</span></div>
     </div>
   </div>
 </section>
-<section class="section soft-section" style="padding-top: 1.5rem;">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present a large-scale (60 h / 40 TB of field recordings and 19 h / 13 TB at farmyards) multi-modal dataset containing raw environmental data collected during routine farming operations. The data was continuously recorded using a custom-built, rugged sensor setup mounted on a Fendt 724 Vario tractor.
-          </p>
-          <p>
-            This dataset is designed to support research in agricultural robotics, autonomous navigation in unstructured environments, computer vision, environmental mapping, and multi-modal sensor fusion.   
-          </p>
-          <p>
-            We are continuously expanding it to include a broader range of agricultural tasks, varying environmental conditions that affect signal quality and visibility, different crop types and growth stages, as well as diverse objects encountered in the field.   
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
 
-    <!-- Dataset Overview -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Dataset Overview</h2>
-        <div class="content has-text-justified">
-          <div class="columns is-variable is-6">
-            <div class="column">
-              <div class="info-panel">
-              <h4>Key Components</h4>
-              <ul>
-                <li>ZED 2i Stereo Camera</li>
-                <li>5x ArkVision Basic+ Mini 120° RGB Cameras</li>
-                <li>Ouster OS0 LiDAR (3D point clouds)</li>
-                <li>Blickfeld Qb2 LiDAR (3D point clouds)</li>
-                <li>Novatel Smart7/Smart2 GNSS/INS/RTK/NTRIP</li>
-                <li>NVIDIA Jetson Orin AGX</li>
-                <li>Teltonica RUTX50 5G Router</li>
-                <li>MittX Roof Bar (Customized)</li>
-                <li>10x Hella LED Black Magic Cube 3.2" 3000 lm</li>
-              </ul>
-              </div>
-            </div>
-            <div class="column">
-              <div class="info-panel">
-              <h4>Data Characteristics</h4>
-              <ul>
-                <li>Location: Research Farm of the Leipzig University (Lehr- und Forschungsgut Oberholz)</li>
-                <li>Seasons: Currently Spring and Summer; will be expanded to include multiple growing seasons.</li>
-                <li>Tasks: plowing, tilling, cultivating, mowing; will be expanded to include planting, harvesting, fertilizing and more.</li>
-              </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">See LOAM in action</span>
+      <h2>Recording, perception and integration in 90 seconds</h2>
+      <p>
+        From the sensor setup and recorded scenarios to semantic segmentation, semantic LiDAR, people detection and
+        integrated bird's-eye perception.
+      </p>
+    </div>
+    <figure class="media">
+      <video src="./static/sync_data_20sec/videos/presentation_v5.mp4"
+             poster="./static/images/poster_presentation_v5.jpg"
+             controls muted playsinline preload="none"></video>
+    </figure>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>From real field data to deployable autonomy</h2>
+      <p>
+        Agricultural machines work in conditions that urban and off-road datasets do not cover: implements in view,
+        changing soil states, dust, headlands and cluttered farmyards. LOAM records, annotates and simulates exactly these situations.
+      </p>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card-link" href="research.html">
+        <span class="icon-box"><i class="fas fa-database"></i></span>
+        <h3>Datasets &amp; Research</h3>
+        <p>LOAM-D, the first large-scale semantic segmentation dataset for tractors in farmyards and fields, plus peer-reviewed perception methods.</p>
+        <span class="more">Research <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a class="card card-link" href="industry.html#perception">
+        <span class="icon-box"><i class="fas fa-tractor"></i></span>
+        <h3>Full Perception Integration</h3>
+        <p>A retrofittable sensor kit, embedded compute and real-time perception &ndash; running on a Fendt 724 Vario during routine operations.</p>
+        <span class="more">Industry <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a class="card card-link" href="industry.html#simulation">
+        <span class="icon-box"><i class="fas fa-cube"></i></span>
+        <h3>Simulation &amp; HIL</h3>
+        <p>A digital twin of tractor and sensors in NVIDIA Isaac Sim for full sensor simulation and hardware-in-the-loop testing.</p>
+        <span class="more">Simulation <i class="fas fa-arrow-right"></i></span>
+      </a>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
-
-    <!-- Camera Views -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Data Collection from Real Fieldwork</h2>
-        <div class="content has-text-justified">
-          <p>
-            In collaboration with the Lehr- und Forschungsgut Oberholz of Leipzig University, we equipped a Fendt 724 tractor with a multi-modal sensor setup to record daily field operations under real working conditions. The video below shows an example scene from our synchronized recording pipeline and illustrates the rich visual context captured for agricultural autonomy research.
-          </p>
-        </div>
-
-        <!-- Synchronized Camera Videos -->
-        <div class="columns is-multiline" id="camera-grid">
-          <!-- Synchronized camera videos will be populated here -->
-        </div>
-      </div>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Latest</span>
+      <h2>News &amp; publications</h2>
     </div>
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Perception Demonstrators</h2>
-        <div class="content has-text-justified">
-          <p>
-            Beyond raw sensor collection, the dataset supports perception-oriented autonomy tasks such as free-space reasoning and human-aware scene understanding in agricultural environments.
-          </p>
-        </div>
-
-        <div class="columns is-variable is-6 is-multiline">
-          <div class="column is-6-desktop">
-            <div class="showcase-card">
-              <div class="showcase-image-wrapper">
-                <img src="./static/images/free_space_detection.png"
-                     alt="Traversability estimation visualization"
-                     class="showcase-image">
-              </div>
-              <div class="showcase-content">
-                <p class="showcase-eyebrow">Traversability Estimation</p>
-                <h3 class="title is-4">Free-space reasoning for safe navigation</h3>
-                <p>
-                  Traversability estimation highlights drivable free space in front of the vehicle and provides a strong basis for route planning, control, and safety monitoring in unstructured field conditions.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="column is-6-desktop">
-            <div class="showcase-card">
-              <div class="showcase-image-wrapper">
-                <video src="./static/sync_data_20sec/videos/people_detection_agra_pptx.mp4"
-                       autoplay muted loop playsinline
-                       class="showcase-image"></video>
-              </div>
-              <div class="showcase-content">
-                <p class="showcase-eyebrow">People Detection</p>
-                <h3 class="title is-4">Human-aware perception in the field</h3>
-                <p>
-                  People detection supports safety-critical autonomy by identifying nearby workers and bystanders in challenging outdoor scenes, enabling risk-aware operation around humans and machinery.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Windrow Detection Paper</h2>
-        <div class="columns is-variable is-6 is-vcentered">
-          <div class="column is-6-desktop">
-            <div class="showcase-card">
-              <div class="showcase-image-wrapper">
-                <video class="showcase-image"
-                       controls
-                       muted
-                       loop
-                       playsinline
-                       preload="metadata">
-                  <source src="./static/sync_data_20sec/videos/windrow_filter.webm" type="video/webm">
-                  Your browser does not support video playback.
-                </video>
-              </div>
-              <div class="showcase-content">
-                <p class="showcase-eyebrow">Publication Demo</p>
-                <h3 class="title is-4">Real-time windrow detection for automated following</h3>
-                <p>
-                  The demonstrator visualizes the centerline extraction pipeline used for automated windrow following from onboard stereo and LiDAR measurements.
-                </p>
-                <div class="paper-actions">
-                  <a class="button is-link is-medium"
-                     href="https://zenodo.org/records/17486318"
-                     target="_blank"
-                     rel="noopener">
-                    <span class="icon">
-                      <i class="fas fa-database"></i>
-                    </span>
-                    <span>Open Sample Dataset</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column is-6-desktop">
-            <div class="info-panel paper-panel">
-              <p class="showcase-eyebrow">Paper</p>
-              <h3 class="title is-4">Real-Time Windrow Detection from Onboard Tractor Sensors for Automated Following</h3>
-              <p>
-                This paper presents a real-world multi-modal dataset for windrow-following research, recorded during baling operations with tractor-mounted stereo vision, LiDAR, and GNSS sensors. Based on this dataset, the work introduces a real-time centroid-based detection pipeline running at more than 20 Hz on a Jetson AGX Orin and shows strong agreement between stereo and LiDAR measurements in the key 4-10 m guidance range.
-              </p>
-              <div class="paper-actions">
-                <a class="button is-link is-medium"
-                   href="./static/pdf/Gunreben_Realtime_Windrow_Detection_GIL_2026.pdf"
-                   target="_blank"
-                   rel="noopener">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Download Paper</span>
-                </a>
-              </div>
-              <div class="citation-block">
-                <strong>Citation</strong>
-                <p>
-                  L. Gunreben, N. Heider, S. Z&uuml;rner, M. Schieck, and B. Franczyk, "Real-time windrow detection from onboard tractor sensors for automated following," in 46. GIL-Jahrestagung, Gesellschaft f&uuml;r Informatik e.V., 2026.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LiDAR Registration Visualization -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">LiDAR Point Clouds</h2>
-        <div class="content has-text-justified">
-          <p>
-            The Ouster OS0 LiDAR (128 scanlines) is mounted forward-facing with a 45° downward tilt at a height of 3 meters. This configuration captures a high-resolution 3D point cloud of the environment, supporting precise mapping and localization, object detection, and use as a deterministic safety sensor. Below is a registered point cloud of the farmyard environment as captured by the LiDAR.
-          </p>
-        </div>
-
-        <div class="has-text-centered">
-          <figure class="image media-frame">
-            <img src="./static/images/lidar_registration.png" 
-                 alt="LiDAR-Camera Registration Visualization" 
-                 style="max-width: 100%; height: auto;">
-          </figure>
-          <p class="has-text-grey mt-2">
-            <em>LiDAR registration showing the farmyard of the research farm of Leipzig University (Lehr- und Forschungsgut Oberholz). Acknowledgment to Main Street Autonomy for their work.</em>
-          </p>
-        </div>
-      </div>
+    <div class="grid grid-3">
+      <a class="card card-link" href="research.html#wacv">
+        <div class="pub-meta"><span class="pill">WACV 2027</span><span class="pill pill-blue">Accepted</span></div>
+        <h3>LOAM-D: A Multi-Domain Agricultural Semantic Segmentation Dataset</h3>
+        <p>Accepted at the WACV 2027 Datasets Track. Paper and dataset will be released soon.</p>
+        <span class="more">Read more <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a class="card card-link" href="research.html#windrow">
+        <div class="pub-meta"><span class="pill">GIL 2026</span></div>
+        <h3>Real-Time Windrow Detection from Onboard Tractor Sensors</h3>
+        <p>Centroid-based windrow detection at more than 20 Hz on a Jetson AGX Orin for automated following.</p>
+        <span class="more">Read more <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a class="card card-link" href="https://zenodo.org/records/17486318" target="_blank" rel="noopener">
+        <div class="pub-meta"><span class="pill">Zenodo</span></div>
+        <h3>Windrow sample dataset</h3>
+        <p>Multi-modal sample recordings from baling operations with stereo vision, LiDAR and GNSS, openly available.</p>
+        <span class="more">Open dataset <i class="fas fa-external-link-alt"></i></span>
+      </a>
     </div>
   </div>
-  
-<!-- Funding -->
-<div class="columns is-centered">
-  <div class="column is-full-width">
-    <h2 class="title is-3" style="margin-left: 3rem;">Funded by</h2>
-    <div class="has-text-centered">
-      <div class="funding-strip">
-        <img src="./static/images/bmftr_logo.svg" 
-             alt="BMFtR Logo" 
-             style="height: 80px; border: 0px solid #ccc;">
-        <img src="./static/images/ptj_logo.png" 
-             alt="PTJ Logo" 
-             style="height: 80px; border: 0px solid #ccc;">
-        <img src="./static/images/Feldschwarm_logo.png" 
-             alt="Feldschwarm Logo" 
-             style="height: 80px; border: 0px solid #ccc;">
-        <img src="./static/images/rubin_logo.jpg" 
-             alt="Rubin Logo" 
-             style="height: 80px; border: 0px solid #ccc;">
-        <img src="./static/images/nvidia_logo.png"
-             alt="NVIDIA Research Grant Logo"
-             style="height: 120px; border: 0px solid #ccc;">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  
 </section>
 
-
-
-<footer class="footer">
+<section class="section" style="padding-top: 0;">
   <div class="container">
-    <div class="content has-text-centered">
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            Website template borrowed from <a
-              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-          </p>
-        </div>
+    <div class="cta">
+      <div>
+        <h2>Building autonomous agricultural machinery?</h2>
+        <p>Let's talk about benchmarking, joint data collection or co-developing perception functions.</p>
       </div>
+      <a class="btn btn-primary" href="contact.html"><i class="fas fa-envelope"></i> Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-label">Funded by</p>
+    <div class="logo-row">
+      <img src="./static/images/bmftr_logo.svg" alt="BMFTR">
+      <img src="./static/images/ptj_logo.png" alt="Projektträger Jülich">
+      <img src="./static/images/Feldschwarm_logo.png" alt="Feldschwarm">
+      <img src="./static/images/rubin_logo.jpg" alt="RUBIN">
+      <img src="./static/images/nvidia_logo.png" alt="NVIDIA Research Grant" class="logo-lg">
+    </div>
+    <p class="footer-label">A project of</p>
+    <div class="logo-row">
+      <img src="./static/images/567-258-max.png" alt="Smart Farming Lab" class="logo-lg">
+      <img src="./static/images/1181-1181-max.png" alt="Leipzig University" class="logo-lg">
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Smart Farming Lab, Leipzig University &middot; Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="industry.html">Industry</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </div>
 </footer>
 
+<div class="modal" role="dialog" aria-label="LOAM presentation video">
+  <button class="modal-close" type="button" aria-label="Close video"><i class="fas fa-times"></i></button>
+  <video src="./static/sync_data_20sec/videos/presentation_v5.mp4"
+         poster="./static/images/poster_presentation_v5.jpg"
+         controls playsinline preload="none"></video>
+</div>
+
 </body>
-</html> 
+</html>

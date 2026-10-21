@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | LOAM</title>
+  <meta name="description"
+        content="LOAM research: the LOAM-D agricultural semantic segmentation dataset (WACV 2027) and real-time windrow detection from onboard tractor sensors (GIL 2026).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/site.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/site.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">LOAM <small>Leipzig University</small></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="research.html" aria-current="page">Research <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="research.html#wacv"><span>LOAM-D &middot; WACV 2027</span><small>Agricultural semantic segmentation dataset</small></a></li>
+          <li><a href="research.html#windrow"><span>Windrow Detection &middot; GIL 2026</span><small>Real-time detection for automated following</small></a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="industry.html">Industry <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="industry.html#perception"><span>Full Perception Integration</span><small>Sensors, compute and perception on a series tractor</small></a></li>
+          <li><a href="industry.html#partners"><span>Established Partnerships</span><small>Main Street Autonomy, NVIDIA</small></a></li>
+          <li><a href="industry.html#simulation"><span>Simulation</span><small>Full sensor simulation and HIL testing</small></a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <span class="eyebrow">Research</span>
+    <h1>Perception for agricultural autonomy</h1>
+    <p>
+      Openly available data for agricultural autonomy &ndash; especially for large machinery like tractors &ndash; is still scarce.
+      We publish datasets, ontologies and baselines recorded during real farm work.
+    </p>
+    <nav class="subnav" aria-label="Publications on this page">
+      <a href="#wacv">LOAM-D &middot; WACV 2027</a>
+      <a href="#windrow">Windrow Detection &middot; GIL 2026</a>
+    </nav>
+  </div>
+</section>
+
+<!-- LOAM-D (WACV 2027) -->
+<section class="section" id="wacv">
+  <div class="container">
+    <div class="pub-meta">
+      <span class="pill">WACV 2027</span>
+      <span class="pill">Datasets Track</span>
+      <span class="pill pill-blue">Accepted</span>
+    </div>
+    <h2>LOAM-D: A Multi-Domain Agricultural Semantic Segmentation Dataset</h2>
+    <div class="prose">
+      <p>
+        Large-scale datasets have advanced urban autonomous driving and are expanding into off-road domains, yet openly
+        available data for agricultural machinery is still missing. LOAM-D closes this gap with 1,512 human-annotated images
+        from seven roof-mounted wide-angle cameras, covering paved farmyards and open fields. Its 121-class ontology extends
+        the off-road GOOSE taxonomy with agriculture-specific categories such as tillage states, farm equipment and implements,
+        enabling model and data transfer between both datasets.
+      </p>
+    </div>
+    <div class="btn-row" style="margin: 8px 0 40px;">
+      <span class="btn btn-soon" aria-disabled="true" title="Available soon">
+        <i class="fas fa-file-pdf"></i> Paper <span class="soon-tag">soon</span>
+      </span>
+      <span class="btn btn-soon" aria-disabled="true" title="Available soon">
+        <i class="fas fa-database"></i> Zenodo <span class="soon-tag">soon</span>
+      </span>
+    </div>
+
+    <figure class="media">
+      <img src="./static/images/loamd_annotation_examples.jpg"
+           alt="LOAM-D example images with human annotations: a farmyard barn passage and a baling scene on a stubble field">
+      <figcaption>Rectified wide-angle input (left) and human annotation (right). Top: farmyard domain. Bottom: field domain with baler and trailers.</figcaption>
+    </figure>
+
+    <div class="grid grid-2" style="margin-top: 40px;">
+      <div class="card">
+        <h3>Key findings</h3>
+        <ul class="check-list">
+          <li><strong>92.12 % mIoU</strong> on four-class traversability with SegFormer-B4.</li>
+          <li><strong>Transfers to off-road:</strong> trained only on LOAM-D, a model reaches 38.33 % mIoU / 78.11 % FW-IoU on GOOSE validation. The reverse direction reaches only 14.56 % mIoU.</li>
+          <li><strong>Foundation models are not enough:</strong> SAM-3 autolabels miss 34.5 % of human-annotated pixels, mostly tillage states and crop residues.</li>
+          <li><strong>10,329 SAM-3 autolabels</strong> released as an additional training resource.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Baselines (test split)</h3>
+        <div class="table-wrap">
+          <table class="results">
+            <thead>
+              <tr><th>Model</th><th>Trav. mIoU</th><th>C-12 mIoU</th><th>C-12 FW-IoU</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>PIDNet-S <small>(real-time)</small></td><td>84.53</td><td>31.71</td><td>73.49</td></tr>
+              <tr><td>SegFormer-B4</td><td><strong>92.12</strong></td><td><strong>34.96</strong></td><td><strong>76.04</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          Trained on human labels plus SAM-3 autolabels. Trav. = traversable / non-traversable / obstacle / sky.
+          C-12 = GOOSE top-level categories plus implements.
+        </p>
+      </div>
+    </div>
+
+    <figure class="media" style="margin-top: 40px;">
+      <img src="./static/images/loamd_baseline_predictions.jpg"
+           alt="SegFormer-B4 predictions on four held-out LOAM-D images: input, traversability overlay and Coarse-12 overlay">
+      <figcaption>SegFormer-B4 on held-out images. Columns: input, traversability, Coarse-12. Rows 1&ndash;2: field (headland next to a public road, open field). Rows 3&ndash;4: farmyard (worker and van, gravel yard with puddles).</figcaption>
+    </figure>
+
+    <div class="citation">
+      <strong>Citation</strong>
+      &ldquo;LOAM-D: A Multi-Domain Agricultural Semantic Segmentation Dataset,&rdquo; in IEEE/CVF Winter Conference on
+      Applications of Computer Vision (WACV), 2027. Full citation will follow with the camera-ready version.
+    </div>
+  </div>
+</section>
+
+<!-- Windrow detection (GIL 2026) -->
+<section class="section section-soft" id="windrow">
+  <div class="container">
+    <div class="pub-meta">
+      <span class="pill">GIL 2026</span>
+      <span class="pill pill-blue">Published</span>
+    </div>
+    <h2>Real-Time Windrow Detection from Onboard Tractor Sensors for Automated Following</h2>
+    <div class="grid grid-2 align-center">
+      <figure class="media">
+        <video controls muted loop playsinline preload="metadata">
+          <source src="./static/sync_data_20sec/videos/windrow_filter.webm" type="video/webm">
+          Your browser does not support video playback.
+        </video>
+        <figcaption>Centerline extraction for automated windrow following from onboard stereo and LiDAR measurements.</figcaption>
+      </figure>
+      <div>
+        <p>
+          This paper presents a real-world multi-modal dataset for windrow-following research, recorded during baling
+          operations with tractor-mounted stereo vision, LiDAR and GNSS sensors. Based on this dataset, the work introduces a
+          real-time centroid-based detection pipeline running at more than 20 Hz on a Jetson AGX Orin and shows strong
+          agreement between stereo and LiDAR measurements in the key 4&ndash;10 m guidance range.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary"
+             href="./static/pdf/Gunreben_Realtime_Windrow_Detection_GIL_2026.pdf"
+             target="_blank" rel="noopener">
+            <i class="fas fa-file-pdf"></i> Download Paper
+          </a>
+          <a class="btn btn-outline"
+             href="https://zenodo.org/records/17486318"
+             target="_blank" rel="noopener">
+            <i class="fas fa-database"></i> Sample Dataset
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="citation">
+      <strong>Citation</strong>
+      L. Gunreben, N. Heider, S. Z&uuml;rner, M. Schieck, and B. Franczyk, &ldquo;Real-time windrow detection from onboard
+      tractor sensors for automated following,&rdquo; in 46. GIL-Jahrestagung, Gesellschaft f&uuml;r Informatik e.V., 2026.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>Want to use our data or collaborate?</h2>
+        <p>We are happy to support benchmarks, joint publications and student projects.</p>
+      </div>
+      <a class="btn btn-primary" href="contact.html"><i class="fas fa-envelope"></i> Contact us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-label">Funded by</p>
+    <div class="logo-row">
+      <img src="./static/images/bmftr_logo.svg" alt="BMFTR">
+      <img src="./static/images/ptj_logo.png" alt="Projektträger Jülich">
+      <img src="./static/images/Feldschwarm_logo.png" alt="Feldschwarm">
+      <img src="./static/images/rubin_logo.jpg" alt="RUBIN">
+      <img src="./static/images/nvidia_logo.png" alt="NVIDIA Research Grant" class="logo-lg">
+    </div>
+    <p class="footer-label">A project of</p>
+    <div class="logo-row">
+      <img src="./static/images/567-258-max.png" alt="Smart Farming Lab" class="logo-lg">
+      <img src="./static/images/1181-1181-max.png" alt="Leipzig University" class="logo-lg">
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Smart Farming Lab, Leipzig University &middot; Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="industry.html">Industry</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
