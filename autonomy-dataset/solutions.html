@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solutions | Agricultural Robotics &middot; Smart Farming Lab</title>
+  <meta name="description"
+        content="Agricultural robotics for tractor and agricultural machinery manufacturers: full perception integration on a series tractor, partnerships with Main Street Autonomy and NVIDIA, and full sensor simulation with HIL testing in NVIDIA Isaac Sim.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="./static/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="./static/css/site.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/site.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Agricultural Robotics <small>Smart Farming Lab &middot; Leipzig University</small></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="research.html">Research <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="research.html#recordings"><span>Raw Recordings</span><small>60 h of multi-modal field and farmyard data</small></a></li>
+          <li><a href="research.html#wacv"><span>LOAM-D &middot; WACV 2027</span><small>Agricultural semantic segmentation dataset</small></a></li>
+          <li><a href="research.html#windrow"><span>Windrow Detection &middot; GIL 2026</span><small>Real-time detection for automated following</small></a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="solutions.html" aria-current="page">Solutions <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="solutions.html#perception"><span>Full Perception Integration</span><small>Sensors, compute and perception on a series tractor</small></a></li>
+          <li><a href="solutions.html#partners"><span>Established Partnerships</span><small>Main Street Autonomy, NVIDIA</small></a></li>
+          <li><a href="solutions.html#simulation"><span>Simulation</span><small>Full sensor simulation and HIL testing</small></a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <span class="eyebrow">For tractor &amp; agricultural machinery manufacturers</span>
+    <h1>From field data to deployable perception</h1>
+    <p>
+      We integrate sensors, embedded compute and perception on a series-production tractor, validate them during everyday
+      farm work and test them in simulation before they reach the field.
+    </p>
+    <nav class="subnav" aria-label="Sections on this page">
+      <a href="#perception">Full Perception Integration</a>
+      <a href="#partners">Established Partnerships</a>
+      <a href="#simulation">Simulation</a>
+    </nav>
+  </div>
+</section>
+
+<!-- Full perception integration -->
+<section class="section" id="perception">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Full Perception Integration</span>
+      <h2>A complete perception stack on a working tractor</h2>
+      <p>
+        Our Fendt 724 Vario carries a rugged, retrofittable roof-bar sensor kit and records continuously during plowing,
+        tilling, cultivating, mowing and baling on the research farm of Leipzig University (Lehr- und Forschungsgut Oberholz).
+      </p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card">
+        <span class="icon-box"><i class="fas fa-tractor"></i></span>
+        <h3>Series machine</h3>
+        <p>Real operations on a series-production tractor, not a prototype vehicle.</p>
+      </div>
+      <div class="card">
+        <span class="icon-box"><i class="fas fa-user-shield"></i></span>
+        <h3>Safety-relevant</h3>
+        <p>Traversability, people and obstacle detection with 360&deg; camera coverage and LiDAR.</p>
+      </div>
+      <div class="card">
+        <span class="icon-box"><i class="fas fa-microchip"></i></span>
+        <h3>Embedded real-time</h3>
+        <p>Pipelines run on board an NVIDIA Jetson AGX Orin, e.g. windrow detection at more than 20 Hz.</p>
+      </div>
+      <div class="card">
+        <span class="icon-box"><i class="fas fa-exchange-alt"></i></span>
+        <h3>Interoperable</h3>
+        <p>A GOOSE-compatible ontology lets you combine our data with existing off-road datasets.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-2 align-center" style="margin-top: 56px;">
+      <figure class="media">
+        <img src="./static/images/dachtreager.jpg" alt="Fendt 724 Vario with the multi-modal sensor roof bar">
+        <figcaption>Fendt 724 Vario equipped with the multi-modal sensor roof bar.</figcaption>
+      </figure>
+      <div class="card">
+        <h3>Sensor kit &amp; compute</h3>
+        <ul class="check-list">
+          <li>ZED 2i stereo camera (front)</li>
+          <li>5x ArkVision Basic+ Mini 120&deg; RGB cameras</li>
+          <li>Ouster OS0-128 LiDAR (front) and Blickfeld Qb2 LiDAR (rear)</li>
+          <li>NovAtel Smart7/Smart2 GNSS/INS with RTK/NTRIP</li>
+          <li>NVIDIA Jetson AGX Orin</li>
+          <li>Teltonika RUTX50 5G router</li>
+          <li>Customized MittX roof bar with 10x Hella Black Magic Cube LED lights</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top: 72px;">
+      <h3>Perception functions</h3>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <figure class="media" style="margin-bottom: 18px;">
+          <img src="./static/images/free_space_detection.png" alt="Traversability estimation visualization">
+        </figure>
+        <span class="eyebrow">Traversability</span>
+        <h3>Free-space estimation</h3>
+        <p>Highlights drivable space around the vehicle as a basis for route planning, control and safety monitoring.</p>
+      </div>
+      <div class="card">
+        <figure class="media" style="margin-bottom: 18px;">
+          <video src="./static/sync_data_20sec/videos/people_detection_agra_pptx.mp4"
+                 autoplay muted loop playsinline></video>
+        </figure>
+        <span class="eyebrow">People detection</span>
+        <h3>Human-aware operation</h3>
+        <p>Detects workers and bystanders in challenging outdoor scenes for risk-aware operation around machinery.</p>
+      </div>
+      <div class="card">
+        <figure class="media" style="margin-bottom: 18px;">
+          <video muted loop playsinline autoplay preload="metadata">
+            <source src="./static/sync_data_20sec/videos/windrow_filter.webm" type="video/webm">
+          </video>
+        </figure>
+        <span class="eyebrow">Windrow following</span>
+        <h3>Automated guidance</h3>
+        <p>Real-time windrow centerline extraction from stereo and LiDAR for automated following during baling.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 56px;">
+      <h3>Ways to work with us</h3>
+      <div class="grid grid-2" style="gap: 0 32px;">
+        <ul class="check-list">
+          <li><strong>Benchmark</strong> your perception stack on tractor-perspective farm and field data</li>
+          <li><strong>Joint data collection</strong> on your machines and implements with our sensor kit and calibration workflow</li>
+        </ul>
+        <ul class="check-list">
+          <li><strong>Co-develop</strong> perception functions such as windrow following, people detection or free-space estimation</li>
+          <li><strong>Research projects</strong> and funding consortia on agricultural autonomy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partnerships -->
+<section class="section section-soft" id="partners">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Established Partnerships</span>
+      <h2>Working with industry leaders</h2>
+      <p>Our work builds on close collaboration with technology partners across mapping, calibration and edge AI.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card partner-card">
+        <div class="partner-logo"><span class="wordmark">Main Street Autonomy</span></div>
+        <div class="pub-meta"><span class="pill">Calibration</span><span class="pill">LiDAR mapping</span></div>
+        <p>
+          Main Street Autonomy supports us with sensor calibration and LiDAR mapping. The registered farmyard point cloud
+          below was created in collaboration with their team.
+        </p>
+      </div>
+      <div class="card partner-card">
+        <div class="partner-logo"><img src="./static/images/nvidia_logo.png" alt="NVIDIA"></div>
+        <div class="pub-meta"><span class="pill">Research grant</span><span class="pill">Edge AI</span><span class="pill">Isaac Sim</span></div>
+        <p>
+          Supported by an NVIDIA research grant. Our onboard perception runs on NVIDIA Jetson AGX Orin, and our
+          simulation pipeline builds on NVIDIA Isaac Sim.
+        </p>
+      </div>
+    </div>
+
+    <figure class="media" style="margin-top: 40px;">
+      <img src="./static/images/lidar_registration.png" alt="Registered LiDAR point cloud of the research farm's farmyard">
+      <figcaption>
+        Registered point cloud of the farmyard at Lehr- und Forschungsgut Oberholz, captured with the Ouster OS0-128
+        (128 scanlines, forward-facing, 45&deg; downward tilt, mounted at 3 m). Created together with Main Street Autonomy.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Simulation -->
+<section class="section section-dark" id="simulation">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Simulation</span>
+      <h2>Digital twin in NVIDIA Isaac Sim</h2>
+      <p>
+        Our tractor, its sensor roof bar and the surrounding fields are replicated in NVIDIA Isaac Sim. This lets us test
+        perception across crop growth stages and rare, safety-critical situations before going to the field.
+      </p>
+    </div>
+
+    <div class="sim-pair">
+      <figure>
+        <img src="./static/images/simulation_wheat_young.jpg" alt="Simulated tractor with sensor roof bar in a young wheat field, a deer in the background">
+        <figcaption>Young wheat</figcaption>
+      </figure>
+      <figure>
+        <img src="./static/images/simulation_wheat_old.jpg" alt="Simulated tractor in a ripe wheat field with two people in high-visibility vests ahead">
+        <figcaption>Ripe wheat</figcaption>
+      </figure>
+    </div>
+
+    <div class="grid grid-3" style="margin-top: 40px;">
+      <div class="card">
+        <span class="icon-box"><i class="fas fa-satellite-dish"></i></span>
+        <h3>Full sensor simulation</h3>
+        <p>Cameras, stereo, LiDAR and GNSS/INS are simulated with the same mounting positions as on the real roof bar.</p>
+      </div>
+      <div class="card">
+        <span class="icon-box"><i class="fas fa-seedling"></i></span>
+        <h3>Scenario variation</h3>
+        <p>Vary crop type and growth stage and place people, animals or obstacles in the field &ndash; including situations too risky to stage for real.</p>
+      </div>
+      <div class="card">
+        <span class="icon-box"><i class="fas fa-plug"></i></span>
+        <h3>Hardware-in-the-loop</h3>
+        <p>Simulated sensor streams feed the onboard compute, so the perception stack is tested on the target hardware before field trials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>Let's bring perception to your machines</h2>
+        <p>Talk to us about integration, testing and joint projects.</p>
+      </div>
+      <a class="btn btn-primary" href="contact.html"><i class="fas fa-envelope"></i> Contact us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-label">Funded by</p>
+    <div class="logo-row">
+      <img src="./static/images/bmftr_logo.svg" alt="BMFTR">
+      <img src="./static/images/ptj_logo.png" alt="Projektträger Jülich">
+      <img src="./static/images/Feldschwarm_logo_dark.png" alt="Feldschwarm ÖkoSystem">
+      <img src="./static/images/rubin_logo.jpg" alt="RUBIN">
+      <img src="./static/images/nvidia_logo.png" alt="NVIDIA Research Grant" class="logo-lg">
+    </div>
+    <p class="footer-label">A project of</p>
+    <div class="logo-row">
+      <img src="./static/images/567-258-max.png" alt="Smart Farming Lab" class="logo-lg">
+      <img src="./static/images/1181-1181-max.png" alt="Leipzig University" class="logo-lg">
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Smart Farming Lab, Leipzig University &middot; Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
