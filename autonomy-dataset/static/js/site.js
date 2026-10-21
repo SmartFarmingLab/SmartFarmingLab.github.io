@@ -1,4 +1,4 @@
-// Shared behaviour for all pages: mobile menu, header state, scroll-driven hero video.
+// Shared behaviour for all pages: mobile menu, header state, maximizable hero video.
 document.addEventListener('DOMContentLoaded', function () {
   var header = document.querySelector('.site-header');
   var toggle = document.querySelector('.nav-toggle');
@@ -17,111 +17,57 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Transparent header over the front-page video turns solid on scroll
-  if (header && header.classList.contains('is-overlay')) {
-    var onScroll = function () {
-      header.classList.toggle('is-scrolled', window.scrollY > 40);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  initScrollVideo();
-
-  // Videos that start playing once they scroll into view and pause when they leave
-  var inViewVideos = document.querySelectorAll('[data-autoplay-in-view]');
-  if (inViewVideos.length && 'IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.play().catch(function () {});
-        } else {
-          entry.target.pause();
-        }
-      });
-    }, { threshold: 0.4 });
-    inViewVideos.forEach(function (v) { observer.observe(v); });
-  }
+  initVideoModal();
 });
 
-// Front-page hero: video time follows the scroll position inside .scroll-hero
-function initScrollVideo() {
-  var section = document.querySelector('.scroll-hero');
-  var video = section && section.querySelector('[data-scroll-video]');
-  if (!video) return;
+// Front-page hero: open the looping background video large, with controls
+function initVideoModal() {
+  var modal = document.querySelector('.modal');
+  if (!modal) return;
 
-  var fade = section.querySelector('[data-scroll-fade]');
-  var hint = section.querySelector('[data-scroll-hint]');
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var player = modal.querySelector('video');
+  var background = document.querySelector('[data-hero-video]');
 
-  if (reduceMotion) {
-    section.classList.add('is-static');
-    return;
-  }
-
-  // Load the whole clip into memory so seeking is instant and smooth
-  fetch(video.getAttribute('src'))
-    .then(function (r) { return r.blob(); })
-    .then(function (blob) {
-      video.src = URL.createObjectURL(blob);
-      video.load();
-    })
-    .catch(function () {});
-
-  // iOS only renders seeks after the video has been "played" once
-  video.addEventListener('loadedmetadata', function () {
-    var p = video.play();
-    if (p && p.then) p.then(function () { video.pause(); }).catch(function () {});
-  });
-
-  var current = 0;
-  var target = 0;
-  var ticking = false;
-
-  function progress() {
-    var rect = section.getBoundingClientRect();
-    var scrollable = section.offsetHeight - window.innerHeight;
-    if (scrollable <= 0) return 0;
-    return Math.min(1, Math.max(0, -rect.top / scrollable));
-  }
-
-  function update() {
-    var p = progress();
-
-    if (fade) {
-      // Title stays, then fades out over the last part of the clip
-      var f = Math.min(1, Math.max(0, (p - 0.55) / 0.35));
-      fade.style.opacity = 1 - f;
-      fade.style.transform = 'translateY(' + (-40 * f) + 'px)';
-    }
-    if (hint) hint.style.opacity = p > 0.03 ? 0 : 1;
-
-    if (video.duration) {
-      target = p * (video.duration - 0.05);
-      // Ease towards the target time so fast scrolling still looks smooth
-      current += (target - current) * 0.25;
-      if (Math.abs(target - current) < 0.01) current = target;
-      if (!video.seeking && Math.abs(video.currentTime - current) > 0.01) {
-        video.currentTime = current;
-      }
-    }
-
-    if (Math.abs(target - current) > 0.001) {
-      requestAnimationFrame(update);
+  function open() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // Continue where the background video currently is
+    var start = background ? background.currentTime : 0;
+    var resume = function () {
+      player.currentTime = start;
+      player.play().catch(function () {});
+    };
+    if (player.readyState >= 1) {
+      resume();
     } else {
-      ticking = false;
+      player.preload = 'auto';
+      player.addEventListener('loadedmetadata', resume, { once: true });
+      player.load();
+    }
+    if (background) background.pause();
+  }
+
+  function close() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+    player.pause();
+    if (background) {
+      background.currentTime = player.currentTime;
+      background.play().catch(function () {});
     }
   }
 
-  function requestUpdate() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(update);
-    }
-  }
-
-  window.addEventListener('scroll', requestUpdate, { passive: true });
-  window.addEventListener('resize', requestUpdate);
-  video.addEventListener('loadeddata', requestUpdate);
-  requestUpdate();
+  document.querySelectorAll('[data-open-video]').forEach(function (btn) {
+    btn.addEventListener('click', open);
+  });
+  modal.querySelector('.modal-close').addEventListener('click', close);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
 }

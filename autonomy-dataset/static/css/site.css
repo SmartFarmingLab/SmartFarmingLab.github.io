@@ -97,19 +97,14 @@ p {
   border-bottom: 1px solid var(--line);
 }
 
+/* Front page: solid dark bar fixed over the video, hiding the video's own title bar */
 .site-header.is-overlay {
   position: fixed;
   left: 0;
   right: 0;
-  background: transparent;
-  border-bottom-color: transparent;
+  background: var(--bg-deep);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
   backdrop-filter: none;
-  transition: background 0.25s, border-color 0.25s;
-}
-
-.site-header.is-overlay.is-scrolled {
-  background: rgba(13, 22, 17, 0.85);
-  backdrop-filter: blur(12px);
 }
 
 .header-inner {
@@ -397,11 +392,13 @@ p {
   background: var(--bg-deep);
 }
 
+/* Shifted up so the text bar at the top of the presentation video stays under the header */
 .hero-video {
   position: absolute;
-  inset: 0;
+  top: -64px;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 64px);
   max-width: none;
   object-fit: cover;
 }
@@ -924,9 +921,10 @@ address {
 }
 
 /* ---------- Footer ---------- */
+/* White so logos that ship with a white background blend in */
 .site-footer {
   padding: 56px 0 32px;
-  background: var(--bg-soft);
+  background: #fff;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.9rem;
@@ -1124,29 +1122,7 @@ address {
   }
 }
 
-/* ---------- Scroll-driven front-page hero ---------- */
-.scroll-hero {
-  position: relative;
-  height: 260vh;
-  background: var(--bg-deep);
-}
-
-.scroll-hero-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
-  min-height: 0;
-}
-
-.scroll-hero.is-static {
-  height: auto;
-}
-
-.scroll-hero [data-scroll-fade] {
-  will-change: opacity, transform;
-}
-
+/* ---------- Front-page hero video ---------- */
 .hero-org {
   margin: -12px 0 28px;
   color: rgba(255, 255, 255, 0.75);
@@ -1155,32 +1131,75 @@ address {
   letter-spacing: 0.02em;
 }
 
-.scroll-hero .hero-title {
+.hero .hero-title {
   font-size: clamp(2.8rem, 8vw, 6.5rem);
 }
 
-.scroll-hint {
+.hero-expand {
   position: absolute;
   z-index: 1;
-  left: 50%;
-  bottom: 22px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
+  right: 24px;
+  bottom: 24px;
+  display: inline-flex;
   align-items: center;
-  gap: 2px;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: opacity 0.3s;
-  animation: hint-bob 1.8s ease-in-out infinite;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s, transform 0.15s;
 }
 
-@keyframes hint-bob {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 6px); }
+.hero-expand:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.06);
+}
+
+/* Maximized video */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal video {
+  width: 100%;
+  max-width: 1600px;
+  max-height: calc(100vh - 80px);
+  border-radius: 10px;
+  background: #000;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* ---------- About statements ---------- */
@@ -1217,7 +1236,7 @@ address {
 }
 
 @media (max-width: 720px) {
-  .scroll-hint {
+  .hero-expand {
     display: none;
   }
 }

@@ -44,58 +44,47 @@
   </div>
 </header>
 
-<!-- Scroll-driven hero: the video advances as you scroll (see site.js) -->
-<section class="scroll-hero">
-  <div class="hero scroll-hero-sticky">
-    <video class="hero-video"
-           data-scroll-video
-           src="./static/sync_data_20sec/videos/hero_scroll.mp4"
-           poster="./static/images/poster_hero.jpg"
-           muted playsinline preload="auto"
-           aria-hidden="true"></video>
+<section class="hero">
+  <video class="hero-video"
+         data-hero-video
+         src="./static/sync_data_20sec/videos/presentation_v5_loop.mp4"
+         poster="./static/images/poster_hero.jpg"
+         autoplay muted loop playsinline preload="auto"
+         aria-hidden="true"></video>
 
-    <div class="container hero-content" data-scroll-fade>
-      <a class="badge badge-light" href="research.html#wacv">
-        <span class="badge-tag">New</span>
-        LOAM-D accepted at WACV 2027
+  <div class="container hero-content">
+    <a class="badge badge-light" href="research.html#wacv">
+      <span class="badge-tag">New</span>
+      LOAM-D accepted at WACV 2027
+    </a>
+    <h1 class="hero-title">Agricultural Robotics</h1>
+    <p class="hero-subtitle">Smart Farming Lab</p>
+    <p class="hero-org">Leipzig University</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="research.html">
+        <i class="fas fa-flask"></i> Research
       </a>
-      <h1 class="hero-title">Agricultural Robotics</h1>
-      <p class="hero-subtitle">Smart Farming Lab</p>
-      <p class="hero-org">Leipzig University</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="research.html">
-          <i class="fas fa-flask"></i> Research
-        </a>
-        <a class="btn btn-ghost" href="industry.html">
-          <i class="fas fa-industry"></i> Industry
-        </a>
-      </div>
-    </div>
-    <div class="scroll-hint" data-scroll-hint>
-      Scroll
-      <i class="fas fa-chevron-down"></i>
+      <a class="btn btn-ghost" href="industry.html">
+        <i class="fas fa-industry"></i> Industry
+      </a>
+      <button class="btn btn-ghost" type="button" data-open-video>
+        <i class="fas fa-expand"></i> Watch full screen
+      </button>
     </div>
   </div>
+
+  <button class="hero-expand" type="button" data-open-video aria-label="Maximize video">
+    <i class="fas fa-expand"></i>
+  </button>
 </section>
 
-<section class="section section-dark">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">See it in action</span>
-      <h2>From sensor setup to integrated perception</h2>
-      <p>
-        Our sensor-equipped tractor during real field work: semantic segmentation, semantic LiDAR, people detection and
-        integrated bird's-eye perception.
-      </p>
-    </div>
-    <figure class="media">
-      <video src="./static/sync_data_20sec/videos/presentation_v5_main.mp4"
-             poster="./static/images/poster_presentation_v5.jpg"
-             data-autoplay-in-view
-             controls muted loop playsinline preload="metadata"></video>
-    </figure>
-  </div>
-</section>
+<!-- Maximized video with controls; continues from the background video's position -->
+<div class="modal" role="dialog" aria-label="Video" aria-hidden="true">
+  <button class="modal-close" type="button" aria-label="Close video"><i class="fas fa-times"></i></button>
+  <video src="./static/sync_data_20sec/videos/presentation_v5_loop.mp4"
+         poster="./static/images/poster_hero.jpg"
+         controls muted loop playsinline preload="none"></video>
+</div>
 
 <section class="section">
   <div class="container">
@@ -201,7 +190,7 @@
     <div class="logo-row">
       <img src="./static/images/bmftr_logo.svg" alt="BMFTR">
       <img src="./static/images/ptj_logo.png" alt="Projektträger Jülich">
-      <img src="./static/images/Feldschwarm_logo.png" alt="Feldschwarm">
+      <img src="./static/images/Feldschwarm_logo_dark.png" alt="Feldschwarm ÖkoSystem">
       <img src="./static/images/rubin_logo.jpg" alt="RUBIN">
       <img src="./static/images/nvidia_logo.png" alt="NVIDIA Research Grant" class="logo-lg">
     </div>
