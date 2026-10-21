@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="./static/images/apple-touch-icon.png">
   <link rel="stylesheet" href="./static/css/site.css">
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script defer src="./static/js/site.js"></script>
@@ -85,22 +87,24 @@
     <div class="section-head" style="margin: 64px 0 24px;">
       <h3>Contact persons</h3>
     </div>
-    <div class="grid grid-2">
-      <div class="card person">
-        <span class="avatar">SZ</span>
-        <div>
-          <h3>Sebastian Z&uuml;rner</h3>
-          <p>Smart Farming Lab, Leipzig University</p>
-          <a href="mailto:zuerner@wifa.uni-leipzig.de">zuerner@wifa.uni-leipzig.de</a>
-        </div>
+    <div class="grid grid-3">
+      <div class="card person-card">
+        <img class="person-photo" src="./static/images/contact_zuerner.jpg" alt="Sebastian Z&uuml;rner">
+        <h3>Sebastian Z&uuml;rner</h3>
+        <p>Smart Farming Lab, Leipzig University</p>
+        <a href="mailto:zuerner@wifa.uni-leipzig.de">zuerner@<wbr>wifa.uni-leipzig.de</a>
       </div>
-      <div class="card person">
-        <span class="avatar">LG</span>
-        <div>
-          <h3>Lorenz Gunreben</h3>
-          <p>Smart Farming Lab, Leipzig University</p>
-          <a href="mailto:gunreben@wifa.uni-leipzig.de">gunreben@wifa.uni-leipzig.de</a>
-        </div>
+      <div class="card person-card">
+        <img class="person-photo" src="./static/images/contact_gunreben.jpg" alt="Lorenz Gunreben">
+        <h3>Lorenz Gunreben</h3>
+        <p>Smart Farming Lab, Leipzig University</p>
+        <a href="mailto:gunreben@wifa.uni-leipzig.de">gunreben@<wbr>wifa.uni-leipzig.de</a>
+      </div>
+      <div class="card person-card">
+        <img class="person-photo" src="./static/images/contact_heider.jpg" alt="Nico Heider">
+        <h3>Nico Heider</h3>
+        <p>Smart Farming Lab, Leipzig University</p>
+        <a href="mailto:heider@wifa.uni-leipzig.de">heider@<wbr>wifa.uni-leipzig.de</a>
       </div>
     </div>
   </div>
@@ -111,7 +115,7 @@
     <div class="section-head">
       <h2>What we can help with</h2>
     </div>
-    <div class="grid grid-4">
+    <div class="grid grid-5">
       <a class="card card-link" href="research.html">
         <span class="icon-box"><i class="fas fa-database"></i></span>
         <h3>Datasets</h3>
@@ -127,11 +131,16 @@
         <h3>Simulation</h3>
         <p>Sensor simulation and HIL testing in Isaac Sim.</p>
       </a>
-      <div class="card">
+      <a class="card card-link" href="mailto:feldschwarm@wifa.uni-leipzig.de?subject=Research%20project">
         <span class="icon-box"><i class="fas fa-handshake"></i></span>
-        <h3>Projects</h3>
-        <p>Research projects and funding consortia.</p>
-      </div>
+        <h3>Research Projects</h3>
+        <p>Joint publicly funded projects and research consortia.</p>
+      </a>
+      <a class="card card-link" href="mailto:feldschwarm@wifa.uni-leipzig.de?subject=Contract%20research">
+        <span class="icon-box"><i class="fas fa-file-signature"></i></span>
+        <h3>Contract Research</h3>
+        <p>Commissioned development, testing and data collection for your machines.</p>
+      </a>
     </div>
   </div>
 </section>
