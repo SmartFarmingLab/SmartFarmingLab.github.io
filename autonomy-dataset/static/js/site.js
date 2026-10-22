@@ -17,8 +17,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  initHeroVideo();
   initVideoModal();
 });
+
+// Front-page background video: lighter file on phones, and a retry when autoplay is blocked
+function initHeroVideo() {
+  var video = document.querySelector('[data-hero-video]');
+  if (!video) return;
+
+  var small = window.matchMedia('(max-width: 768px)').matches;
+  var src = (small && video.dataset.srcMobile) || video.dataset.src;
+  if (src && !video.getAttribute('src')) video.src = src;
+
+  // Some browsers only honour the property, not the attribute, for muted autoplay
+  video.muted = true;
+  video.defaultMuted = true;
+  video.setAttribute('muted', '');
+
+  function tryPlay() {
+    if (document.querySelector('.modal.is-open')) return;
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+
+  tryPlay();
+  video.addEventListener('canplay', function () {
+    if (video.paused) tryPlay();
+  }, { once: true });
+
+  // Browsers in battery or data saving mode block autoplay until the first interaction
+  var events = ['touchstart', 'pointerdown', 'scroll', 'keydown'];
+  function onFirstInteraction() {
+    if (video.paused) tryPlay();
+    events.forEach(function (e) { window.removeEventListener(e, onFirstInteraction); });
+  }
+  events.forEach(function (e) {
+    window.addEventListener(e, onFirstInteraction, { passive: true });
+  });
+
+  // Resume after switching tabs or apps
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible' && video.paused) tryPlay();
+  });
+}
 
 // Front-page hero: open the looping background video large, with controls
 function initVideoModal() {

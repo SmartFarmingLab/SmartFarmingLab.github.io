@@ -47,11 +47,13 @@
 </header>
 
 <section class="hero">
+  <!-- site.js picks the source: the 720p file on small screens, full quality otherwise -->
   <video class="hero-video"
          data-hero-video
-         src="./static/sync_data_20sec/videos/presentation_v5_loop.mp4"
+         data-src="./static/sync_data_20sec/videos/presentation_v5_loop.mp4"
+         data-src-mobile="./static/sync_data_20sec/videos/presentation_v5_loop_720.mp4"
          poster="./static/images/poster_hero.jpg"
-         autoplay muted loop playsinline preload="auto"
+         autoplay muted loop playsinline disablepictureinpicture preload="auto"
          aria-hidden="true"></video>
 
   <div class="container hero-content">

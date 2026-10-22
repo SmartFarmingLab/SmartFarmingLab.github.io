@@ -412,10 +412,12 @@ p {
     linear-gradient(0deg, rgba(8, 14, 10, 0.88) 0%, rgba(8, 14, 10, 0.35) 45%, rgba(8, 14, 10, 0) 70%);
 }
 
-.hero-content {
+/* Specific selector so the mobile .container padding rule cannot reset the bottom spacing */
+.hero > .hero-content {
   position: relative;
   z-index: 1;
-  padding-bottom: clamp(48px, 9vh, 96px);
+  padding-top: calc(var(--header-h) + 24px);
+  padding-bottom: clamp(56px, 9vh, 96px);
 }
 
 .hero-title {
