@@ -1246,3 +1246,34 @@ address {
     display: none;
   }
 }
+
+/* ---------- Data sharing call-out (Research) ---------- */
+.share-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 28px;
+  margin-top: 32px;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  border: 1px solid rgba(62, 142, 79, 0.25);
+}
+
+.share-panel .icon-box {
+  margin-bottom: 0;
+  background: #fff;
+}
+
+.share-text {
+  flex: 1 1 320px;
+}
+
+.share-text h3 {
+  margin-bottom: 4px;
+}
+
+.share-text p {
+  margin: 0;
+  color: var(--ink-soft);
+}
