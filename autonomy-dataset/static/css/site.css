@@ -1277,3 +1277,14 @@ address {
   margin: 0;
   color: var(--ink-soft);
 }
+
+/* Wide wordmark logos (e.g. Main Street Autonomy) need less height to match visually */
+.logo-row img.logo-wide {
+  height: 46px;
+}
+
+@media (max-width: 720px) {
+  .logo-row img.logo-wide {
+    height: 36px;
+  }
+}
